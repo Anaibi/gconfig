@@ -74,7 +74,12 @@ body#enjoy-mondays {
   color: #df3f54; }
 
 /* headers */
-#enjoy-mondays h1, h2, h3, h4, h5, h6 {
+#enjoy-mondays h1,
+#enjoy-mondays h2,
+#enjoy-mondays h3,
+#enjoy-mondays h4,
+#enjoy-mondays h5,
+#enjoy-mondays h6 {
   font-family: "Dosis", sans-serif !important;
   font-weight: 600 !important; }
 
