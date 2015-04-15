@@ -203,7 +203,11 @@ body#{$theme} {
 @media (min-width: 1180px) {
   
   #{$theme} .content h1,
-  #{$theme} .content h2 {
+  #{$theme} .content h2,
+  #{$theme} .content h3,
+  #{$theme} .content h4,
+  #{$theme} .content h5,
+  #{$theme} .content h6 {
     max-width: 550px;
   }
 
@@ -229,6 +233,9 @@ body#{$theme} {
   #{$theme} .content h1,
   #{$theme} .content h2,
   #{$theme} .content h3,
+  #{$theme} .content h4,
+  #{$theme} .content h5,
+  #{$theme} .content h6,
   #{$theme} .content p,
   #{$theme} .content ul,
   #{$theme} .content ol {
