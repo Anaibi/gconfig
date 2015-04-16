@@ -52,7 +52,7 @@ $(window).load(function() {
       // top measures don't affect 
       // if only one pre element, total height to consider if paddings are the same, inner height
       var this_pre_height = this_pre_heights.inner_height;
-      var previous_height = this_pre_heights.inner_height;
+      var previous_height = previous_heights.inner_height;
       
       // case <pre> is followed by one or more <pre>
       // if more then one pre element, sum of inner heights and 'inner' paddings
@@ -70,8 +70,8 @@ $(window).load(function() {
       // if previous height < pre_height
       if (previous_height < this_pre_height) {
         // set -margin and padding to compensate float empty space
-        $previous.css('margin-bottom', -(this_pre_height - previous_heights.inner_height);
-        $previous.css('padding-bottom' this_pre_height - previous_heights.inner_height + previous_heights.padding_bottom);
+        $previous.css('margin-bottom', - (this_pre_height - previous_heights.inner_height));
+        $previous.css('padding-bottom' (this_pre_height - previous_heights.inner_height + previous_heights.padding_bottom));
       }
 
     });
