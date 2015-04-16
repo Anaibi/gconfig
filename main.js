@@ -1,11 +1,26 @@
 $(window).load(function() {
 
-	// fix for <pre> elements floated to right for third column layout
-	// for each <pre> element, PREVIOUS (usuallyl <p>) gets floated left 
-	// set height of both to be the same
-	// special case <pre> followed by one or more <pre> tags, 
-	// jump the each in this case also for all but the first <pre> !!
+	var threeColumnContentCalled = false;
 
+	if ($(window).width() > 1280) {
+	  	threeColumnContent();
+	  	threeColumnContentCalled = true;
+	}
+
+	$(window).resize(function() {
+		if (!threeColumnContentCalled) {
+		  threeColumnContent();
+	  	  threeColumnContentCalled = true;
+		}
+	})
+
+  // fix for <pre> elements floated to right for third column layout
+  // for each <pre> element, PREVIOUS (usuallyl <p>) gets floated left 
+  // set height of both to be the same
+  // special case <pre> followed by one or more <pre> tags, 
+  // jump the each in this case also for all but the first <pre> !!
+
+  function threeColumnContent() {
     $.each($('.content').find('pre'), function(i, preElement) {
       // get previous sibling of this pre element
       var $previous = $(preElement).prev();
@@ -37,4 +52,5 @@ $(window).load(function() {
       }
 
     });
+  }
 });
