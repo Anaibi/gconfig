@@ -115,7 +115,15 @@ body#enjoy-mondays {
 #enjoy-mondays .hljs {
   background-color: #3f3f3f !important; }
 
-/* 3 column background fix */
+/* logo footer */
+#enjoy-mondays #logo-footer {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  width: 25px;
+  height: auto; }
+
+/* 3 COLUMN BACKGROUND for big layout */
 @media (min-width: 1180px) {
   #enjoy-mondays .content h1,
   #enjoy-mondays .content h2,
@@ -156,12 +164,6 @@ body#enjoy-mondays {
     z-index: 2; }
 
   #enjoy-mondays .content-root {
-    background-color: #3f3f3f !important; }
-
-  /* fill rest of bg above pre tags...chapucilla, just checking if all this works, but at least this should be done with script */
-  #enjoy-mondays .content pre + p {
-    /*  margin-top: -130px !important;
-      padding-top: 140px !important;*/
-    z-index: 1; } }
+    background-color: #3f3f3f !important; } }
 
 /*# sourceMappingURL=style.css.map */
