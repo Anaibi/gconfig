@@ -63,15 +63,21 @@ body#enjoy-mondays {
 #enjoy-mondays a:active, #enjoy-mondays a:hover, #enjoy-mondays a.active {
   border-bottom: solid #df3f54 3px; }
 
-/* or, using flatdoc representation, change only 'dash' color: */
+/* remove dash from links */
 #enjoy-mondays .menu a.active:after {
-  background-color: #df3f54; }
+  background: none; }
 
 #enjoy-mondays .menu a:visited,
 #enjoy-mondays .menu a:hover,
 #enjoy-mondays .menu a.active {
+  border-left: 3px solid #df3f54;
+  margin-left: -3px;
   border-bottom: none;
   color: #df3f54; }
+
+/* make room for border-left as some flatdoc level-x links don't have */
+#enjoy-mondays .menu a {
+  padding-left: 2px; }
 
 /* headers */
 #enjoy-mondays h1,

@@ -94,6 +94,8 @@ $slim_fix_header_aux_height : $flatdoc_header_height_total + 25;
 /* links */
 
 $fucsia_border_bottom: solid $FUXSIA 3px;
+$border_left_fucsia: 3px solid $FUXSIA;
+
 @mixin active_link { border-bottom: $fucsia_border_bottom; }
 @mixin visited_link {
   border-bottom: none;
@@ -136,18 +138,25 @@ body#{$theme} {
 }
 
 #{$theme} a:hover, #{$theme} a.active {
-  @extend a:active;
+ @extend a:active; 
 }
 
-/* or, using flatdoc representation, change only 'dash' color: */
+/* remove dash from links */
 #{$theme} .menu a.active:after {
-  background-color: $FUXSIA;
+  background: none;
 }
 
 #{$theme} .menu a:visited, 
 #{$theme} .menu a:hover,
 #{$theme} .menu a.active {
+  border-left: $border_left_fucsia;
+  margin-left: -3px;
   @include visited_link;
+}
+
+/* make room for border-left as some flatdoc level-x links don't have */
+#{$theme} .menu a {
+  padding-left: 2px;
 }
 
 
