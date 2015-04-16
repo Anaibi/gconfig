@@ -2,7 +2,7 @@ $(window).load(function() {
 
 	var threeColumnContentCalled = false;
 
-	if ($(window).width() > 1280) {
+	if ($(window).width() > 1180) {
 	  	threeColumnContent();
 	  	threeColumnContentCalled = true;
 	}
