@@ -71,7 +71,7 @@ $(window).load(function() {
       if (previous_height < this_pre_height) {
         // set -margin and padding to compensate float empty space
         $previous.css('margin-bottom', - (this_pre_height - previous_heights.inner_height));
-        $previous.css('padding-bottom' (this_pre_height - previous_heights.inner_height + previous_heights.padding_bottom));
+        $previous.css('padding-bottom', (this_pre_height - previous_heights.inner_height + previous_heights.padding_bottom));
       }
 
     });
