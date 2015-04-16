@@ -88,6 +88,8 @@ $Dosis: 'Dosis', sans-serif;
 
 $fix_header_aux_height : $flatdoc_header_height_total;
 $main_header_height: $flatdoc_header_height;
+$slim_header_height: $main_header_height + 25;
+$slim_fix_header_aux_height : $flatdoc_header_height_total + 25;
 
 /* links */
 
@@ -269,4 +271,97 @@ body#{$theme} {
  #{$theme} .content-root {
    background-color: $ZENBURN_BG !important;
  }
+}
+
+
+/* format HEADER iframes WHEN UNDER 767px */
+/* check width when side menu drops out */
+@media (max-width: 767px) {
+
+  /* header title and menu */
+  #{$theme} .header .left {
+    left: 0;
+  }
+  
+  /* github buttons */
+  #{$theme} .header .right {
+    right: 84px;
+  }
+  
+  /* github follow button */
+  #{$theme} .header .right iframe:first-child {
+    width: 145px;
+    float: left;
+  }
+
+  #{$theme} .header .right iframe:nth-child(2) {
+    width: 75px;
+    float: left;
+  }
+
+  /* format CONTENT when under 860 px --> centered content */
+  .content {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+
+}
+
+/* STACK HEADER iframes WHEN UNDER 650px */
+@media (max-width: 650px) {
+  /* adapt header height to stack in two rows*/
+  #{$theme} .header {
+    height: $slim_header_height; 
+  }
+
+  #{$theme} #fixed-header-aux {
+    height: $slim_fix_header_aux_height;
+  }
+
+  /* header title and menu */
+  #{$theme} .header .left h1 {
+    float: left;
+    margin-right: 20px;
+  }
+
+  #{$theme} .header .left ul {
+    float: left;
+  }
+
+  #{$theme} .header .left li {
+    float: left;
+    margin-right: 10px;
+  }  
+  
+  /* github buttons */
+  #{$theme} .header .right {
+    left: 30px;
+    top: 47px;
+    display: block;
+  }
+}
+
+/* STACK HEADER iframes WHEN UNDER 300px */
+@media (max-width: 300px) {
+  #{$theme} .header {
+    height: 47px; 
+  }
+
+  #{$theme} #fixed-header-aux {
+    height: 78px;
+  }
+
+  /* header title and menu */
+  #{$theme} .header .left h1 {
+    margin-bottom: 12px;
+  }
+
+  /* github buttons */
+  #{$theme} .header .right {
+    display: none;
+  }
+  
 }

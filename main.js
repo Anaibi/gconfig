@@ -2,31 +2,31 @@ $(window).load(function() {
 
 	var threeColumnContentCalled = false;
 
-	if ($(window).width() > 1180) {
-	  	threeColumnContent();
-	  	threeColumnContentCalled = true;
-	}
-
+	// fix css for three column layout 
+	threeColumnContent();
+	
 	$(window).resize(function() {
 		if (!threeColumnContentCalled) {
 		  threeColumnContent();
-	  	  threeColumnContentCalled = true;
 		}
 	});
 
+
   // fix for <pre> elements floated to right for third column layout
-  // for each <pre> element, PREVIOUS (usuallyl <p>) gets floated left 
-  // set height of both to be the same --> Nooo! has to be margins/paddings  --> just once (test)
-  // else set height to auto again on resize :( --> each resize calculate or somehow assign again --> better try margins/paddings
+  // each <pre> element gets floated right 
   // special case <pre> followed by one or more <pre> tags, 
-  // jump the each in this case also for all but the first <pre> !!
+  // jump the each in this case also for all but the first <pre> 
 
   // want each element before <pre> tags to have total height (height + margin/padding) 
-  // to be same as floated <pre> at left
-
-  // now all content elements have same padding = 10px, account for this to change though
-
+  // to be same as floated <pre> at right
   function threeColumnContent() {
+    // if not needed, return
+  	if ($(window).width() < 1180) {
+      return;
+  	} else {
+  	  threeColumnContentCalled = true;
+  	}
+
     $.each($('.content').find('pre'), function(i, preElement) {
       
       var $this_pre = $(preElement);
@@ -87,22 +87,20 @@ $(window).load(function() {
       }
     });
 
-	  // return true if nodename is <pre>
-	  function isPre(nodeName) { 
-	  	return (nodeName === 'PRE');
-	  }
+	// return true if nodename is <pre>
+	function isPre(nodeName) { 
+	  return (nodeName === 'PRE');
+	}
 
-	  // return heights of element: inner height, padding-top, padding-bottom, margin-top, margin-bottom
-	  function getHeights(elem) { 
-	  	var h = {};
+	// return heights of element: inner height, padding-top, padding-bottom, margin-top, margin-bottom
+	function getHeights(elem) { 
+	  var h = {};
 
-	  	h.inner_height = $(elem).height();
-	  	h.padding_bottom = parseInt($(elem).css('padding-bottom'));
-	  	h.padding_top = parseInt($(elem).css('padding-top'));
-	  	h.margin_bottom = parseInt($(elem).css('margin-bottom'));
-	  	h.margin_top = parseInt($(elem).css('margin-top')); 
+	  h.inner_height = $(elem).height();
+	  h.padding_bottom = parseInt($(elem).css('padding-bottom'));
+	  h.padding_top = parseInt($(elem).css('padding-top'));
 
-	  	return h;
-	  }
+	  return h;
+	}
   }
 });

@@ -168,5 +168,73 @@ body#enjoy-mondays {
 
   #enjoy-mondays .content-root {
     background-color: #3f3f3f !important; } }
+/* format HEADER iframes WHEN UNDER 767px */
+/* check width when side menu drops out */
+@media (max-width: 767px) {
+  /* header title and menu */
+  #enjoy-mondays .header .left {
+    left: 0; }
+
+  /* github buttons */
+  #enjoy-mondays .header .right {
+    right: 84px; }
+
+  /* github follow button */
+  #enjoy-mondays .header .right iframe:first-child {
+    width: 145px;
+    float: left; }
+
+  #enjoy-mondays .header .right iframe:nth-child(2) {
+    width: 75px;
+    float: left; }
+
+  /* format CONTENT when under 860 px --> centered content */
+  .content {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%; } }
+/* STACK HEADER iframes WHEN UNDER 650px */
+@media (max-width: 650px) {
+  /* adapt header height to stack in two rows*/
+  #enjoy-mondays .header {
+    height: 45px; }
+
+  #enjoy-mondays #fixed-header-aux {
+    height: 76px; }
+
+  /* header title and menu */
+  #enjoy-mondays .header .left h1 {
+    float: left;
+    margin-right: 20px; }
+
+  #enjoy-mondays .header .left ul {
+    float: left; }
+
+  #enjoy-mondays .header .left li {
+    float: left;
+    margin-right: 10px; }
+
+  /* github buttons */
+  #enjoy-mondays .header .right {
+    left: 30px;
+    top: 47px;
+    display: block; } }
+/* STACK HEADER iframes WHEN UNDER 300px */
+@media (max-width: 300px) {
+  #enjoy-mondays .header {
+    height: 47px; }
+
+  #enjoy-mondays #fixed-header-aux {
+    height: 78px; }
+
+  /* header title and menu */
+  #enjoy-mondays .header .left h1 {
+    margin-bottom: 12px; }
+
+  /* github buttons */
+  #enjoy-mondays .header .right {
+    display: none; } }
 
 /*# sourceMappingURL=style.css.map */
