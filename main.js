@@ -46,7 +46,7 @@ $(window).load(function() {
       var previous_heights = getHeights($previous);
 
       // get next sibling for case <pre> is followed by one or more <pre> elements
-      var $next = $this_pre.next(); console.log($next);
+      var $next = $this_pre.next(); 
 
       // calculate pre heights 
       // top measures don't affect 
@@ -65,15 +65,21 @@ $(window).load(function() {
           this_pre_height = this_pre_height + next_pre_heights.inner_height + this_pre_heights.padding_top;
           $next = $next.next();
         }
-      }
 
-      // if previous height < pre_height
-      if (previous_height < this_pre_height) { 
-        // set -margin and padding to compensate float empty space
-        $previous.css('margin-bottom', - (this_pre_height - previous_heights.inner_height));
-        $previous.css('padding-bottom', (this_pre_height - previous_heights.inner_height + previous_heights.padding_bottom));
+        // if previous height < pre_height
+        if (previous_height < this_pre_height) { 
+          // set -margin and padding to compensate float empty space
+          $previous.css('margin-bottom', - (this_pre_height - previous_heights.inner_height));
+          $previous.css('padding-bottom', (this_pre_height - previous_heights.inner_height + previous_heights.padding_bottom));
+        }
+      } else {
+      	// if previous height < pre_height
+        if (previous_height < this_pre_height) { 
+          // set -margin and padding to compensate float empty space
+          $previous.css('margin-bottom', - (this_pre_height - previous_heights.inner_height));
+          $previous.css('padding-bottom', (this_pre_height - previous_heights.inner_height + previous_heights.padding_bottom));
+        }
       }
-
     });
   }
   
