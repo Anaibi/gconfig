@@ -1,24 +1,32 @@
 $(function() {
 
 	// fix for <pre> elements floated to right for third column layout
-	// cover with content background (margin/padding) to achieve same background color
-    // formula is : set the next sibling of the <pre> element margin-top and padding-top
-    // to be: margin-top = -(<pre>.height + padding-bottom)
-    // padding-top = <pre>.height + padding-bottom + padding-top
+	// for each <pre> element, PREVIOUS (usuallyl <p>) gets floated left 
+	// set height of both to be the same
 
-    $each.($('.content').find('pre'), function(i, preElement) {
-      // get measures	
+    $.each($('.content').find('pre'), function(i, preElement) {
+      // get previous sibling of this pre element
+      var $previous = $(preElement).prev();
+      // get heights
       var pre_height = $(preElement).height();
-      var pre_padding_bottom = parseInt($(preElement).css('padding-bottom'));
-      var pre_padding_top = parseInt($(preElement).css('padding-top'));
+      var previous_height = $previous.height();
 
-      // get next sibling of this pre element
+      // get next siblign for case <pre> is followed by one or more <pre> elements
       var $next = $(preElement).next();
-      
-      // if there's next element, set it's margin-top and padding-top as in formula
-      if (!!$next) {
-        $(next).css('margin-top', -(pre_height + pre_padding_bottom));
-        $(next).css('padding-top', pre_height + pre_padding_bottom + pre_padding_top);
+      console.log($next.prop('tagName'));
+
+      // case <pre> is followed by one or more <pre>
+      if ($next.prop('tagName') === 'PRE') {
+      	while ($next.prop('tagName') === 'PRE') {
+      	  pre_height = pre_height + $next.height();
+          $next = $next.next();
+        }
+      }
+
+      // if previous height < pre_height
+      if (previous_height < pre_height) {
+        // set it to same as floated right pre element
+        $previous.height(pre_height);
       }
 
     });
