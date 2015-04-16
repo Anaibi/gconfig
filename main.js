@@ -36,7 +36,9 @@ $(window).load(function() {
       
       // if previous elements is <pre>, jump each as it's allready accounted for
       // if ($previous.prop('tagName') === 'PRE') return;
-      if (isPre($previous)) return;
+      if (isPre($previous.prop('nodeName'))) {
+      	return;
+      }
       
       // get measures
       // total height of preElement
@@ -56,12 +58,12 @@ $(window).load(function() {
 
       // case <pre> is followed by one or more <pre>
       // if more then one pre element, sum of inner heights and 'inner' paddings
-      if (isPre($next)) { console.log('is pre next');
+      if (isPre($next.prop('nodeName'))) { console.log('is pre next');
       	
         this_pre_height = this_pre_height + this_pre_heights.padding_bottom;
       	var next_pre_heights = getHeights($next);
 
-      	while (isPre($next)) { 
+      	while (isPre($next.prop('nodeName'))) { 
           this_pre_height = this_pre_height + next_pre_heights.inner_height + this_pre_heights.padding_top;
           $next = $next.next();
         }
@@ -72,32 +74,35 @@ $(window).load(function() {
           $previous.css('margin-bottom', - (this_pre_height - previous_heights.inner_height));
           $previous.css('padding-bottom', (this_pre_height - previous_heights.inner_height + previous_heights.padding_bottom));
         }
+
       } else {
+
       	// if previous height < pre_height
         if (previous_height < this_pre_height) { 
           // set -margin and padding to compensate float empty space
           $previous.css('margin-bottom', - (this_pre_height - previous_heights.inner_height));
           $previous.css('padding-bottom', (this_pre_height - previous_heights.inner_height + previous_heights.padding_bottom));
         }
+
       }
     });
-  }
-  
-  // return true if element is <pre>
-  function isPre(elem) {
-  	return ($(elem).prop('tagName' === 'PRE'));
-  }
 
-  // return heights of element: inner height, padding-top, padding-bottom, margin-top, margin-bottom
-  function getHeights(elem) {
-  	var h = {};
+	  // return true if nodename is <pre>
+	  function isPre(nodeName) { 
+	  	return (nodeName === 'PRE');
+	  }
 
-  	h.inner_height = $(elem).height();
-  	h.padding_bottom = parseInt($(elem).css('padding-bottom'));
-  	h.padding_top = parseInt($(elem).css('padding-top'));
-  	h.margin_bottom = parseInt($(elem).css('margin-bottom'));
-  	h.margin_top = parseInt($(elem).css('margin-top')); 
+	  // return heights of element: inner height, padding-top, padding-bottom, margin-top, margin-bottom
+	  function getHeights(elem) { 
+	  	var h = {};
 
-  	return h;
+	  	h.inner_height = $(elem).height();
+	  	h.padding_bottom = parseInt($(elem).css('padding-bottom'));
+	  	h.padding_top = parseInt($(elem).css('padding-top'));
+	  	h.margin_bottom = parseInt($(elem).css('margin-bottom'));
+	  	h.margin_top = parseInt($(elem).css('margin-top')); 
+
+	  	return h;
+	  }
   }
 });
