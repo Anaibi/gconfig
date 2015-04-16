@@ -54,22 +54,21 @@ $(window).load(function() {
       var this_pre_height = this_pre_heights.inner_height;
       var previous_height = previous_heights.inner_height;
 
-      // if previous height < pre_height
-      if (previous_height < this_pre_height) { console.log('in previous < this');
-
-        // case <pre> is followed by one or more <pre>
-        // if more then one pre element, sum of inner heights and 'inner' paddings
-        if (isPre($next)) { console.log('is pre next');
+      // case <pre> is followed by one or more <pre>
+      // if more then one pre element, sum of inner heights and 'inner' paddings
+      if (isPre($next)) { console.log('is pre next');
       	
-      	  this_pre_height = this_pre_height + this_pre_heights.padding_bottom;
-      	  var next_pre_heights = getHeights($next);
+        this_pre_height = this_pre_height + this_pre_heights.padding_bottom;
+      	var next_pre_heights = getHeights($next);
 
-      	  while (isPre($next)) { 
-            this_pre_height = this_pre_height + next_pre_heights.inner_height + this_pre_heights.padding_top;
-            $next = $next.next();
-          }
+      	while (isPre($next)) { 
+          this_pre_height = this_pre_height + next_pre_heights.inner_height + this_pre_heights.padding_top;
+          $next = $next.next();
         }
+      }
 
+      // if previous height < pre_height
+      if (previous_height < this_pre_height) { 
         // set -margin and padding to compensate float empty space
         $previous.css('margin-bottom', - (this_pre_height - previous_heights.inner_height));
         $previous.css('padding-bottom', (this_pre_height - previous_heights.inner_height + previous_heights.padding_bottom));
