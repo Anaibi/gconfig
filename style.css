@@ -120,8 +120,11 @@ body#enjoy-mondays {
   position: absolute;
   left: 20px;
   bottom: 20px;
-  width: 25px;
+  width: 28px;
   height: auto; }
+
+#enjoy-mondays #logo-footer img {
+  width: 100%; }
 
 /* 3 COLUMN BACKGROUND for big layout */
 @media (min-width: 1180px) {

@@ -98,6 +98,7 @@ $fucsia_border_bottom: solid $FUXSIA 3px;
   color: $FUXSIA;
 }
 
+$logo_footer_width: 28px;
 
 /* */
 /* enjoy-mondays css TODO refactor later */
@@ -209,8 +210,12 @@ body#{$theme} {
   position: absolute;
   left: 20px;
   bottom: 20px;
-  width: 25px;
+  width: $logo_footer_width;
   height: auto;  
+}
+
+#{$theme}  #logo-footer img {
+  width: 100%;
 }
 
 
@@ -265,5 +270,3 @@ body#{$theme} {
    background-color: $ZENBURN_BG !important;
  }
 }
-
-
