@@ -213,7 +213,9 @@ body#{$theme} {
   #{$theme} .content h4,
   #{$theme} .content h5,
   #{$theme} .content h6 {
-    max-width: 550px;
+    width: 550px;
+    margin: 0;
+    padding-left: 40px;
   }
 
   .content ul, .content ol {

@@ -123,7 +123,9 @@ body#enjoy-mondays {
   #enjoy-mondays .content h4,
   #enjoy-mondays .content h5,
   #enjoy-mondays .content h6 {
-    max-width: 550px; }
+    width: 550px;
+    margin: 0;
+    padding-left: 40px; }
 
   .content ul, .content ol {
     margin-left: 0;
