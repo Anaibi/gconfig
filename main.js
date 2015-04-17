@@ -58,7 +58,7 @@ $(window).load(function() {
 
       // case <pre> is followed by one or more <pre>
       // if more then one pre element, sum of inner heights and 'inner' paddings
-      if (isPre($next.prop('nodeName'))) { console.log('is pre next');
+      if (isPre($next.prop('nodeName'))) { 
       	
         this_pre_height = this_pre_height + this_pre_heights.padding_bottom;
       	var next_pre_heights = getHeights($next);
@@ -104,29 +104,36 @@ $(window).load(function() {
 	}
   }
 
-  function colorSwapTest() {
+  function colorSwapTest(color) {
   	var theme = '#enjoy-mondays';
-    var bg_1_elements = {};
-    var light_green = '#CCFFCC';
+    
+    // add here all elements modified in background_1.scss/css 
+    var bg_1_elements = [];
       
-    bg_1_elements['body' + theme] = 0;
-    bg_1_elements[theme + ' .content-root'] = 0;
-    bg_1_elements[theme + ' .menubar'] = 0;
-    bg_1_elements[theme + ' .content'] = 0;
-    bg_1_elements[theme + ' .header'] = 0;
-    bg_1_elements[theme + ' h1'] = 0;
-    bg_1_elements[theme + ' h2'] = 0;
-    bg_1_elements[theme + ' h3'] = 0;
-    bg_1_elements[theme + ' h4'] = 0;
-    bg_1_elements[theme + ' h5'] = 0;
-    bg_1_elements[theme + ' h6'] = 0;
-    bg_1_elements[theme + ' p'] = 0;
-    bg_1_elements[theme + ' ul'] = 0;
-    bg_1_elements[theme + ' ol'] = 0;
+    // http://stackoverflow.com/questions/9708192/use-a-concatenated-dynamic-string-as-javascript-object-key
+    bg_1_elements.push(
+    	'body' + theme,
+    	theme + ' .content-root',
+    	theme + ' .menubar',    	
+    	theme + ' .content',
+    	theme + ' .header',
+    	theme + ' h1',
+    	theme + ' h2',
+    	theme + ' h3',
+    	theme + ' h4',
+    	theme + ' h5',
+    	theme + ' h6',
+    	theme + ' p',
+    	theme + ' ul',
+    	theme + ' ol'
+    );
 
-    $.each(bg_1_elements, function(elem, val) {
-      console.log(elem);
-      swapBGcolor($(elem), light_green);
+    // TODO add here all elements modified in background_2.scss/css
+    // var bg_2_elements = [];
+
+
+    $.each(bg_1_elements, function(i, elem) { 
+      swapBGcolor($(elem), color);
     });
 
     function swapBGcolor(elem, color) {
@@ -134,6 +141,12 @@ $(window).load(function() {
     }
   }
 
-  colorSwapTest();
+  // color swapper (only for background_1 at the moment)
+  $('#color-swapper a').click(function(e) {
+    e.preventDefault();
+    var color = $(this).parent().css('background-color');
+    colorSwapTest(color);
+  })
+
   
 });

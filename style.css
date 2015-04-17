@@ -64,7 +64,7 @@
 /*--------------------------------------------------------------------*/
 /*=ENJOY-MONDAYS CSS--------------------------------------------------*/
 /*--------------------------------------------------------------------*/
-/* positioning, box model, typo, visual*/
+/* check code style guide: positioning, box model, typo, visual*/
 /*=DEFAULTS---------------------*/
 body#enjoy-mondays {
   font-family: "Lato", sans-serif;
@@ -278,5 +278,53 @@ body#enjoy-mondays {
   /* github buttons */
   #enjoy-mondays .header .right {
     display: none; } }
+/*=COLOR SWAPPER TEST (only over 767px)-----------------------*/
+@media (min-width: 767px) {
+  #color-swapper {
+    left: 0;
+    padding: 5px; }
+
+  #color-swapper tr {
+    height: 15px;
+    overflow: hidden; }
+
+  #color-swapper td {
+    font-size: 0;
+    line-height: 0;
+    width: 27px; }
+
+  #color-swapper td a {
+    width: 27px;
+    height: 12px;
+    display: block; }
+
+  #color-swapper tr:hover {
+    height: 12px;
+    cursor: pointer; }
+
+  /*=COLOR OPTIONS-----------*/
+  #color-swapper td.GRAY {
+    background-color: #4a4a4a; }
+
+  #color-swapper td.LIGHT_GRAY {
+    background-color: #e9e8e3; }
+
+  #color-swapper td.DARK_GRAY {
+    background-color: #3a3a3a; }
+
+  #color-swapper td.DARK_BLUE {
+    background-color: #363b48; }
+
+  #color-swapper td.FUXSIA {
+    background-color: #df3f54; }
+
+  #color-swapper td.LIGHT_FUXSIA {
+    background-color: #f17c71; }
+
+  #color-swapper td.ZENBURN_BG {
+    background-color: #3f3f3f; }
+
+  #color-swapper td.LIGHT_WHITE {
+    background-color: #F8F8F4; } }
 
 /*# sourceMappingURL=style.css.map */

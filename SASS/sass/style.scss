@@ -177,7 +177,7 @@ $logo_footer_width: 28px;
 /*--------------------------------------------------------------------*/ 
 /*=ENJOY-MONDAYS CSS--------------------------------------------------*/ 
 /*--------------------------------------------------------------------*/ 
-/* positioning, box model, typo, visual*/
+/* check code style guide: positioning, box model, typo, visual*/
 
 
 /*=DEFAULTS---------------------*/ 
@@ -471,5 +471,70 @@ body#{$theme} {
   #{$theme} .header .right {
     display: none;
   }
-  
 }
+
+  /*=COLOR SWAPPER TEST (only over 767px)-----------------------*/ 
+
+  @media (min-width: 767px) {
+    #color-swapper {
+      left: 0;
+      padding: 5px;
+    }
+
+    #color-swapper tr {
+      height: 15px;
+      overflow: hidden;
+    }
+
+    #color-swapper td {  
+      font-size: 0;
+      line-height: 0;
+      width: 27px;
+    }
+
+    #color-swapper td a {
+      width: 27px;
+      height: 12px;
+      display: block;
+    }
+
+    #color-swapper tr:hover {
+      height: 12px;
+      cursor: pointer;
+    }
+
+
+    /*=COLOR OPTIONS-----------*/ 
+
+    #color-swapper td.GRAY {
+      background-color: $GRAY;
+    }
+
+    #color-swapper td.LIGHT_GRAY {
+      background-color: $LIGHT_GRAY;
+    }
+
+    #color-swapper td.DARK_GRAY {
+      background-color: $DARK_GRAY;
+    }
+
+    #color-swapper td.DARK_BLUE {
+      background-color: $DARK_BLUE;
+    }
+
+    #color-swapper td.FUXSIA {
+      background-color: $FUXSIA;
+    }
+
+    #color-swapper td.LIGHT_FUXSIA {
+      background-color: $LIGHT_FUXSIA;
+    }
+
+    #color-swapper td.ZENBURN_BG {
+      background-color: $ZENBURN_BG;
+    }
+
+    #color-swapper td.LIGHT_WHITE {
+      background-color: $LIGHT_WHITE;
+    }
+  }

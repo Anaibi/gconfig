@@ -4,20 +4,11 @@ $LIGHT_WHITE: #F8F8F4;
 $background_1 : $LIGHT_WHITE;
 
 
-body#{$theme} { 
-  background-color: $background_1; 
-}
-
+body#{$theme}, 
 #{$theme} .content-root,
 #{$theme} .menubar,
-#{$theme} .content {
-  background-color: $background_1;
-}
-
-#{$theme} .header {
-	background-color: $background_1;
-}
-
+#{$theme} .content,
+#{$theme} .header,
 #{$theme} h1,
 #{$theme} h2,
 #{$theme} h3,
