@@ -103,4 +103,37 @@ $(window).load(function() {
 	  return h;
 	}
   }
+
+  function colorSwapTest() {
+  	var theme = '#enjoy-mondays';
+    var bg_1_elements = {};
+    var light_green = '#CCFFCC';
+      
+    bg_1_elements['body' + theme] = 0;
+    bg_1_elements[theme + ' .content-root'] = 0;
+    bg_1_elements[theme + ' .menubar'] = 0;
+    bg_1_elements[theme + ' .content'] = 0;
+    bg_1_elements[theme + ' .header'] = 0;
+    bg_1_elements[theme + ' h1'] = 0;
+    bg_1_elements[theme + ' h2'] = 0;
+    bg_1_elements[theme + ' h3'] = 0;
+    bg_1_elements[theme + ' h4'] = 0;
+    bg_1_elements[theme + ' h5'] = 0;
+    bg_1_elements[theme + ' h6'] = 0;
+    bg_1_elements[theme + ' p'] = 0;
+    bg_1_elements[theme + ' ul'] = 0;
+    bg_1_elements[theme + ' ol'] = 0;
+
+    $.each(bg_1_elements, function(elem, val) {
+      console.log(elem);
+      swapBGcolor($(elem), light_green);
+    });
+
+    function swapBGcolor(elem, color) {
+  	  $(elem).css('background-color', color);
+    }
+  }
+
+  colorSwapTest();
+  
 });

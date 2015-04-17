@@ -42,6 +42,8 @@ $BOLD: 600;
 
 
 /*=ENJOY-MONDAYS PATTERN VARIABLES--------------------------*/ 
+  
+  /* assigned (manually) to body as id, used to make sure these css rules override flatdoc style.css rules */
 
   $theme: #enjoy-mondays;
 
@@ -241,6 +243,7 @@ body#{$theme} {
 #{$theme} h6 {
   font-family: $font_2 !important;
   font-weight: $font_weight_2 !important; 
+  background-color: $background_1;
 }
 
 #{$theme} h1 {
@@ -267,18 +270,20 @@ body#{$theme} {
 }
 
 
+  
 
 /*=CONTENT--------------------*/ 
 
 #{$theme} p {
   font-size: $font_size_1;
+  background-color: $background_1;
 }
 
 #{$theme} pre {
   font-size: $font_size_2;
 }
 
-#{$theme} hr {
+#{$theme} .content hr {
   border: 0;
   height: 3px;
   width: 18%;
@@ -286,6 +291,10 @@ body#{$theme} {
   clear: both;
 }
 
+#{$theme} ul,
+#{$theme} ol {
+  background-color: $background_1;
+}
 
 /*=HIGHLIGHT JS OVERRIDE-----*/ 
 
@@ -351,7 +360,6 @@ body#{$theme} {
   #{$theme} .content p,
   #{$theme} .content ul,
   #{$theme} .content ol {
-    background-color: $background_1;
     position: relative;
     z-index: 2;
  }

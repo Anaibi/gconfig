@@ -9,15 +9,15 @@ body#enjoy-mondays {
 #enjoy-mondays .header {
   background-color: #F8F8F4; }
 
-@media (min-width: 1180px) {
-  #enjoy-mondays .content h2,
-  #enjoy-mondays .content h3,
-  #enjoy-mondays .content h4,
-  #enjoy-mondays .content h5,
-  #enjoy-mondays .content h6,
-  #enjoy-mondays .content p,
-  #enjoy-mondays .content ul,
-  #enjoy-mondays .content ol {
-    background-color: #F8F8F4; } }
+#enjoy-mondays h1,
+#enjoy-mondays h2,
+#enjoy-mondays h3,
+#enjoy-mondays h4,
+#enjoy-mondays h5,
+#enjoy-mondays h6,
+#enjoy-mondays p,
+#enjoy-mondays ul,
+#enjoy-mondays ol {
+  background-color: #F8F8F4; }
 
 /*# sourceMappingURL=background_1.css.map */
