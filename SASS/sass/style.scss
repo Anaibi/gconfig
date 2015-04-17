@@ -1,16 +1,22 @@
-/* flatdoc constants */
+/*=FLATDOC THEME values------------------------------------------------*/ 
 
 $flatdoc_header_height: 20px;
 $flatdoc_header_padding_top_bottom: 30px;
 $flatdoc_header_margin: 0;
 $flatdoc_header_border: 1px;
 
-$flatdoc_header_height_total: $flatdoc_header_height + $flatdoc_header_padding_top_bottom + $flatdoc_header_margin + $flatdoc_header_border;
+$flatdoc_header_height_total: $flatdoc_header_height + 
+  $flatdoc_header_padding_top_bottom + $flatdoc_header_margin + 
+  $flatdoc_header_border;
 
 $flatdoc_body_font_size: 13px;
 
+/*--------------------------------------------------------------------*/ 
+/*=ENJOY-MONDAYS CONSTANTS--------------------------------------------*/ 
+/*--------------------------------------------------------------------*/ 
 
-/* color constants */
+/*=COLORS--------------------------------------------------*/ 
+/* define any new colors here */ 
 
 $GRAY: #4a4a4a;
 $LIGHT_GRAY: #e9e8e3;
@@ -21,20 +27,137 @@ $LIGHT_FUXSIA: #f17c71;
 $ZENBURN_BG: #3f3f3f; 
 
 
-/* font constants */
+/*=FONTS---------------------------------------------------*/ 
+/* define any new fonts here */ 
 
-$Lato: 'Lato', sans-serif;
-$Dosis: 'Dosis', sans-serif;
+$LATO: 'Lato', sans-serif;
+$DOSIS: 'Dosis', sans-serif;
+
+/* fontweights, add/redefine here */
+
+$BOLDER: 900;
+$LIGHT: 100;
+$BOLD: 600;
 
 
-/* classes */
+/*=ENJOY-MONDAYS PATTERN VARIABLES--------------------------*/ 
+
+  $theme: #enjoy-mondays;
+
+
+/*=COLOR COMBOS--------------------------*/
+/* change colors here */
+
+/* BACKGROUNDS */
+
+  /* GENERAL CONTENT BACKGROUND: */
+  $background_1 : $LIGHT_GRAY;
+
+  /* CODE BACKGROUND: */
+  $background_2 : $ZENBURN_BG;
+
+/* TEXT */
+  
+  /* GENERAL TEXT */
+  $color_1: $GRAY;
+
+  /* LINKS */
+  $color_2: $DARK_GRAY;
+
+  /* DETAILS (hovers, visited links) */
+  $color_3: $FUXSIA;
+
+
+
+/*=FONT FAMILIES-------------------------*/
+/* change font families here */
+
+  /* links and text */
+  $font_1: $LATO;
+  
+  /* headers */
+  $font_2: $DOSIS;
+
+
+/*=FONT SIZES---------------------------*/
+/* change font sizes here */
+
+  /* text, p */
+  $font_size_1: 1.25em; 
+  
+  /* text, pre */
+  $font_size_2: 1.15em;
+  
+  /* side menu links */
+  $font_size_3: 1em;
+  
+  /* h1 */ 
+  $font_size_4: 2.5em; 
+
+
+/*=FONT WEIGHTS-------------------------*/
+/* change font weights here */
+
+  $font_weight_1: $LIGHT;
+  $font_weight_2: $BOLD;
+  $font_weight_3: $BOLDER;
+
+
+
+/*=VARIABLES and MIXINS------------------------------------*/ 
+
+/*=HEADER VARIABLES---------*/ 
+
+$fix_header_aux_height : $flatdoc_header_height_total;
+$main_header_height: $flatdoc_header_height;
+
+/* for under 650px */
+$slim_header_height: $main_header_height + 25;
+$slim_fix_header_aux_height : $flatdoc_header_height_total + 25;
+
+/* for under 300px */
+$slim_header_height: 47px;
+$slim_fix_header_aux_height : 78px;
+
+
+/*=LINKS VARIABLES---------*/ 
+
+$links_border_bottom: 3px solid $color_3;
+$links_border_left: 3px solid $color_3;
+
+/* hover effects */
+
+@mixin underline_link { 
+  border-bottom: $links_border_bottom; 
+}
+
+@mixin colored_link {
+  border-bottom: none;
+  color: $color_3;
+}
+
+@mixin left_border_link {
+  border-left: $links_border_left;
+}
+
+
+/*=FOOTER VARIABLES---------*/ 
+
+$logo_footer_width: 28px;
+
+
+
+/*=CLASSES-------------------------------------------------*/ 
 
 .clearfix { clear: both; }
+
 .fixed { 
   position: fixed;
   z-index: 1000;
 }
+
 .fullwidth { width: 100%; }
+
 .screan-reader-text {
   position: absolute;
   height: 0;
@@ -42,77 +165,24 @@ $Dosis: 'Dosis', sans-serif;
   opacity: 0;
   font-size: 0;
 }
+
 .hidden { display: none; }
+
 .top0 { top: 0; }
 
 
-/* */
-/* enjoy-mondays pattern variables */
-
-/* TODO test template variables */
-/* TODO $theme, $background combos, $a_color, $base_font_color and set into rule / options string */
-
-  /*$theme: enjoy-mondays;*/
-  $theme: #enjoy-mondays;
-
-
-  /* colors */
-  $background_1 : $LIGHT_GRAY;
-  $background_2 : $DARK_GRAY;
-  $background_3 : $DARK_BLUE;
-  $background_4 : $FUXSIA;
-
-  $a_color: $DARK_GRAY;
-  $base_font_color: $GRAY;
-
-
-  /* typos */
-
-  $font_1: $Lato;
-  $font_2: $Dosis;
-
-  $bolder: 900;
-  $light: 100;
-  $bold: 600;
-
-  $base_font_size: 62.5%; 
-  $p_size: 1.25em; 
-  $a_size: 1em; 
-  $h_size: 2.5em; 
-
-
-/* */
-/* elements */
-
-/* header */
-
-$fix_header_aux_height : $flatdoc_header_height_total;
-$main_header_height: $flatdoc_header_height;
-$slim_header_height: $main_header_height + 25;
-$slim_fix_header_aux_height : $flatdoc_header_height_total + 25;
-
-/* links */
-
-$fucsia_border_bottom: solid $FUXSIA 3px;
-$border_left_fucsia: 3px solid $FUXSIA;
-
-@mixin active_link { border-bottom: $fucsia_border_bottom; }
-@mixin visited_link {
-  border-bottom: none;
-  color: $FUXSIA;
-}
-
-$logo_footer_width: 28px;
-
-/* */
-/* enjoy-mondays css TODO refactor later */
+/*--------------------------------------------------------------------*/ 
+/*=ENJOY-MONDAYS CSS--------------------------------------------------*/ 
+/*--------------------------------------------------------------------*/ 
 /* positioning, box model, typo, visual*/
+
+
+/*=DEFAULTS---------------------*/ 
 
 body#{$theme} { 
   font-family: $font_1;
-  font-weight: $light;
-  /*font-size: $base_font_size;*/ /* flatdoc theme has body 13px */
-  color: $base_font_color;
+  font-weight: $font_weight_1;
+  color: $color_1;
   background-color: $background_1; 
 }
 
@@ -124,43 +194,43 @@ body#{$theme} {
 }
   
 
-/* links */
+/*=LINKS-----------------------*/ 
+
+/* ALL links */
 
 #{$theme} a {
   text-decoration: none;
-  font-size: $a_size;
-  color: $a_color;
-  font-weight: $bolder;
-}
-
-#{$theme} a:active { 
-  @include active_link;
+  font-size: $font_size_3;
+  color: $color_2;
+  font-weight: $font_weight_3;
 }
 
 #{$theme} a:hover, #{$theme} a.active {
- @extend a:active; 
+ @include underline_link;
 }
 
-/* remove dash from links */
+/* remove dash from links FLATDOC OVERRIDE */
 #{$theme} .menu a.active:after {
   background: none;
 }
 
+/* SIDE MENU links */
+
 #{$theme} .menu a:visited, 
 #{$theme} .menu a:hover,
 #{$theme} .menu a.active {
-  border-left: $border_left_fucsia;
   margin-left: -3px;
-  @include visited_link;
+  @include left_border_link;
+  @include colored_link;
 }
 
 /* make room for border-left as some flatdoc level-x links don't have */
-#{$theme} .menu a {
-  padding-left: 2px;
+#{$theme} .menu .level-2 > a {
+  padding-left: 3px;
 }
 
 
-/* headers */
+/*=HEADERS--------------------*/ 
 
 #{$theme} h1, 
 #{$theme} h2, 
@@ -169,37 +239,42 @@ body#{$theme} {
 #{$theme} h5,
 #{$theme} h6 {
   font-family: $font_2 !important;
-  font-weight: $bold !important; 
+  font-weight: $font_weight_2 !important; 
 }
 
 #{$theme} h1 {
-  font-size: $h_size;  
+  font-size: $font_size_4;  
   text-transform: uppercase;
 }
 
 
-  /* nav header for flatdoc */
+/*=NAV HEADER------------------*/ 
 
 #{$theme} .header {
 	height: $main_header_height;
 	background-color: $background_1;
 }
+
 #{$theme} #fixed-header-aux {
 	height: $fix_header_aux_height;
 }
 
- /* TODO if menubar has class fixed, animate header to the left */
- #{$theme} .header .left {
+/* TODO if menubar has class fixed, animate header to the left ? */
+#{$theme} .header .left {
   position: relative;
   left: 220px;
- }
+}
 
 
 
- /* elements */ 
+/*=CONTENT--------------------*/ 
 
 #{$theme} p {
-  font-size: $p_size;
+  font-size: $font_size_1;
+}
+
+#{$theme} pre {
+  font-size: $font_size_2;
 }
 
 #{$theme} hr {
@@ -211,12 +286,14 @@ body#{$theme} {
 }
 
 
-/* hightlight js fix */
+/*=HIGHLIGHT JS OVERRIDE-----*/ 
+
 #{$theme} .hljs {
-  background-color: #3f3f3f !important;
+  background-color: $background_2 !important;
 }
 
-/* logo footer */
+/*=LOGO FOOTER---------------*/ 
+
 #{$theme}  #logo-footer {
   position: absolute;
   left: 20px;
@@ -230,7 +307,8 @@ body#{$theme} {
 }
 
 
-/* 3 COLUMN BACKGROUND for big layout */
+/*=3 COLUMN BACKGROUND for big layout--------------------*/ 
+
 @media (min-width: 1180px) {
   
   #{$theme} .content h1,
@@ -258,7 +336,7 @@ body#{$theme} {
   }
 
   #{$theme} .content {
-    background-color: $ZENBURN_BG !important;
+    background-color: $background_2 !important;
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -278,37 +356,44 @@ body#{$theme} {
  }
 
  #{$theme} .content-root {
-   background-color: $ZENBURN_BG !important;
+   background-color: $background_2 !important;
  }
 }
 
 
-/* format HEADER iframes WHEN UNDER 767px */
-/* check width when side menu drops out */
+/*=format HEADER iframes WHEN UNDER 767px--------------------*/ 
+/* (when side menu drops out) */
+
 @media (max-width: 767px) {
 
-  /* header title and menu */
+  /*=header title and menu-----------*/ 
+
   #{$theme} .header .left {
     left: 0;
   }
   
-  /* github buttons */
+  /* github buttons */ 
+
   #{$theme} .header .right {
     right: 84px;
   }
   
   /* github follow button */
+
   #{$theme} .header .right iframe:first-child {
     width: 145px;
     float: left;
   }
+
+  /* github star button */
 
   #{$theme} .header .right iframe:nth-child(2) {
     width: 75px;
     float: left;
   }
 
-  /* format CONTENT when under 860 px --> centered content */
+  /*=format CONTENT when under 767px = centered content--------*/ 
+
   .content {
     padding-left: 0;
     padding-right: 0;
@@ -319,9 +404,12 @@ body#{$theme} {
 
 }
 
-/* STACK HEADER iframes WHEN UNDER 650px */
+/*=STACK HEADER iframes WHEN UNDER 650px-----------------------*/ 
+
 @media (max-width: 650px) {
-  /* adapt header height to stack in two rows*/
+  
+  /* adapt header height to stack in two rows */
+  
   #{$theme} .header {
     height: $slim_header_height; 
   }
@@ -353,8 +441,10 @@ body#{$theme} {
   }
 }
 
-/* STACK HEADER iframes WHEN UNDER 300px */
+/*=STACK HEADER iframes WHEN UNDER 300px-----------------------*/ 
+
 @media (max-width: 300px) {
+  
   #{$theme} .header {
     height: 47px; 
   }
