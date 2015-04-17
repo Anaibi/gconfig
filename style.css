@@ -4,16 +4,25 @@
 /*--------------------------------------------------------------------*/
 /*=COLORS--------------------------------------------------*/
 /* define any new colors here */
+/*=COLOR COMBOS--------------------------*/
+/* add combinations of colors here */
+/* general_bg -*- right_code_bg -*- general_text -*- links_text -*- details (as hover) -*- left_code_bg */
+/* combo 1: $LIGHT_GRAY, $ZENBURN_BG, $GRAY, $DARK_GRAY, $FUXSIA, $LIGHT_WHITE */
+/* combo 2: $DARK_GRAY, $BLACK, $LIGHT_GRAY, $LIGHT_WHITE, $LIGHT_FUXSIA, $BLACK */
+/* combo 3: $DARK_BLUE, $BLACK, $LIGHT_GRAY, $LIGHT_WHITE, $LIGHT_FUXSIA */
+/* combo 4: $FUXSIA, $ZENBURN_BG, $LIGHT_GRAY, $LIGHT_WHITE, $LIGHT_FUXSIA, $ZENBURN_BG */
+/* combo 1: $LIGHTER_WHITE, $ZENBURN_BG, $GRAY, $DARK_GRAY, $FUXSIA, $LIGHT_WHITE */
+/* sass lists: http://hugogiraudel.com/2013/07/15/understanding-sass-lists/ */
 /*=FONTS---------------------------------------------------*/
 /* define any new fonts here */
 /* fontweights, add/redefine here */
 /*=ENJOY-MONDAYS PATTERN VARIABLES--------------------------*/
 /* assigned (manually) to body as id, used to make sure these css rules override flatdoc style.css rules */
 /*=COLOR COMBOS--------------------------*/
-/* change colors here */
-/* BACKGROUNDS */
+/* set color combinations here */
 /* GENERAL CONTENT BACKGROUND: */
-/* CODE BACKGROUND: */
+/* CODE IN BOX BACKGROUND: */
+/* CODE IN TEXT BACKGROUND */
 /* TEXT */
 /* GENERAL TEXT */
 /* LINKS */
@@ -30,9 +39,12 @@
 /* h1 */
 /*=FONT WEIGHTS-------------------------*/
 /* change font weights here */
-/*=VARIABLES and MIXINS------------------------------------*/
-/*=HEADER VARIABLES---------*/
+/*=VARIABLES, FUNCTIONS AND MIXINS----------------------------*/
+/*=HEADER VARIABLES--------*/
+/* change base header heights here, now same as flatdoc theme */
+/* header under 350px varies */
 /*=LINKS VARIABLES---------*/
+/* add any new hover effects here and either modify mixin or make new one */
 /* hover effects */
 /*=FOOTER VARIABLES---------*/
 /*=CLASSES-------------------------------------------------*/
@@ -67,23 +79,23 @@ body#enjoy-mondays {
   font-family: "Lato", sans-serif;
   font-weight: 100;
   color: #4a4a4a;
-  background-color: #e9e8e3; }
+  background-color: #F8F8F4; }
 
 /* left menu and central content background need re-stating */
 #enjoy-mondays .content-root,
 #enjoy-mondays .menubar,
 #enjoy-mondays .content {
-  background-color: #e9e8e3; }
+  background-color: #F8F8F4; }
 
 /*=LINKS-----------------------*/
 /* ALL links */
 #enjoy-mondays a {
   text-decoration: none;
   font-size: 1em;
-  color: #3a3a3a;
+  color: #3A3A3A;
   font-weight: 900; }
   #enjoy-mondays a:hover, #enjoy-mondays a.active {
-    border-bottom: 3px solid #df3f54; }
+    border-bottom: 3px solid #DF3F54; }
     #enjoy-mondays a:hover::after, #enjoy-mondays a.active::after {
       /* remove dash from links FLATDOC OVERRIDE */
       background: none; }
@@ -91,9 +103,9 @@ body#enjoy-mondays {
 /* SIDE MENU links */
 #enjoy-mondays .menu a:visited, #enjoy-mondays .menu a:hover, #enjoy-mondays .menu a.active {
   margin-left: -3px;
-  border-left: 3px solid #df3f54;
+  border-left: 3px solid #DF3F54;
   border-bottom: none;
-  color: #df3f54; }
+  color: #DF3F54 !important; }
 
 /* make room for border-left as some flatdoc level-x links don't have */
 #enjoy-mondays .menu .level-2 > a {
@@ -108,7 +120,7 @@ body#enjoy-mondays {
 #enjoy-mondays h6 {
   font-family: "Dosis", sans-serif !important;
   font-weight: 600 !important;
-  background-color: #e9e8e3; }
+  background-color: #F8F8F4; }
 
 #enjoy-mondays h1 {
   font-size: 2.5em;
@@ -116,8 +128,7 @@ body#enjoy-mondays {
 
 /*=NAV HEADER------------------*/
 #enjoy-mondays #main-header {
-  height: 20px;
-  background-color: #e9e8e3; }
+  background-color: #F8F8F4; }
   #enjoy-mondays #main-header .left {
     position: relative;
     left: 220px; }
@@ -128,25 +139,25 @@ body#enjoy-mondays {
 /*=CONTENT--------------------*/
 #enjoy-mondays p {
   font-size: 1.25em;
-  background-color: #e9e8e3; }
-
+  background-color: #F8F8F4; }
 #enjoy-mondays pre {
   font-size: 1.15em; }
-
+#enjoy-mondays code {
+  background-color: #FFF; }
 #enjoy-mondays .content hr {
   border: 0;
   height: 3px;
   width: 18%;
   margin: 0 auto 3%;
   clear: both; }
-
-#enjoy-mondays ul,
-#enjoy-mondays ol {
-  background-color: #e9e8e3; }
+#enjoy-mondays ul, #enjoy-mondays ol {
+  background-color: #F8F8F4; }
 
 /*=HIGHLIGHT JS OVERRIDE-----*/
-#enjoy-mondays .hljs {
-  background-color: #3f3f3f !important; }
+#enjoy-mondays .hljs, #enjoy-mondays pre > code {
+  background-color: #3F3F3F; }
+#enjoy-mondays pre > code {
+  border-color: #3F3F3F; }
 
 /*=LOGO FOOTER---------------*/
 #enjoy-mondays #logo-footer {
@@ -162,8 +173,12 @@ body#enjoy-mondays {
 /*=3 COLUMN BACKGROUND for big layout-----------------------------*/
 /*=---------------------------------------------------------------*/
 @media (min-width: 1180px) {
+  #enjoy-mondays .content-root {
+    /*background-color: $background_2 !important;*/
+    background-color: #3F3F3F; }
   #enjoy-mondays .content {
-    background-color: #3f3f3f !important;
+    /*background-color: $background_2 !important;*/
+    background-color: #3F3F3F;
     padding-top: 0;
     padding-bottom: 0; }
     #enjoy-mondays .content h1, #enjoy-mondays .content h2, #enjoy-mondays .content h3, #enjoy-mondays .content h4, #enjoy-mondays .content h5, #enjoy-mondays .content h6 {
@@ -182,12 +197,8 @@ body#enjoy-mondays {
     #enjoy-mondays .content p {
       position: relative;
       z-index: 2; }
-
   #enjoy-mondays .content > *:last-child {
-    padding-bottom: 40px; }
-
-  #enjoy-mondays .content-root {
-    background-color: #3f3f3f !important; } }
+    padding-bottom: 40px; } }
 /*=---------------------------------------------------------------*/
 /*=STYLE HEADER AND CONTENT media queries-------------------------*/
 /*=---------------------------------------------------------------*/
@@ -227,12 +238,15 @@ body#enjoy-mondays {
         float: right;
         margin-right: 30px; }
         #enjoy-mondays #main-header .left ul li {
-          float: left;
-          margin-left: 20px; }
+          float: left; }
       #enjoy-mondays #main-header .left li:last-child a {
         padding-right: 0; }
     #enjoy-mondays #main-header .right {
       display: none; } }
+/*=----------------------------------------------------UNDER 480px*/
+@media (max-width: 480px) {
+  #enjoy-mondays #main-header .left li {
+    margin-left: 20px; } }
 /*=----------------------------------------------------UNDER 350px*/
 @media (max-width: 350px) {
   /*=HEADER title and menu = stack in 2 rows----*/
@@ -249,7 +263,8 @@ body#enjoy-mondays {
       display: inline-block; }
 
   #enjoy-mondays #fixed-header-aux {
-    height: 70px; } }
+    height: 71px;
+    /*height: $total_header_height;*/ } }
 /*=---------------------------------------------------------------*/
 /*=COLOR SWAPPER TEST (only over 767px)---------------------------*/
 /*=---------------------------------------------------------------*/
@@ -277,22 +292,26 @@ body#enjoy-mondays {
         display: block; }
 
   /*=COLOR OPTIONS-----------*/
-  #color-swapper td.GRAY {
-    background-color: #4a4a4a; }
-  #color-swapper td.LIGHT_GRAY {
-    background-color: #e9e8e3; }
-  #color-swapper td.DARK_GRAY {
-    background-color: #3a3a3a; }
-  #color-swapper td.DARK_BLUE {
-    background-color: #363b48; }
-  #color-swapper td.FUXSIA {
-    background-color: #df3f54; }
-  #color-swapper td.LIGHT_FUXSIA {
-    background-color: #f17c71; }
-  #color-swapper td.ZENBURN_BG {
-    background-color: #3f3f3f; }
-  #color-swapper td.LIGHT_WHITE {
-    background-color: #F8F8F4; } }
+  #color-swapper td {
+    border-right: 1px solid white; }
+    #color-swapper td.GRAY {
+      background-color: #4a4a4a; }
+    #color-swapper td.LIGHT_GRAY {
+      background-color: #E9E8E3; }
+    #color-swapper td.DARK_GRAY {
+      background-color: #3A3A3A; }
+    #color-swapper td.DARK_BLUE {
+      background-color: #363B48; }
+    #color-swapper td.FUXSIA {
+      background-color: #DF3F54; }
+    #color-swapper td.LIGHT_FUXSIA {
+      background-color: #F17C71; }
+    #color-swapper td.ZENBURN_BG {
+      background-color: #3F3F3F; }
+    #color-swapper td.LIGHT_WHITE {
+      background-color: #F3F6FB; }
+    #color-swapper td.LIGHTER_WHITE {
+      background-color: #F8F8F4; } }
 /*=---------------------------------------------------------------*/
 /*=HIDE SCROLLBAR-------------------------------------------------*/
 /*=---------------------------------------------------------------*/

@@ -1,17 +1,30 @@
 $theme: #enjoy-mondays;
-$LIGHT_WHITE: #F8F8F4;
 ZENBURN_BG: #3f3f3f;
 
 $background_2 : $ZENBURN_BG;
 
 
-#{$theme} .hljs {
-  background-color: $background_2 !important;
+#{$theme} {
+  .hljs, pre > code {
+    background-color: $background_2;
+  }
+
+  pre > code {
+    border-color: $background_2;
+  }
 }
 
 @media (min-width: 1180px) {
-  #{$theme} .content,
-  #{$theme} .content-root  {
-    background-color: $background_2 !important;
+
+  #{$theme} {
+    .content-root {
+      /*background-color: $background_2 !important;*/
+      background-color: $background_2;
+    }
+  
+    .content {
+      /*background-color: $background_2 !important;*/
+      background-color: $background_2;
+    }
   }
 }

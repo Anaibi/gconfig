@@ -2,16 +2,17 @@
 
 $flatdoc_header_height: 20px;
 
-  $flatdoc_header_padding_top_bottom: 30px;
-  $flatdoc_header_margin: 0;
-  $flatdoc_header_border: 1px;
+$flatdoc_header_padding_top: 15px; 
+$flatdoc_header_padding_bottom: 15px;
+$flatdoc_header_margin_top: 0;
+$flatdoc_header_margin_bottom: 0;
+$flatdoc_header_border_top: 0;
+$flatdoc_header_border_bottom: 1px;
 
-$flatdoc_header_height_total: $flatdoc_header_height 
-  + $flatdoc_header_padding_top_bottom 
-  + $flatdoc_header_margin 
-  + $flatdoc_header_border;
 
 $flatdoc_body_font_size: 13px;
+
+
 
 /*--------------------------------------------------------------------*/ 
 /*=ENJOY-MONDAYS CONSTANTS--------------------------------------------*/ 
@@ -21,13 +22,43 @@ $flatdoc_body_font_size: 13px;
 /* define any new colors here */ 
 
 $GRAY: #4a4a4a;
-$LIGHT_GRAY: #e9e8e3;
-$DARK_GRAY:	#3a3a3a;
-$DARK_BLUE:	#363b48;	
-$FUXSIA: #df3f54;
-$LIGHT_FUXSIA: #f17c71;
-$ZENBURN_BG: #3f3f3f; 
-$LIGHT_WHITE: #F8F8F4;
+$LIGHT_GRAY: #E9E8E3;
+$DARK_GRAY:	#3A3A3A;
+$DARK_BLUE:	#363B48;	
+$FUXSIA: #DF3F54;
+$LIGHT_FUXSIA: #F17C71;
+$ZENBURN_BG: #3F3F3F; 
+$LIGHTER_WHITE: #F8F8F4;
+$LIGHT_WHITE: #F3F6FB;
+$BLACK: #000;
+$WHITE: #FFF;
+
+
+
+
+
+/*=COLOR COMBOS--------------------------*/
+/* add combinations of colors here */
+/* general_bg -*- right_code_bg -*- general_text -*- links_text -*- details (as hover) -*- left_code_bg */
+
+
+/* combo 1: $LIGHT_GRAY, $ZENBURN_BG, $GRAY, $DARK_GRAY, $FUXSIA, $LIGHT_WHITE */
+$combo1: $LIGHT_GRAY, $ZENBURN_BG, $GRAY, $DARK_GRAY, $FUXSIA, $LIGHT_WHITE;
+
+/* combo 2: $DARK_GRAY, $BLACK, $LIGHT_GRAY, $LIGHT_WHITE, $LIGHT_FUXSIA, $BLACK */
+$combo2: $DARK_GRAY, $BLACK, $LIGHT_GRAY, $LIGHT_WHITE, $LIGHT_FUXSIA, $BLACK;
+
+/* combo 3: $DARK_BLUE, $BLACK, $LIGHT_GRAY, $LIGHT_WHITE, $LIGHT_FUXSIA */
+$combo3: $DARK_BLUE, $BLACK, $LIGHT_GRAY, $LIGHT_WHITE, $LIGHT_FUXSIA;
+
+/* combo 4: $FUXSIA, $ZENBURN_BG, $LIGHT_GRAY, $LIGHT_WHITE, $LIGHT_FUXSIA, $ZENBURN_BG */
+$combo4: $FUXSIA, $ZENBURN_BG, $LIGHT_GRAY, $LIGHT_WHITE, $LIGHT_FUXSIA, $ZENBURN_BG;
+
+/* combo 1: $LIGHTER_WHITE, $ZENBURN_BG, $GRAY, $DARK_GRAY, $FUXSIA, $LIGHT_WHITE */
+$combo5: $LIGHTER_WHITE, $ZENBURN_BG, $GRAY, $DARK_GRAY, $FUXSIA, $WHITE;
+
+
+/* sass lists: http://hugogiraudel.com/2013/07/15/understanding-sass-lists/ */
 
 
 /*=FONTS---------------------------------------------------*/ 
@@ -51,27 +82,31 @@ $BOLD: 600;
 
 
 /*=COLOR COMBOS--------------------------*/
-/* change colors here */
+/* set color combinations here */
 
-/* BACKGROUNDS */
+$combo: $combo5;
 
   /* GENERAL CONTENT BACKGROUND: */
-  $background_1 : $LIGHT_GRAY;
+  $background_1 : nth($combo, 1);
 
-  /* CODE BACKGROUND: */
-  $background_2 : $ZENBURN_BG;
+  /* CODE IN BOX BACKGROUND: */
+  $background_2 : nth($combo, 2);
+
+  /* CODE IN TEXT BACKGROUND */
+  $background_3 : nth($combo, 6);
 
 /* TEXT */
   
   /* GENERAL TEXT */
-  $color_1: $GRAY;
+  $color_1 : nth($combo, 3);
 
   /* LINKS */
-  $color_2: $DARK_GRAY;
+  $color_2 : nth($combo, 4);
 
   /* DETAILS (hovers, visited links) */
-  $color_3: $FUXSIA;
+  $color_3 : nth($combo, 5);
 
+  
 
 
 /*=FONT FAMILIES-------------------------*/
@@ -109,18 +144,32 @@ $BOLD: 600;
 
 
 
-/*=VARIABLES and MIXINS------------------------------------*/ 
+/*=VARIABLES, FUNCTIONS AND MIXINS----------------------------*/ 
 
-/*=HEADER VARIABLES---------*/ 
+@function totalHeight($height, $paddings, $margins, $borders) {
+  @return $height + $paddings + $margins + $borders;
+}
 
-$fix_header_aux_height : $flatdoc_header_height_total;
-$main_header_height: $flatdoc_header_height;
+
+/*=HEADER VARIABLES--------*/ 
+/* change base header heights here, now same as flatdoc theme */
+/* header under 350px varies */
+
+$header_height: $flatdoc_header_height;
+$header_paddings: $flatdoc_header_padding_top + $flatdoc_header_padding_bottom;
+$header_margins: $flatdoc_header_margin_top + $flatdoc_header_margin_bottom;
+$header_borders: $flatdoc_header_border_top + $flatdoc_header_border_bottom;
+
+
+$total_header_height: totalHeight($header_height, $header_paddings, $header_margins, $header_borders);
 
 
 /*=LINKS VARIABLES---------*/ 
+/* add any new hover effects here and either modify mixin or make new one */
 
 $links_border_bottom: 3px solid $color_3;
 $links_border_left: 3px solid $color_3;
+
 
 /* hover effects */
 
@@ -130,7 +179,7 @@ $links_border_left: 3px solid $color_3;
 
 @mixin colored_link {
   border-bottom: none;
-  color: $color_3;
+  color: $color_3 !important;
 }
 
 @mixin left_border_link {
@@ -182,10 +231,12 @@ body#{$theme} {
 }
 
 /* left menu and central content background need re-stating */
-#{$theme} .content-root,
-#{$theme} .menubar,
-#{$theme} .content {
-  background-color: $background_1;
+#{$theme} {
+  .content-root,
+  .menubar,
+  .content {
+    background-color: $background_1;
+  }
 }
   
 
@@ -231,15 +282,17 @@ body#{$theme} {
 
 /*=HEADERS--------------------*/ 
 
-#{$theme} h1, 
-#{$theme} h2, 
-#{$theme} h3, 
-#{$theme} h4, 
-#{$theme} h5,
-#{$theme} h6 {
-  font-family: $font_2 !important;
-  font-weight: $font_weight_2 !important; 
-  background-color: $background_1;
+#{$theme} {
+  h1, 
+  h2, 
+  h3, 
+  h4, 
+  h5,
+  h6 {
+    font-family: $font_2 !important;
+    font-weight: $font_weight_2 !important; 
+    background-color: $background_1;
+  }
 }
 
 #{$theme} h1 {
@@ -251,7 +304,6 @@ body#{$theme} {
 /*=NAV HEADER------------------*/ 
 
 #{$theme} #main-header {
-	height: $main_header_height;
 	background-color: $background_1;
 
   .left {
@@ -261,38 +313,49 @@ body#{$theme} {
 }
 
 #{$theme} #fixed-header-aux {
-	height: $fix_header_aux_height;
+	height: $total_header_height;
 }
   
 
 /*=CONTENT--------------------*/ 
 
-#{$theme} p {
-  font-size: $font_size_1;
-  background-color: $background_1;
-}
+#{$theme} {
+  p {
+    font-size: $font_size_1;
+    background-color: $background_1;
+  }
 
-#{$theme} pre {
-  font-size: $font_size_2;
-}
+  pre {
+    font-size: $font_size_2;
+  }
 
-#{$theme} .content hr {
-  border: 0;
-  height: 3px;
-  width: 18%;
-  margin: 0 auto 3%;
-  clear: both;
-}
+  code {
+    background-color: $background_3;
+  }  
 
-#{$theme} ul,
-#{$theme} ol {
-  background-color: $background_1;
+  .content hr {
+    border: 0;
+    height: 3px;
+    width: 18%;
+    margin: 0 auto 3%;
+    clear: both;
+  }
+
+  ul, ol {
+    background-color: $background_1;
+  }
 }
 
 /*=HIGHLIGHT JS OVERRIDE-----*/ 
 
-#{$theme} .hljs {
-  background-color: $background_2 !important;
+#{$theme} {
+  .hljs, pre > code {
+    background-color: $background_2;
+  }
+
+  pre > code {
+    border-color: $background_2;
+  }
 }
 
 /*=LOGO FOOTER---------------*/ 
@@ -315,45 +378,48 @@ body#{$theme} {
 /*=---------------------------------------------------------------*/ 
 
 @media (min-width: 1180px) {
+
+  #{$theme} {
+    .content-root {
+      /*background-color: $background_2 !important;*/
+      background-color: $background_2;
+    }
   
-  #{$theme} .content {
+    .content {
+      /*background-color: $background_2 !important;*/
+      background-color: $background_2;
+      padding-top: 0;
+      padding-bottom: 0;
 
-    background-color: $background_2 !important;
-    padding-top: 0;
-    padding-bottom: 0;
+      h1, h2, h3, h4, h5, h6 {
+        width: 550px;
+        margin: 0;
+        padding-left: 40px;
+        position: relative;
+        z-index: 2;
+      }
 
-    h1, h2, h3, h4, h5, h6 {
-      width: 550px;
-      margin: 0;
-      padding-left: 40px;
-      position: relative;
-      z-index: 2;
+      h1:first-child {
+        padding-top: 30px;
+      }
+
+      ul, ol {
+        margin-left: 0;
+        padding-left: 60px !important;
+        position: relative;
+        z-index: 2;
+      }
+
+      p {
+        position: relative;
+        z-index: 2;
+      }
     }
 
-    h1:first-child {
-      padding-top: 30px;
-    }
-
-    ul, ol {
-      margin-left: 0;
-      padding-left: 60px !important;
-      position: relative;
-      z-index: 2;
-    }
-
-    p {
-      position: relative;
-      z-index: 2;
+    .content > *:last-child {
+      padding-bottom: 40px;
     }
   }
-
-  #{$theme} .content > *:last-child {
-    padding-bottom: 40px;
-  }
-
-  #{$theme} .content-root {
-   background-color: $background_2 !important;
-  } 
 }
 
 
@@ -417,7 +483,6 @@ body#{$theme} {
 
         li {
           float: left;
-          margin-left: 20px;
         }
       }
 
@@ -430,6 +495,13 @@ body#{$theme} {
     .right {
       display: none;
     } 
+  }
+}
+
+/*=----------------------------------------------------UNDER 480px*/
+@media (max-width: 480px) {
+  #{$theme} #main-header .left li {
+    margin-left: 20px;
   }
 }
 
@@ -459,7 +531,8 @@ body#{$theme} {
   }
 
   #{$theme} #fixed-header-aux {
-    height: 70px;
+    height: totalHeight(70, 0, 0, $header_borders);
+    /*height: $total_header_height;*/
   }
 }
 
@@ -508,6 +581,8 @@ body#{$theme} {
 
   #color-swapper td {
 
+    border-right: 1px solid white;
+
     &.GRAY {
       background-color: $GRAY;
     }
@@ -538,6 +613,10 @@ body#{$theme} {
 
     &.LIGHT_WHITE {
       background-color: $LIGHT_WHITE;
+    }
+
+    &.LIGHTER_WHITE {
+      background-color: $LIGHTER_WHITE;
     }
   }
 }
