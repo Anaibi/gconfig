@@ -4,19 +4,26 @@ $LIGHT_WHITE: #F8F8F4;
 $background_1 : $LIGHT_WHITE;
 
 
-body#{$theme}, 
-#{$theme} .content-root,
-#{$theme} .menubar,
-#{$theme} .content,
-#{$theme} .header,
-#{$theme} h1,
-#{$theme} h2,
-#{$theme} h3,
-#{$theme} h4,
-#{$theme} h5,
-#{$theme} h6,
-#{$theme} p,
-#{$theme} ul,
-#{$theme} ol {
+body#{$theme} {
+
   background-color: $background_1;
 }
+  
+#{$theme} {
+	.content-root,
+	.menubar,
+	.content,
+	#main-header,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	ul,
+	ol {
+    background-color: $background_1;
+  }
+}
+

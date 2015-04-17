@@ -3,12 +3,8 @@ body#enjoy-mondays {
 
 #enjoy-mondays .content-root,
 #enjoy-mondays .menubar,
-#enjoy-mondays .content {
-  background-color: #F8F8F4; }
-
-#enjoy-mondays .header {
-  background-color: #F8F8F4; }
-
+#enjoy-mondays .content,
+#enjoy-mondays #main-header,
 #enjoy-mondays h1,
 #enjoy-mondays h2,
 #enjoy-mondays h3,

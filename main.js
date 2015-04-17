@@ -6,6 +6,7 @@ $(window).load(function() {
 	threeColumnContent();
 	
 	$(window).resize(function() {
+		// fix css for three column layout
 		if (!threeColumnContentCalled) {
 		  threeColumnContent();
 		}
@@ -104,6 +105,8 @@ $(window).load(function() {
 	}
   }
 
+
+
   function colorSwapTest(color) {
   	var theme = '#enjoy-mondays';
     
@@ -116,7 +119,7 @@ $(window).load(function() {
     	theme + ' .content-root',
     	theme + ' .menubar',    	
     	theme + ' .content',
-    	theme + ' .header',
+    	theme + ' #main-header',
     	theme + ' h1',
     	theme + ' h2',
     	theme + ' h3',
@@ -146,7 +149,6 @@ $(window).load(function() {
     e.preventDefault();
     var color = $(this).parent().css('background-color');
     colorSwapTest(color);
-  })
+  });
 
-  
 });

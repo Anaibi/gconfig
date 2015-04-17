@@ -32,8 +32,6 @@
 /* change font weights here */
 /*=VARIABLES and MIXINS------------------------------------*/
 /*=HEADER VARIABLES---------*/
-/* for under 650px */
-/* for under 300px */
 /*=LINKS VARIABLES---------*/
 /* hover effects */
 /*=FOOTER VARIABLES---------*/
@@ -64,7 +62,6 @@
 /*--------------------------------------------------------------------*/
 /*=ENJOY-MONDAYS CSS--------------------------------------------------*/
 /*--------------------------------------------------------------------*/
-/* check code style guide: positioning, box model, typo, visual*/
 /*=DEFAULTS---------------------*/
 body#enjoy-mondays {
   font-family: "Lato", sans-serif;
@@ -85,18 +82,14 @@ body#enjoy-mondays {
   font-size: 1em;
   color: #3a3a3a;
   font-weight: 900; }
-
-#enjoy-mondays a:hover, #enjoy-mondays a.active {
-  border-bottom: 3px solid #df3f54; }
-
-/* remove dash from links FLATDOC OVERRIDE */
-#enjoy-mondays .menu a.active:after {
-  background: none; }
+  #enjoy-mondays a:hover, #enjoy-mondays a.active {
+    border-bottom: 3px solid #df3f54; }
+    #enjoy-mondays a:hover::after, #enjoy-mondays a.active::after {
+      /* remove dash from links FLATDOC OVERRIDE */
+      background: none; }
 
 /* SIDE MENU links */
-#enjoy-mondays .menu a:visited,
-#enjoy-mondays .menu a:hover,
-#enjoy-mondays .menu a.active {
+#enjoy-mondays .menu a:visited, #enjoy-mondays .menu a:hover, #enjoy-mondays .menu a.active {
   margin-left: -3px;
   border-left: 3px solid #df3f54;
   border-bottom: none;
@@ -122,17 +115,15 @@ body#enjoy-mondays {
   text-transform: uppercase; }
 
 /*=NAV HEADER------------------*/
-#enjoy-mondays .header {
+#enjoy-mondays #main-header {
   height: 20px;
   background-color: #e9e8e3; }
+  #enjoy-mondays #main-header .left {
+    position: relative;
+    left: 220px; }
 
 #enjoy-mondays #fixed-header-aux {
   height: 51px; }
-
-/* TODO if menubar has class fixed, animate header to the left ? */
-#enjoy-mondays .header .left {
-  position: relative;
-  left: 220px; }
 
 /*=CONTENT--------------------*/
 #enjoy-mondays p {
@@ -164,167 +155,150 @@ body#enjoy-mondays {
   bottom: 20px;
   width: 28px;
   height: auto; }
+  #enjoy-mondays #logo-footer img {
+    width: 100%; }
 
-#enjoy-mondays #logo-footer img {
-  width: 100%; }
-
-/*=3 COLUMN BACKGROUND for big layout--------------------*/
+/*=---------------------------------------------------------------*/
+/*=3 COLUMN BACKGROUND for big layout-----------------------------*/
+/*=---------------------------------------------------------------*/
 @media (min-width: 1180px) {
-  #enjoy-mondays .content h1,
-  #enjoy-mondays .content h2,
-  #enjoy-mondays .content h3,
-  #enjoy-mondays .content h4,
-  #enjoy-mondays .content h5,
-  #enjoy-mondays .content h6 {
-    width: 550px;
-    margin: 0;
-    padding-left: 40px; }
-
-  .content ul, .content ol {
-    margin-left: 0;
-    padding-left: 60px !important; }
-
-  #enjoy-mondays .content h1:first-child {
-    padding-top: 30px; }
-
-  #enjoy-mondays .content > *:last-child {
-    padding-bottom: 40px; }
-
   #enjoy-mondays .content {
     background-color: #3f3f3f !important;
     padding-top: 0;
     padding-bottom: 0; }
+    #enjoy-mondays .content h1, #enjoy-mondays .content h2, #enjoy-mondays .content h3, #enjoy-mondays .content h4, #enjoy-mondays .content h5, #enjoy-mondays .content h6 {
+      width: 550px;
+      margin: 0;
+      padding-left: 40px;
+      position: relative;
+      z-index: 2; }
+    #enjoy-mondays .content h1:first-child {
+      padding-top: 30px; }
+    #enjoy-mondays .content ul, #enjoy-mondays .content ol {
+      margin-left: 0;
+      padding-left: 60px !important;
+      position: relative;
+      z-index: 2; }
+    #enjoy-mondays .content p {
+      position: relative;
+      z-index: 2; }
 
-  #enjoy-mondays .content h1,
-  #enjoy-mondays .content h2,
-  #enjoy-mondays .content h3,
-  #enjoy-mondays .content h4,
-  #enjoy-mondays .content h5,
-  #enjoy-mondays .content h6,
-  #enjoy-mondays .content p,
-  #enjoy-mondays .content ul,
-  #enjoy-mondays .content ol {
-    position: relative;
-    z-index: 2; }
+  #enjoy-mondays .content > *:last-child {
+    padding-bottom: 40px; }
 
   #enjoy-mondays .content-root {
     background-color: #3f3f3f !important; } }
-/*=format HEADER iframes WHEN UNDER 767px--------------------*/
+/*=---------------------------------------------------------------*/
+/*=STYLE HEADER AND CONTENT media queries-------------------------*/
+/*=---------------------------------------------------------------*/
+/*=----------------------------------------------------UNDER 900px*/
+@media (max-width: 900px) {
+  /*=GITHUB BUTTONS = stack un 2 rows-------------*/
+  #enjoy-mondays #main-header .right {
+    width: 168px;
+    top: 3px; } }
+/*=----------------------------------------------------UNDER 767px*/
 /* (when side menu drops out) */
 @media (max-width: 767px) {
-  /*=header title and menu-----------*/
-  #enjoy-mondays .header .left {
+  /*=HEADER title and menu = move to left---------*/
+  #enjoy-mondays #main-header .left {
     left: 0; }
 
-  /* github buttons */
-  #enjoy-mondays .header .right {
-    right: 84px; }
-
-  /* github follow button */
-  #enjoy-mondays .header .right iframe:first-child {
-    width: 145px;
-    float: left; }
-
-  /* github star button */
-  #enjoy-mondays .header .right iframe:nth-child(2) {
-    width: 75px;
-    float: left; }
-
-  /*=format CONTENT when under 767px = centered content--------*/
+  /*=CONTENT = centered content-------------------*/
   .content {
     padding-left: 0;
     padding-right: 0;
     margin-left: auto;
     margin-right: auto;
     width: 80%; } }
-/*=STACK HEADER iframes WHEN UNDER 650px-----------------------*/
+/*=----------------------------------------------------UNDER 650px*/
 @media (max-width: 650px) {
-  /* adapt header height to stack in two rows */
-  #enjoy-mondays .header {
-    height: 47px; }
+  /*=HEADER title and menu = fullwidth-----------*/
+  #enjoy-mondays #main-header {
+    padding-left: 0;
+    padding-right: 0;
+    /*=GITHUB BUTTONS = hide----*/ }
+    #enjoy-mondays #main-header .left {
+      float: none; }
+      #enjoy-mondays #main-header .left h1 {
+        margin-left: 30px;
+        float: left; }
+      #enjoy-mondays #main-header .left ul {
+        float: right;
+        margin-right: 30px; }
+        #enjoy-mondays #main-header .left ul li {
+          float: left;
+          margin-left: 20px; }
+      #enjoy-mondays #main-header .left li:last-child a {
+        padding-right: 0; }
+    #enjoy-mondays #main-header .right {
+      display: none; } }
+/*=----------------------------------------------------UNDER 350px*/
+@media (max-width: 350px) {
+  /*=HEADER title and menu = stack in 2 rows----*/
+  #enjoy-mondays #main-header {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    height: 70px; }
+    #enjoy-mondays #main-header .left h1 {
+      float: none;
+      margin: 10px auto 12px auto; }
+    #enjoy-mondays #main-header .left ul {
+      float: none;
+      display: inline-block; }
 
   #enjoy-mondays #fixed-header-aux {
-    height: 78px; }
+    height: 70px; } }
+/*=---------------------------------------------------------------*/
+/*=COLOR SWAPPER TEST (only over 767px)---------------------------*/
+/*=---------------------------------------------------------------*/
+#color-swapper {
+  display: none; }
 
-  /* header title and menu */
-  #enjoy-mondays .header .left h1 {
-    float: left;
-    margin-right: 20px; }
-
-  #enjoy-mondays .header .left ul {
-    float: left; }
-
-  #enjoy-mondays .header .left li {
-    float: left;
-    margin-right: 10px; }
-
-  /* github buttons */
-  #enjoy-mondays .header .right {
-    left: 30px;
-    top: 47px;
-    display: block; } }
-/*=STACK HEADER iframes WHEN UNDER 300px-----------------------*/
-@media (max-width: 300px) {
-  #enjoy-mondays .header {
-    height: 47px; }
-
-  #enjoy-mondays #fixed-header-aux {
-    height: 78px; }
-
-  /* header title and menu */
-  #enjoy-mondays .header .left h1 {
-    margin-bottom: 12px; }
-
-  /* github buttons */
-  #enjoy-mondays .header .right {
-    display: none; } }
-/*=COLOR SWAPPER TEST (only over 767px)-----------------------*/
 @media (min-width: 767px) {
   #color-swapper {
+    display: initial;
     left: 0;
     padding: 5px; }
-
-  #color-swapper tr {
-    height: 15px;
-    overflow: hidden; }
-
-  #color-swapper td {
-    font-size: 0;
-    line-height: 0;
-    width: 27px; }
-
-  #color-swapper td a {
-    width: 27px;
-    height: 12px;
-    display: block; }
-
-  #color-swapper tr:hover {
-    height: 12px;
-    cursor: pointer; }
+    #color-swapper tr {
+      height: 15px;
+      overflow: hidden; }
+      #color-swapper tr:hover {
+        height: 12px;
+        cursor: pointer; }
+    #color-swapper td {
+      font-size: 0;
+      line-height: 0;
+      width: 27px; }
+      #color-swapper td a {
+        width: 27px;
+        height: 12px;
+        display: block; }
 
   /*=COLOR OPTIONS-----------*/
   #color-swapper td.GRAY {
     background-color: #4a4a4a; }
-
   #color-swapper td.LIGHT_GRAY {
     background-color: #e9e8e3; }
-
   #color-swapper td.DARK_GRAY {
     background-color: #3a3a3a; }
-
   #color-swapper td.DARK_BLUE {
     background-color: #363b48; }
-
   #color-swapper td.FUXSIA {
     background-color: #df3f54; }
-
   #color-swapper td.LIGHT_FUXSIA {
     background-color: #f17c71; }
-
   #color-swapper td.ZENBURN_BG {
     background-color: #3f3f3f; }
-
   #color-swapper td.LIGHT_WHITE {
     background-color: #F8F8F4; } }
+/*=---------------------------------------------------------------*/
+/*=HIDE SCROLLBAR-------------------------------------------------*/
+/*=---------------------------------------------------------------*/
+@media (max-width: 1180px) {
+  #enjoy-mondays .content pre > code::-webkit-scrollbar {
+    width: 0;
+    height: 0; } }
 
 /*# sourceMappingURL=style.css.map */
