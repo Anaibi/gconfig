@@ -105,7 +105,7 @@ body#enjoy-mondays {
   margin-left: -3px;
   border-left: 3px solid #DF3F54;
   border-bottom: none;
-  color: #DF3F54 !important; }
+  color: #DF3F54; }
 
 /* make room for border-left as some flatdoc level-x links don't have */
 #enjoy-mondays .menu .level-2 > a {
@@ -174,10 +174,8 @@ body#enjoy-mondays {
 /*=---------------------------------------------------------------*/
 @media (min-width: 1180px) {
   #enjoy-mondays .content-root {
-    /*background-color: $background_2 !important;*/
     background-color: #3F3F3F; }
   #enjoy-mondays .content {
-    /*background-color: $background_2 !important;*/
     background-color: #3F3F3F;
     padding-top: 0;
     padding-bottom: 0; }

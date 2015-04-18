@@ -179,7 +179,7 @@ $links_border_left: 3px solid $color_3;
 
 @mixin colored_link {
   border-bottom: none;
-  color: $color_3 !important;
+  color: $color_3;
 }
 
 @mixin left_border_link {
@@ -381,12 +381,10 @@ body#{$theme} {
 
   #{$theme} {
     .content-root {
-      /*background-color: $background_2 !important;*/
       background-color: $background_2;
     }
   
     .content {
-      /*background-color: $background_2 !important;*/
       background-color: $background_2;
       padding-top: 0;
       padding-bottom: 0;
