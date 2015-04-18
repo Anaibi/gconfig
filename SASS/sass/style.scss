@@ -331,7 +331,11 @@ body#{$theme} {
 
   code {
     background-color: $background_3;
-  }  
+  } 
+
+  .content {
+    width: 100%;
+  } 
 
   .content hr {
     border: 0;
@@ -411,6 +415,12 @@ body#{$theme} {
       p {
         position: relative;
         z-index: 2;
+      }
+
+      
+
+      pre {
+        width: calc(100% - 550px);
       }
     }
 

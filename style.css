@@ -144,6 +144,8 @@ body#enjoy-mondays {
   font-size: 1.15em; }
 #enjoy-mondays code {
   background-color: #F3F6FB; }
+#enjoy-mondays .content {
+  width: 100%; }
 #enjoy-mondays .content hr {
   border: 0;
   height: 3px;
@@ -195,6 +197,8 @@ body#enjoy-mondays {
     #enjoy-mondays .content p {
       position: relative;
       z-index: 2; }
+    #enjoy-mondays .content pre {
+      width: calc(100% - 550px); }
   #enjoy-mondays .content > *:last-child {
     padding-bottom: 40px; } }
 /*=---------------------------------------------------------------*/
