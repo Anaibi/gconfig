@@ -333,10 +333,6 @@ body#{$theme} {
     background-color: $background_3;
   } 
 
-  .content {
-    width: 100%;
-  } 
-
   .content hr {
     border: 0;
     height: 3px;
@@ -389,9 +385,10 @@ body#{$theme} {
     }
   
     .content {
-      background-color: $background_2;
+      width: 100%;
       padding-top: 0;
       padding-bottom: 0;
+      background-color: $background_2;
 
       h1, h2, h3, h4, h5, h6 {
         width: 550px;
@@ -417,7 +414,7 @@ body#{$theme} {
         z-index: 2;
       }
 
-      
+
 
       pre {
         width: calc(100% - 550px);
@@ -633,13 +630,13 @@ body#{$theme} {
 /*=---------------------------------------------------------------*/ 
 /*=HIDE SCROLLBAR-------------------------------------------------*/ 
 /*=---------------------------------------------------------------*/ 
-
-/* @media (max-width: 1180px) {*/
+/* testing if needed, check motzilla affects height of pre elements, check */
+/* @media (max-width: 1180px) {
   #{$theme} .content pre > code::-webkit-scrollbar {
     width: 0;
     height: 0;
   }
-/*}*/
+  }*/
 
 
 

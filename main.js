@@ -1,8 +1,9 @@
 $(window).load(function() {
 
   var threeColumnContentCalled = false;
-
   var windowWidthMark = 1180;
+
+  var preElements = $('.content').find('pre');
 
   // fix css for three column layout 
   threeColumnContent();
@@ -12,7 +13,28 @@ $(window).load(function() {
     if (!threeColumnContentCalled) {
 	  threeColumnContent();
     }
+    hideScrollbarMoz();
   });
+
+  
+  function hideScrollbarMoz() {
+  	var cW, sW;
+  	$.each(preElements, function(i, pre) { console.log(pre);
+      cW = pre.clientWidth,
+  	  sW = pre.scrollWidth;
+  	  $(pre).find('.scrolls-x').removeClass('scrolls-x');
+  	  if (cW != sW) {
+  	  	$(pre).addClass('scrolls-x');
+  	  } else {
+  	  	//if ($(pre).hasClass('scrolls-x').removeClass('scroll-x'));
+  	  }
+      
+  	});
+  };
+
+  hideScrollbarMoz();
+
+
 
   // color combos
   var GRAY = '#4a4a4a',
@@ -122,7 +144,7 @@ $(window).load(function() {
   	  threeColumnContentCalled = true;
   	}
 
-    $.each($('.content').find('pre'), function(i, preElement) {
+    $.each(preElements, function(i, preElement) {
       
       var $this_pre = $(preElement);
       
@@ -280,7 +302,8 @@ $(window).load(function() {
 
   function fixCodeBackground() { 
   	setTimeout(function() {
-      var color1 = $('pre > code').css('background-color'); 
+      var color1 = $(preElements[0]).css('background-color');
+      //$('pre > code').css('background-color'); 
   	  var color2 = $('p').css('background-color');
 
   	  if ($(window).width() < windowWidthMark) {

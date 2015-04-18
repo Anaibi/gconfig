@@ -144,8 +144,6 @@ body#enjoy-mondays {
   font-size: 1.15em; }
 #enjoy-mondays code {
   background-color: #F3F6FB; }
-#enjoy-mondays .content {
-  width: 100%; }
 #enjoy-mondays .content hr {
   border: 0;
   height: 3px;
@@ -178,9 +176,10 @@ body#enjoy-mondays {
   #enjoy-mondays .content-root {
     background-color: #3F3F3F; }
   #enjoy-mondays .content {
-    background-color: #3F3F3F;
+    width: 100%;
     padding-top: 0;
-    padding-bottom: 0; }
+    padding-bottom: 0;
+    background-color: #3F3F3F; }
     #enjoy-mondays .content h1, #enjoy-mondays .content h2, #enjoy-mondays .content h3, #enjoy-mondays .content h4, #enjoy-mondays .content h5, #enjoy-mondays .content h6 {
       width: 550px;
       margin: 0;
@@ -316,11 +315,12 @@ body#enjoy-mondays {
 /*=---------------------------------------------------------------*/
 /*=HIDE SCROLLBAR-------------------------------------------------*/
 /*=---------------------------------------------------------------*/
-/* @media (max-width: 1180px) {*/
-#enjoy-mondays .content pre > code::-webkit-scrollbar {
-  width: 0;
-  height: 0; }
-
-/*}*/
+/* testing if needed, check motzilla affects height of pre elements, check */
+/* @media (max-width: 1180px) {
+  #enjoy-mondays .content pre > code::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  }*/
 
 /*# sourceMappingURL=style.css.map */
