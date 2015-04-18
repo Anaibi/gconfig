@@ -2,6 +2,8 @@ $(window).load(function() {
 
   var threeColumnContentCalled = false;
 
+  var windowWidthMark = 1180;
+
   // fix css for three column layout 
   threeColumnContent();
 	
@@ -114,7 +116,7 @@ $(window).load(function() {
   // to be same as floated <pre> at right
   function threeColumnContent() {
     // if not needed, return
-  	if ($(window).width() < 1180) {
+  	if ($(window).width() < windowWidthMark) {
       return;
   	} else {
   	  threeColumnContentCalled = true;
@@ -237,7 +239,7 @@ $(window).load(function() {
     $(window).resize(function() {
       var newWindowWidth = $(window).width(); 
 
-      if (previousWindowWidth < 1180 && newWindowWidth > 1180 || previousWindowWidth > 1180 && newWindowWidth < 1180) {
+      if (previousWindowWidth < windowWidthMark && newWindowWidth > windowWidthMark || previousWindowWidth > windowWidthMark && newWindowWidth < windowWidthMark) {
         previousWindowWidth = newWindowWidth;
         fixCodeBackground();
       }
@@ -280,7 +282,7 @@ $(window).load(function() {
       var color1 = $('pre > code').css('background-color'); 
   	  var color2 = $('p').css('background-color');
 
-  	  if ($(window).width() < 1180) {
+  	  if ($(window).width() < windowWidthMark) {
   	    $('.content, .content-root').css('background-color', color2);
   	  } else {
   	    $('.content, .content-root').css('background-color', color1);
