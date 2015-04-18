@@ -261,8 +261,7 @@ body#enjoy-mondays {
       display: inline-block; }
 
   #enjoy-mondays #fixed-header-aux {
-    height: 71px;
-    /*height: $total_header_height;*/ } }
+    height: 71px; } }
 /*=---------------------------------------------------------------*/
 /*=COLOR SWAPPER TEST (only over 767px)---------------------------*/
 /*=---------------------------------------------------------------*/
@@ -313,9 +312,11 @@ body#enjoy-mondays {
 /*=---------------------------------------------------------------*/
 /*=HIDE SCROLLBAR-------------------------------------------------*/
 /*=---------------------------------------------------------------*/
-@media (max-width: 1180px) {
-  #enjoy-mondays .content pre > code::-webkit-scrollbar {
-    width: 0;
-    height: 0; } }
+/* @media (max-width: 1180px) {*/
+#enjoy-mondays .content pre > code::-webkit-scrollbar {
+  width: 0;
+  height: 0; }
+
+/*}*/
 
 /*# sourceMappingURL=style.css.map */

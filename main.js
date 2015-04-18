@@ -247,13 +247,14 @@ $(window).load(function() {
 
   }
 
-  // color swapper (only for background_1 at the moment)
+  // color swapper 
   $('#color-swapper a').click(function(e) {
     e.preventDefault();
     var color = $(this).parent().attr('class'); 
     var colors;
  
-    // for each background color, different color combination
+    // each class is the name of the first color in combo
+    // TODO (if is to be used, refactor into more general function)
     switch (color) {
       case 'LIGHT_GRAY':
         colors = combo1;

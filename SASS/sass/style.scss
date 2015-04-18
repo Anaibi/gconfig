@@ -498,6 +498,7 @@ body#{$theme} {
 
 /*=----------------------------------------------------UNDER 480px*/
 @media (max-width: 480px) {
+  
   #{$theme} #main-header .left li {
     margin-left: 20px;
   }
@@ -530,7 +531,6 @@ body#{$theme} {
 
   #{$theme} #fixed-header-aux {
     height: totalHeight(70, 0, 0, $header_borders);
-    /*height: $total_header_height;*/
   }
 }
 
@@ -624,12 +624,12 @@ body#{$theme} {
 /*=HIDE SCROLLBAR-------------------------------------------------*/ 
 /*=---------------------------------------------------------------*/ 
 
-@media (max-width: 1180px) {
+/* @media (max-width: 1180px) {*/
   #{$theme} .content pre > code::-webkit-scrollbar {
     width: 0;
     height: 0;
   }
-}
+/*}*/
 
 
 
