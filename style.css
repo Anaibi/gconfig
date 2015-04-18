@@ -79,13 +79,13 @@ body#enjoy-mondays {
   font-family: "Lato", sans-serif;
   font-weight: 100;
   color: #4a4a4a;
-  background-color: #F8F8F4; }
+  background-color: #E9E8E3; }
 
 /* left menu and central content background need re-stating */
 #enjoy-mondays .content-root,
 #enjoy-mondays .menubar,
 #enjoy-mondays .content {
-  background-color: #F8F8F4; }
+  background-color: #E9E8E3; }
 
 /*=LINKS-----------------------*/
 /* ALL links */
@@ -120,7 +120,7 @@ body#enjoy-mondays {
 #enjoy-mondays h6 {
   font-family: "Dosis", sans-serif !important;
   font-weight: 600 !important;
-  background-color: #F8F8F4; }
+  background-color: #E9E8E3; }
 
 #enjoy-mondays h1 {
   font-size: 2.5em;
@@ -128,7 +128,7 @@ body#enjoy-mondays {
 
 /*=NAV HEADER------------------*/
 #enjoy-mondays #main-header {
-  background-color: #F8F8F4; }
+  background-color: #E9E8E3; }
   #enjoy-mondays #main-header .left {
     position: relative;
     left: 220px; }
@@ -139,11 +139,11 @@ body#enjoy-mondays {
 /*=CONTENT--------------------*/
 #enjoy-mondays p {
   font-size: 1.25em;
-  background-color: #F8F8F4; }
+  background-color: #E9E8E3; }
 #enjoy-mondays pre {
   font-size: 1.15em; }
 #enjoy-mondays code {
-  background-color: #FFF; }
+  background-color: #F3F6FB; }
 #enjoy-mondays .content hr {
   border: 0;
   height: 3px;
@@ -151,7 +151,7 @@ body#enjoy-mondays {
   margin: 0 auto 3%;
   clear: both; }
 #enjoy-mondays ul, #enjoy-mondays ol {
-  background-color: #F8F8F4; }
+  background-color: #E9E8E3; }
 
 /*=HIGHLIGHT JS OVERRIDE-----*/
 #enjoy-mondays .hljs, #enjoy-mondays pre > code {
