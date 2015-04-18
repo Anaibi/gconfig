@@ -4,19 +4,12 @@ $(window).load(function() {
 
   // fix css for three column layout 
   threeColumnContent();
-
-  // check .content and .content-root background-color
-  fixCodeBackground();
 	
   $(window).resize(function() {
     // fix css for three column layout
     if (!threeColumnContentCalled) {
 	  threeColumnContent();
     }
-
-	// check .content and .content-root background-color
-	  fixCodeBackground();
-
   });
 
   // color combos
@@ -219,7 +212,6 @@ $(window).load(function() {
     $.each(bg_2_elements, function(i, elem) {
       $(elem).css('background-color', colors[1]);
     });
-
     
 
     $.each(color_1_elements, function(i, elem) {
@@ -239,6 +231,17 @@ $(window).load(function() {
     });
     
     fixCodeBackground();
+
+    var previousWindowWidth = $(window).width(); 
+
+    $(window).resize(function() {
+      var newWindowWidth = $(window).width(); 
+
+      if (previousWindowWidth < 1180 && newWindowWidth > 1180 || previousWindowWidth > 1180 && newWindowWidth < 1180) {
+        previousWindowWidth = newWindowWidth;
+        fixCodeBackground();
+      }
+    })
 
   }
 
@@ -272,7 +275,7 @@ $(window).load(function() {
   });
 
 
-  function fixCodeBackground() {
+  function fixCodeBackground() { 
   	setTimeout(function() {
       var color1 = $('pre > code').css('background-color'); 
   	  var color2 = $('p').css('background-color');
