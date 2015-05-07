@@ -1,159 +1,19 @@
-/*=FLATDOC THEME values------------------------------------------------*/ 
-
-$flatdoc_header_height: 20px;
-
-$flatdoc_header_padding_top: 15px; 
-$flatdoc_header_padding_bottom: 15px;
-$flatdoc_header_margin_top: 0;
-$flatdoc_header_margin_bottom: 0;
-$flatdoc_header_border_top: 0;
-$flatdoc_header_border_bottom: 1px;
-
-
-$flatdoc_body_font_size: 13px;
-
-
-
-/*--------------------------------------------------------------------*/ 
-/*=ENJOY-MONDAYS CONSTANTS--------------------------------------------*/ 
-/*--------------------------------------------------------------------*/ 
-
-/*=COLORS--------------------------------------------------*/ 
-/* define any new colors here */ 
-
-$GRAY: #4a4a4a;
-$LIGHT_GRAY: #E9E8E3;
-$DARK_GRAY:	#3A3A3A;
-$DARK_BLUE:	#363B48;	
-$FUXSIA: #DF3F54;
-$LIGHT_FUXSIA: #F17C71;
-$ZENBURN_BG: #3F3F3F; 
-$LIGHTER_WHITE: #F8F8F4;
-$LIGHT_WHITE: #F3F6FB;
-$BLACK: #000;
-$WHITE: #FFF;
-
-
-
-
-
-/*=COLOR COMBOS--------------------------*/
-/* add combinations of colors here */
-/* general_bg -*- right_code_bg -*- general_text -*- links_text -*- details (as hover) -*- left_code_bg */
-
-
-/* combo 1: $LIGHT_GRAY, $ZENBURN_BG, $GRAY, $DARK_GRAY, $FUXSIA, $LIGHT_WHITE */
-$combo1: $LIGHT_GRAY, $ZENBURN_BG, $GRAY, $DARK_GRAY, $FUXSIA, $LIGHT_WHITE;
-
-/* combo 2: $DARK_GRAY, $BLACK, $LIGHT_GRAY, $LIGHT_WHITE, $LIGHT_FUXSIA, $BLACK */
-$combo2: $DARK_GRAY, $BLACK, $LIGHT_GRAY, $LIGHT_WHITE, $LIGHT_FUXSIA, $BLACK;
-
-/* combo 3: $DARK_BLUE, $BLACK, $LIGHT_GRAY, $LIGHT_WHITE, $LIGHT_FUXSIA */
-$combo3: $DARK_BLUE, $BLACK, $LIGHT_GRAY, $LIGHT_WHITE, $LIGHT_FUXSIA;
-
-/* combo 4: $FUXSIA, $ZENBURN_BG, $LIGHT_GRAY, $LIGHT_WHITE, $LIGHT_FUXSIA, $ZENBURN_BG */
-$combo4: $FUXSIA, $ZENBURN_BG, $LIGHT_GRAY, $LIGHT_WHITE, $LIGHT_FUXSIA, $ZENBURN_BG;
-
-/* combo 1: $LIGHTER_WHITE, $ZENBURN_BG, $GRAY, $DARK_GRAY, $FUXSIA, $LIGHT_WHITE */
-$combo5: $LIGHTER_WHITE, $ZENBURN_BG, $GRAY, $DARK_GRAY, $FUXSIA, $WHITE;
-
-
-/* sass lists: http://hugogiraudel.com/2013/07/15/understanding-sass-lists/ */
-
-
-/*=FONTS---------------------------------------------------*/ 
-/* define any new fonts here */ 
-
-$LATO: 'Lato', sans-serif;
-$DOSIS: 'Dosis', sans-serif;
-
-/* fontweights, add/redefine here */
-
-$BOLDER: 900;
-$LIGHT: 100;
-$BOLD: 600;
-
-
-/*=ENJOY-MONDAYS PATTERN VARIABLES--------------------------*/ 
-  
-  /* assigned (manually) to body as id, used to make sure these css rules override flatdoc style.css rules */
-
-  $theme: #enjoy-mondays;
-
-
-/*=COLOR COMBOS--------------------------*/
-/* set color combinations here */
-
-$combo: $combo1;
-
-  /* GENERAL CONTENT BACKGROUND: */
-  $background_1 : nth($combo, 1);
-
-  /* CODE IN BOX BACKGROUND: */
-  $background_2 : nth($combo, 2);
-
-  /* CODE IN TEXT BACKGROUND */
-  $background_3 : nth($combo, 6);
-
-/* TEXT */
-  
-  /* GENERAL TEXT */
-  $color_1 : nth($combo, 3);
-
-  /* LINKS */
-  $color_2 : nth($combo, 4);
-
-  /* DETAILS (hovers, visited links) */
-  $color_3 : nth($combo, 5);
+@import "partials/_flatdoc.scss";
+@import "partials/_colors.scss";
+@import "partials/_fonts.scss";
+@import "partials/_settings.scss";
 
   
-
-
-/*=FONT FAMILIES-------------------------*/
-/* change font families here */
-
-  /* links and text */
-  $font_1: $LATO;
-  
-  /* headers */
-  $font_2: $DOSIS;
-
-
-/*=FONT SIZES---------------------------*/
-/* change font sizes here */
-
-  /* text, p */
-  $font_size_1: 1.25em; 
-  
-  /* text, pre */
-  $font_size_2: 1.15em;
-  
-  /* side menu links */
-  $font_size_3: 1em;
-  
-  /* h1 */ 
-  $font_size_4: 2.5em; 
-
-
-/*=FONT WEIGHTS-------------------------*/
-/* change font weights here */
-
-  $font_weight_1: $LIGHT;
-  $font_weight_2: $BOLD;
-  $font_weight_3: $BOLDER;
-
-
-
-/*=VARIABLES, FUNCTIONS AND MIXINS----------------------------*/ 
+// ------------------------------------ VARIABLES, FUNCTIONS AND MIXINS
 
 @function totalHeight($height, $paddings, $margins, $borders) {
   @return $height + $paddings + $margins + $borders;
 }
 
 
-/*=HEADER VARIABLES--------*/ 
-/* change base header heights here, now same as flatdoc theme */
-/* header under 350px varies */
+// --------------------------------------------------- HEADER VARIABLES
+// change base header heights here, now same as flatdoc theme
+// header under 350px varies
 
 $header_height: $flatdoc_header_height;
 $header_paddings: $flatdoc_header_padding_top + $flatdoc_header_padding_bottom;
@@ -164,8 +24,8 @@ $header_borders: $flatdoc_header_border_top + $flatdoc_header_border_bottom;
 $total_header_height: totalHeight($header_height, $header_paddings, $header_margins, $header_borders);
 
 
-/*=LINKS VARIABLES---------*/ 
-/* add any new hover effects here and either modify mixin or make new one */
+// ---------------------------------------------------- LINKS VARIABLES
+// add any new hover effects here and either modify mixin or make new one
 
 $links_border_bottom: 3px solid $color_3;
 $links_border_left: 3px solid $color_3;

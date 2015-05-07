@@ -1,0 +1,48 @@
+// ------------------------------- COLOR COMBINATION
+// available 1 through 5
+// TODO change to automatic color combo generator
+
+$combo: $combo1;
+
+
+
+// ------------------------------------------- THEME
+// has to be updated in index.html. 
+$theme: #enjoy-mondays;
+
+
+// ------------------------------------------- FONTS
+// change font assignations here
+
+  // LINKS AND TEXT
+  $font_1: $LATO;
+  
+  // HEADERS
+  $font_2: $DOSIS;
+
+
+// change font sizes here
+
+  // TEXT, P
+  $font_size_1: 1.25em; 
+  
+  // TEXT, PRE
+  $font_size_2: 1.15em;
+  
+  // SIDE MENU LINKS */
+  $font_size_3: 1em;
+  
+  // H1 
+  $font_size_4: 2.5em; 
+
+
+// change font weights here
+  
+  // TEXT, P
+  $font_weight_1: $LIGHT;
+
+  
+  $font_weight_2: $BOLD;
+
+  // LINKS
+  $font_weight_3: $BOLDER;
