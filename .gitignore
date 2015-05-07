@@ -69,3 +69,8 @@ node_modules
 ### Project specific
 .coverage
 lib/*
+
+
+### Sass
+*.css.map
+.sass-cache
