@@ -35,7 +35,6 @@ $(window).load(function() {
   hideScrollbarMoz();
 
 
-
   // color combos
   var GRAY = '#4a4a4a',
       LIGHT_GRAY = '#E9E8E3',
