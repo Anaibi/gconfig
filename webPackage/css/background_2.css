@@ -1,44 +1,14 @@
-/*
-Error: Invalid CSS after "...URN_BG: #3f3f3f": expected "{", was ";"
-        on line 2 of css/sass/background_2.scss
+#enjoy-mondays .hljs, #enjoy-mondays pre > code {
+  background-color: #3f3f3f; }
+#enjoy-mondays pre > code {
+  border-color: #3f3f3f; }
 
-1: $theme: #enjoy-mondays;
-2: ZENBURN_BG: #3f3f3f;
-3: 
-4: $background_2 : $ZENBURN_BG;
-5: 
-6: 
-7: #{$theme} {
+@media (min-width: 1180px) {
+  #enjoy-mondays .content-root {
+    /*background-color: $background_2 !important;*/
+    background-color: #3f3f3f; }
+  #enjoy-mondays .content {
+    /*background-color: $background_2 !important;*/
+    background-color: #3f3f3f; } }
 
-Backtrace:
-css/sass/background_2.scss:2
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:1165:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:1101:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:1096:in `tok!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:641:in `block'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:635:in `ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:660:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:653:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:117:in `stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:42:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/engine.rb:393:in `_to_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/engine.rb:368:in `_render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/engine.rb:285:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `each'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:328:in `block in watch'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/vendor/listen/lib/listen/listener.rb:252:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/vendor/listen/lib/listen/adapter.rb:254:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"...URN_BG: #3f3f3f\": expected \"{\", was \";\"\A         on line 2 of css/sass/background_2.scss\A \A 1: $theme: #enjoy-mondays;\A 2: ZENBURN_BG: #3f3f3f;\A 3: \A 4: $background_2 : $ZENBURN_BG;\A 5: \A 6: \A 7: #{$theme} {"; }
+/*# sourceMappingURL=background_2.css.map */

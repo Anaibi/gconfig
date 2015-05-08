@@ -1,37 +1,124 @@
+@import "_settings.scss";
+
+
 @import "partials/_flatdoc.scss";
-@import "partials/_colors.scss";
-@import "partials/_fonts.scss";
-@import "partials/_settings.scss";
+@import "partials/_classes.scss";
 
-  
-// ------------------------------------ VARIABLES, FUNCTIONS AND MIXINS
 
-@function totalHeight($height, $paddings, $margins, $borders) {
-  @return $height + $paddings + $margins + $borders;
+
+
+
+// ------------------------------------------------------------- CSS
+
+// ------------------------------------------- BACKGROUNDS 
+
+body#{$theme} { 
+  background-color: $background_1; 
+}
+
+// left menu and central content background need re-stating 
+#{$theme} {
+  .content-root,
+  .menubar,
+  .content {
+    background-color: $background_1;
+  }
+
+  #main-header {  
+    background-color: $background_1;
+  }
+
+  .content {
+    p {
+      background-color: $background_1;
+    }
+
+    code {
+      background-color: $background_3;
+    } 
+
+    // ------- HIGHLIGHT JS OVERRIDE
+    .hljs, pre > code {
+      background-color: $background_2;
+    }
+
+    ul, ol {
+      background-color: $background_1;
+    }
+  }
 }
 
 
-// --------------------------------------------------- HEADER VARIABLES
-// change base header heights here, now same as flatdoc theme
-// header under 350px varies
+// --------------------- 3 COLUMN BACKGROUND for big layout
 
-$header_height: $flatdoc_header_height;
-$header_paddings: $flatdoc_header_padding_top + $flatdoc_header_padding_bottom;
-$header_margins: $flatdoc_header_margin_top + $flatdoc_header_margin_bottom;
-$header_borders: $flatdoc_header_border_top + $flatdoc_header_border_bottom;
+@media (min-width: 1180px) {
+  #{$theme} {
+    .content,
+    .content-root {
+      background-color: $background_2;
+    }
+  }
+}
 
 
-$total_header_height: totalHeight($header_height, $header_paddings, $header_margins, $header_borders);
+// ------------------------------------------------- FONTS 
+
+// ---------------------- GENERAL 
+
+body#{$theme} { 
+  font-family: $font_1;
+  font-weight: $font_weight_1;
+  color: $color_1; 
+}
+
+// ------------------------ LINKS 
 
 
-// ---------------------------------------------------- LINKS VARIABLES
-// add any new hover effects here and either modify mixin or make new one
+#{$theme} a {
+  font-size: $font_size_3;
+  font-weight: $font_weight_3;
+  color: $color_2;
+}
 
 $links_border_bottom: 3px solid $color_3;
 $links_border_left: 3px solid $color_3;
 
 
-/* hover effects */
+// --------------------------- Hi 
+
+@for $i from 1 through 6 {
+  #{$theme} h#{$i} {
+    font-family: $font_2 !important;
+    font-weight: $font_weight_2 !important; 
+    background-color: $background_1;
+  }
+}
+
+// --------------------------- H1 
+
+#{$theme} h1 {
+  font-size: $font_size_4;  
+  text-transform: uppercase;
+}
+
+// ---------------------- CONTENT 
+
+#{$theme} .content {
+ p {
+    font-size: $font_size_1;
+  }
+
+  pre {
+    font-size: $font_size_2;
+  }
+}
+
+
+// ------------------------------------------------- LINKS 
+
+// --------------------- MIXINS
+
+// USED IN hover effects
 
 @mixin underline_link { 
   border-bottom: $links_border_bottom; 
@@ -47,294 +134,97 @@ $links_border_left: 3px solid $color_3;
 }
 
 
-/*=FOOTER VARIABLES---------*/ 
-
-$logo_footer_width: 28px;
-
-
-
-/*=CLASSES-------------------------------------------------*/ 
-
-.clearfix { clear: both; }
-
-.fixed { 
-  position: fixed;
-  z-index: 1000;
-}
-
-.fullwidth { width: 100%; }
-
-.screan-reader-text {
-  position: absolute;
-  height: 0;
-  width: 0;
-  opacity: 0;
-  font-size: 0;
-}
-
-.hidden { display: none; }
-
-.top0 { top: 0; }
-
-
-/*--------------------------------------------------------------------*/ 
-/*=ENJOY-MONDAYS CSS--------------------------------------------------*/ 
-/*--------------------------------------------------------------------*/ 
-
-/*=DEFAULTS---------------------*/ 
-
-body#{$theme} { 
-  font-family: $font_1;
-  font-weight: $font_weight_1;
-  color: $color_1;
-  background-color: $background_1; 
-}
-
-/* left menu and central content background need re-stating */
 #{$theme} {
-  .content-root,
-  .menubar,
-  .content {
-    background-color: $background_1;
-  }
-}
   
+  // ----------------- ALL links
+  a {
+    text-decoration: none;
 
-/*=LINKS-----------------------*/ 
+    &:hover,
+    &.active {
+      @include underline_link;
 
-/* ALL links */
+      &::after {
+        // remove dash from links
+        background: none;
+      }
+    }
+  }
 
-#{$theme} a {
-  text-decoration: none;
-  font-size: $font_size_3;
-  color: $color_2;
-  font-weight: $font_weight_3;
+  // ----------- SIDE MENU links
+  .menu {
+    a {
+      &:visited, 
+      &:hover,
+      &.active {
+        margin-left: -3px;
+        @include left_border_link;
+        @include colored_link;
+      }
+    }
 
-  &:hover,
-  &.active {
-    @include underline_link;
-
-    &::after {
-      /* remove dash from links FLATDOC OVERRIDE */
-      background: none;
+    // make room for border-left as some flatdoc level-x links don't have
+    .level-2 > a {
+      padding-left: 3px;
     }
   }
 }
 
 
-/* SIDE MENU links */
+// ------------------------------------------- MAIN HEADER 
+#{$theme} #main-header {  
 
-#{$theme} .menu a {
-  &:visited, 
-  &:hover,
-  &.active {
-    margin-left: -3px;
-    @include left_border_link;
-    @include colored_link;
-  }
-}
+  // -------------------------- TITLE AND MENU
+  .left-content {
 
-/* make room for border-left as some flatdoc level-x links don't have */
-#{$theme} .menu .level-2 > a {
-  padding-left: 3px;
-}
-
-
-/*=HEADERS--------------------*/ 
-
-#{$theme} {
-  h1, 
-  h2, 
-  h3, 
-  h4, 
-  h5,
-  h6 {
-    font-family: $font_2 !important;
-    font-weight: $font_weight_2 !important; 
-    background-color: $background_1;
-  }
-}
-
-#{$theme} h1 {
-  font-size: $font_size_4;  
-  text-transform: uppercase;
-}
-
-
-/*=NAV HEADER------------------*/ 
-
-#{$theme} #main-header {
-	background-color: $background_1;
-
-  .left {
     position: relative;
     left: 220px;
-  }
-}
 
-#{$theme} #fixed-header-aux {
-	height: $total_header_height;
-}
-  
+    // - (when side menu drops out)
+    @media (max-width: 767px) {
 
-/*=CONTENT--------------------*/ 
-
-#{$theme} {
-  p {
-    font-size: $font_size_1;
-    background-color: $background_1;
-  }
-
-  pre {
-    font-size: $font_size_2;
-  }
-
-  code {
-    background-color: $background_3;
-  } 
-
-  .content hr {
-    border: 0;
-    height: 3px;
-    width: 18%;
-    margin: 0 auto 3%;
-    clear: both;
-  }
-
-  ul, ol {
-    background-color: $background_1;
-  }
-}
-
-/*=HIGHLIGHT JS OVERRIDE-----*/ 
-
-#{$theme} {
-  .hljs, pre > code {
-    background-color: $background_2;
-  }
-
-  pre > code {
-    border-color: $background_2;
-  }
-}
-
-/*=LOGO FOOTER---------------*/ 
-
-#{$theme}  #logo-footer {
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
-  width: $logo_footer_width;
-  height: auto; 
-
-  img {
-    width: 100%;
-  } 
-}
-
-
-/*=---------------------------------------------------------------*/
-/*=3 COLUMN BACKGROUND for big layout-----------------------------*/
-/*=---------------------------------------------------------------*/ 
-
-@media (min-width: 1180px) {
-
-  #{$theme} {
-    .content-root {
-      background-color: $background_2;
-    }
-  
-    .content {
-      width: 100%;
-      padding-top: 0;
-      padding-bottom: 0;
-      background-color: $background_2;
-
-      h1, h2, h3, h4, h5, h6 {
-        width: 550px;
-        margin: 0;
-        padding-left: 40px;
-        position: relative;
-        z-index: 2;
-      }
-
-      h1:first-child {
-        padding-top: 30px;
-      }
-
-      ul, ol {
-        margin-left: 0;
-        padding-left: 60px !important;
-        position: relative;
-        z-index: 2;
-      }
-
-      p {
-        position: relative;
-        z-index: 2;
-      }
-
-
-
-      pre {
-        width: calc(100% - 550px);
-      }
-    }
-
-    .content > *:last-child {
-      padding-bottom: 40px;
+      // ------------ move to left
+      left: 0;
     }
   }
-}
 
-
-/*=---------------------------------------------------------------*/ 
-/*=STYLE HEADER AND CONTENT media queries-------------------------*/
-/*=---------------------------------------------------------------*/ 
-
-/*=----------------------------------------------------UNDER 900px*/ 
-@media (max-width: 900px) {
-
-  /*=GITHUB BUTTONS = stack un 2 rows-------------*/
-
-  #{$theme} #main-header .right {
-    width: 168px;
-    top: 3px;
-  }
-}
-
-/*=----------------------------------------------------UNDER 767px*/
-/* (when side menu drops out) */
-@media (max-width: 767px) {
-  
-  /*=HEADER title and menu = move to left---------*/ 
-  
-  #{$theme} #main-header .left {
-    left: 0;
-  }
-  
-  /*=CONTENT = centered content-------------------*/ 
-
-  .content {
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
+  li {
+    @media (max-width: 480px) {
+      margin-left: 20px;
+    }
   }
 
-}
+  // -------------------------- GITHUB BUTTONS
+  .right-content {
 
-/*=----------------------------------------------------UNDER 650px*/
-@media (max-width: 650px) {
-  
-  /*=HEADER title and menu = fullwidth-----------*/
-  
-  #{$theme} #main-header {
+    float: right;
+    height: $header_height;
+
+    @media (max-width: 900px) {
+
+      // ------- => stack in 2 rows
+      width: 168px;
+      height: $header_height_2;
+      top: 3px;
+    }
+
+    @media (max-width: 650px) {
+
+      // ------------------ => hide
+      display: none;
+    }
+  }
+
+  // ---------------------------------------------- UNDER 650px
+  @media (max-width: 650px) {
+
+  // -------------------------- TITLE AND MENU 
+  // ---------------------------- => fullwidth
+
     padding-left: 0;
     padding-right: 0;
 
-    .left {
+    .left-content {
       float: none;
 
       h1 {
@@ -348,42 +238,27 @@ body#{$theme} {
 
         li {
           float: left;
+
+          &:last-child a {
+            padding-right: 0;
+          }
         }
-      }
-
-      li:last-child a {
-        padding-right: 0;
-      }
+      }      
     }
-    
-    /*=GITHUB BUTTONS = hide----*/ 
-    .right {
-      display: none;
-    } 
   }
-}
+  // ---------------------------------------------- UNDER 350px
+  @media (max-width: 350px) {
 
-/*=----------------------------------------------------UNDER 480px*/
-@media (max-width: 480px) {
+  // -------------------------- TITLE AND MENU 
+  // ---------------------- => stack in 2 rows
   
-  #{$theme} #main-header .left li {
-    margin-left: 20px;
-  }
-}
-
-
-/*=----------------------------------------------------UNDER 350px*/
-@media (max-width: 350px) {
-  
-  /*=HEADER title and menu = stack in 2 rows----*/
-
-  #{$theme} #main-header {
     margin: 0;
     padding: 0;
     text-align: center;
-    height: 70px;
+  // ----------------------- new header height
+    height: $header_height_2;
 
-    .left {
+    .left-content {
       h1 {
         float: none;
         margin: 10px auto 12px auto;
@@ -395,15 +270,107 @@ body#{$theme} {
       }
     }
   }
+}
 
-  #{$theme} #fixed-header-aux {
-    height: totalHeight(70, 0, 0, $header_borders);
+// -------------------------------- FIX HEADER PLACEHOLDER 
+
+#{$theme} #fix-placeholder {
+  
+  height: $h;
+
+  @media (max-width: 350px) {
+    height: $h_2;
   }
 }
 
-/*=---------------------------------------------------------------*/ 
-/*=COLOR SWAPPER TEST (only over 767px)---------------------------*/ 
-/*=---------------------------------------------------------------*/ 
+
+// ----------------------------------------------- CONTENT 
+#{$theme} .content {
+
+  // -------------- (when side menu drops out)
+  @media (max-width: 767px) {
+
+    // ---------------------------- => center
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+
+  hr {
+    border: 0;
+    height: 3px;
+    width: 18%;
+    margin: 0 auto 3%;
+    clear: both;
+  }
+}
+
+
+// -------------------------------------------------- LOGO 
+#{$theme} {
+
+  #logo {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    width: $logo_footer_width;
+    height: auto; 
+
+    img {
+      width: 100%;
+    } 
+  } 
+}
+
+
+// --------------------------------- 3 COLUMN BACKGROUND for big layout
+
+@media (min-width: 1180px) {
+
+  #{$theme} .content {
+    
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    h1, h2, h3, h4, h5, h6 {
+      width: 550px;
+      margin: 0;
+      padding-left: 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1:first-child {
+      padding-top: 30px;
+    }
+
+    ul, ol {
+      margin-left: 0;
+      padding-left: 60px !important;
+      position: relative;
+      z-index: 2;
+    }
+
+    p {
+      position: relative;
+      z-index: 2;
+    }
+
+    pre {
+      width: calc(100% - 550px);
+    }
+
+    & > *:last-child {
+      padding-bottom: 40px;
+    }
+  }
+}
+
+
+// ------------------------------- COLOR SWAPPER TEST (only over 767px)
 
 #color-swapper {
   display: none;
@@ -430,6 +397,7 @@ body#{$theme} {
       font-size: 0;
       line-height: 0;
       width: 27px;
+      border-right: 1px solid white;
 
       a {
         width: 27px;
@@ -437,16 +405,12 @@ body#{$theme} {
         display: block;
       }
     }
-
-
   }
 
-
-  /*=COLOR OPTIONS-----------*/ 
+  // --------------------------------------- COLOR OPTIONS
+  // ---------- is study
 
   #color-swapper td {
-
-    border-right: 1px solid white;
 
     &.GRAY {
       background-color: $GRAY;
@@ -486,17 +450,15 @@ body#{$theme} {
   }
 }
 
+// ----------------------------------------------------- HIDE SCROLLBAR
+// testing if needed, check motzilla affects height of pre elements
 
-/*=---------------------------------------------------------------*/ 
-/*=HIDE SCROLLBAR-------------------------------------------------*/ 
-/*=---------------------------------------------------------------*/ 
-/* testing if needed, check motzilla affects height of pre elements, check */
-/* @media (max-width: 1180px) {
-  #{$theme} .content pre > code::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-  }
-  }*/
+// @media (max-width: 1180px) {
+//  #{$theme} .content pre > code::-webkit-scrollbar {
+//    width: 0;
+//    height: 0;
+//  }
+//  }
 
 
 

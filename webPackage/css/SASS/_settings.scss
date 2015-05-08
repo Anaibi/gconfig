@@ -1,3 +1,6 @@
+@import "partials/_colors";
+@import "partials/_fonts";
+
 // ------------------------------- COLOR COMBINATION
 // available 1 through 5
 // TODO change to automatic color combo generator
@@ -5,44 +8,90 @@
 $combo: $combo1;
 
 
-
 // ------------------------------------------- THEME
-// has to be updated in index.html. 
+// has to be updated in index.html
+
 $theme: #enjoy-mondays;
 
 
 // ------------------------------------------- FONTS
-// change font assignations here
 
-  // LINKS AND TEXT
+  // ----------------- change font assignations here
+
+  // ------------------ LINKS AND TEXT
   $font_1: $LATO;
   
-  // HEADERS
+  // ------------------------- HEADERS
   $font_2: $DOSIS;
 
 
-// change font sizes here
+  // ------------------------ change font sizes here
 
-  // TEXT, P
+  // ------------------------- TEXT, P
   $font_size_1: 1.25em; 
   
-  // TEXT, PRE
+  // ----------------------- TEXT, PRE
   $font_size_2: 1.15em;
   
-  // SIDE MENU LINKS */
+  // ----------------- SIDE MENU LINKS
   $font_size_3: 1em;
   
-  // H1 
+  // ------------------------------ H1 
   $font_size_4: 2.5em; 
 
 
-// change font weights here
+  // ---------------------- change font weights here
   
-  // TEXT, P
+  // ------------------------- TEXT, P
   $font_weight_1: $LIGHT;
 
   
   $font_weight_2: $BOLD;
 
-  // LINKS
+  // --------------------------- LINKS
   $font_weight_3: $BOLDER;
+
+
+
+// ---------------------------------------- MEASURES
+
+$header_height: 20px; 
+// (flatdoc theme includes 15px padding top and bottom, +1px border-bottom)
+
+// under 350px:
+$header_height_2: 50px;
+
+$logo_footer_width: 28px;
+
+
+// USED in placeholder height
+$h: $header_height + 31;
+$h_2: $header_height_2 + 31;
+
+
+
+// ------------------------------ COLOR ASSIGNATIONS
+
+// USED AS:
+
+  // GENERAL CONTENT BACKGROUND: 
+  $background_1 : nth($combo, 1);
+
+  // CODE IN BOX BACKGROUND: 
+  $background_2 : nth($combo, 2);
+
+  // CODE IN TEXT BACKGROUND
+  $background_3 : nth($combo, 6);
+
+// TEXT */
+  
+  // GENERAL TEXT 
+  $color_1 : nth($combo, 3);
+
+  // LINKS 
+  $color_2 : nth($combo, 4);
+
+  // DETAILS (hovers, visited links)
+  $color_3 : nth($combo, 5);
+
+

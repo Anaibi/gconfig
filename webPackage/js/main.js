@@ -11,7 +11,7 @@ $(window).load(function() {
   $(window).resize(function() {
     // fix css for three column layout
     if (!threeColumnContentCalled) {
-	  threeColumnContent();
+	    threeColumnContent();
     }
     hideScrollbarMoz();
   });
@@ -19,7 +19,7 @@ $(window).load(function() {
   
   function hideScrollbarMoz() {
   	var cW, sW;
-  	$.each(preElements, function(i, pre) { console.log(pre);
+  	$.each(preElements, function(i, pre) { 
       cW = pre.clientWidth,
   	  sW = pre.scrollWidth;
   	  $(pre).find('.scrolls-x').removeClass('scrolls-x');
@@ -134,7 +134,7 @@ $(window).load(function() {
   // special case <pre> followed by one or more <pre> tags, 
   // jump the each in this case also for all but the first <pre> 
 
-  // want each element before <pre> tags to have total height (height + margin/padding) 
+  // want each element before <pre> tags to have total height (height + margin and padding) 
   // to be same as floated <pre> at right
   function threeColumnContent() {
     // if not needed, return
@@ -219,7 +219,7 @@ $(window).load(function() {
 
 	  return h;
 	}
-  }
+}
 
 
 

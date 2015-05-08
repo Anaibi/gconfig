@@ -28,26 +28,3 @@ $combo4: $FUXSIA, $ZENBURN_BG, $LIGHT_GRAY, $LIGHT_WHITE, $LIGHT_FUXSIA, $ZENBUR
 
 $combo5: $LIGHTER_WHITE, $ZENBURN_BG, $GRAY, $DARK_GRAY, $FUXSIA, $WHITE;
 
-
-
-// USE AS:
-
-  // GENERAL CONTENT BACKGROUND: 
-  $background_1 : nth($combo, 1);
-
-  // CODE IN BOX BACKGROUND: 
-  $background_2 : nth($combo, 2);
-
-  // CODE IN TEXT BACKGROUND
-  $background_3 : nth($combo, 6);
-
-// TEXT */
-  
-  // GENERAL TEXT 
-  $color_1 : nth($combo, 3);
-
-  // LINKS 
-  $color_2 : nth($combo, 4);
-
-  // DETAILS (hovers, visited links)
-  $color_3 : nth($combo, 5);
