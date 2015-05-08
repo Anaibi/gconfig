@@ -5,7 +5,9 @@
 // available 1 through 5
 // TODO change to automatic color combo generator
 
-$combo: $combo1;
+$combo: $combo2;
+
+$use_combo: true;
 
 
 // ------------------------------------------- THEME
@@ -91,7 +93,26 @@ $h_2: $header_height_2 + 31;
   // LINKS 
   $color_2 : nth($combo, 4);
 
+  // HEADERS
   // DETAILS (hovers, visited links)
   $color_3 : nth($combo, 5);
+
+
+
+
+$base_color: #2196F3;
+
+// ----------------- used for testing 
+
+// $base_color: #009688;
+// $base_color: #E91E63;
+// $base_color: #4CAF50;
+// $base_color: #F57F17;
+// $base_color: #795548;
+ $base_color: #000;
+// $base_color: #fff;
+// $base_color: #FFCDD2;
+// $base_color: #3F51B5;
+// $base_color: #F44336;
 
 

@@ -1,115 +1,162 @@
-@import "_settings.scss";
+@import "_settings";
 
 
-@import "partials/_flatdoc.scss";
-@import "partials/_classes.scss";
+@import "partials/_flatdoc";
+@import "partials/_classes";
 
+@import "partials/_colors2";
 
+@if ($use_combo) {
+   $color1: nth($combo, 1);
+   $color2: nth($combo, 6);
+   $color3: nth($combo, 2);
+   $color4: nth($combo, 2);
+   $color5: nth($combo, 4);
+   $color6: nth($combo, 4);
+} @else {
+  $color1: map-get($color_map, b_100);
+  $color2: map-get($color_map, b_500);
+  $color3: map-get($color_map, b_900);
+  $color4: map-get($color_map, b_25);
+  $color5: map-get($color_map, c_900);
+  $color6: map-get($color_map, d_500);
+}
 
+   $color1: nth($combo, 1);
+   $color2: nth($combo, 6);
+   $color3: nth($combo, 2);
+   $color4: nth($combo, 2);
+   $color5: nth($combo, 4);
+   $color6: nth($combo, 4);
 
-
-// ------------------------------------------------------------- CSS
 
 // ------------------------------------------- BACKGROUNDS 
 
-body#{$theme} { 
-  background-color: $background_1; 
-}
+#{$theme} { 
 
-// left menu and central content background need re-stating 
-#{$theme} {
+//  background-color: $background_1; 
+  background-color: $color1;
+
+  #main-header, 
+  // left menu and central content background need re-stating
   .content-root,
   .menubar,
-  .content {
-    background-color: $background_1;
+  .content,
+  h1, h2, h3, h4, h5, h6 {
+//    background-color: $background_1;
+    background-color: $color1;
   }
 
-  #main-header {  
-    background-color: $background_1;
+  // --------------------- 3 COLUMN BACKGROUND for big layout
+  @media (min-width: 1180px) {
+    .content,
+    .content-root {
+//      background-color: $background_2;
+      background-color: $color3;
+    }
   }
 
   .content {
-    p {
-      background-color: $background_1;
+    p, ul, ol {
+//      background-color: $background_1;
+      background-color: $color1;
     }
 
     code {
-      background-color: $background_3;
+//      background-color: $background_3;
+      background-color: $color2;
     } 
 
     // ------- HIGHLIGHT JS OVERRIDE
     .hljs, pre > code {
-      background-color: $background_2;
-    }
-
-    ul, ol {
-      background-color: $background_1;
+//      background-color: $background_2;
+      background-color: $color3;
     }
   }
 }
 
+// ----------------------------------------------- BORDERS 
+#{$theme} {
 
-// --------------------- 3 COLUMN BACKGROUND for big layout
+  #main-header {  
 
-@media (min-width: 1180px) {
-  #{$theme} {
-    .content,
-    .content-root {
-      background-color: $background_2;
+//    text-shadow: 0 1px 0 $background_2;
+    text-shadow: 0 1px 0 $color4;
+   
+    border-bottom: solid 1px $color4;
+
+    li {
+//      border-left: 1px solid $color2;
+      border-right: 1px solid $color3;
     }
+
+    h1 + ul {
+      border-left: 1px solid $color2;
+    }
+  }
+
+  .menubar {
+    border-right: solid 1px $color4;
+  }
+
+  h4 {
+    border-bottom: solid 1px $color4;
   }
 }
 
 
 // ------------------------------------------------- FONTS 
+#{$theme} { 
 
-// ---------------------- GENERAL 
-
-body#{$theme} { 
+  // ---------------------- GENERAL
   font-family: $font_1;
   font-weight: $font_weight_1;
-  color: $color_1; 
-}
+//  color: $color_1;
+  color: $color3;  
 
-// ------------------------ LINKS 
+  // ------------------------ LINKS 
+  a {
+    font-size: $font_size_3;
+    font-weight: $font_weight_3;
+//    color: $color_2;
+    color: $color5;
+  }
 
+  // --------------------------- Hi 
 
-#{$theme} a {
-  font-size: $font_size_3;
-  font-weight: $font_weight_3;
-  color: $color_2;
-}
-
-$links_border_bottom: 3px solid $color_3;
-$links_border_left: 3px solid $color_3;
-
-
-// --------------------------- Hi 
-
-@for $i from 1 through 6 {
-  #{$theme} h#{$i} {
+  h1, h2, h3, h4, h5, h6 {
     font-family: $font_2 !important;
     font-weight: $font_weight_2 !important; 
-    background-color: $background_1;
-  }
-}
-
-// --------------------------- H1 
-
-#{$theme} h1 {
-  font-size: $font_size_4;  
-  text-transform: uppercase;
-}
-
-// ---------------------- CONTENT 
-
-#{$theme} .content {
- p {
-    font-size: $font_size_1;
+//      color: $color_3;
+    color: $color5;
   }
 
-  pre {
-    font-size: $font_size_2;
+  // --------------------------- H1 
+  h1 {
+    font-size: $font_size_4;  
+    text-transform: uppercase;
+  }
+
+  // ---------------------- CONTENT 
+
+  .content {
+    p {
+      font-size: $font_size_1;
+    }
+
+    pre {
+      font-size: $font_size_2;
+    }
+
+    p, li {
+      > code {
+        color: $color1;
+      }
+    }
+
+    em {
+      color: $color2;
+    }
   }
 }
 
@@ -121,16 +168,16 @@ $links_border_left: 3px solid $color_3;
 // USED IN hover effects
 
 @mixin underline_link { 
-  border-bottom: $links_border_bottom; 
+  border-bottom: 3px solid $color6; 
 }
 
 @mixin colored_link {
   border-bottom: none;
-  color: $color_3;
+  color: $color6 !important;
 }
 
 @mixin left_border_link {
-  border-left: $links_border_left;
+  border-left: 3px solid $color6;
 }
 
 
