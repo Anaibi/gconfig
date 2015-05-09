@@ -1,0 +1,44 @@
+
+// SHADES:
+$dark_base_color: darken($base_color, 22%);
+$darker_base_color: darken($base_color, 60%);
+$darkest_base_color: darken($base_color, 80%);
+$lightest_base_color: lighten($base_color, 50%);
+$lighter_base_color: lighten($base_color, 39%);
+$light_base_color: lighten($base_color, 31.6%);
+$transparent_base_color: rgba($base_color, .2);
+
+// CONTRASTS:
+$color2: adjust-hue(complement($base_color), -50deg);
+$dark_color2: darken($color2, 20%);
+$darkest_color2: darken($color2, 50%);
+$lightest_color2: lighten($color2, 50%);
+
+$color3: darken(adjust-hue(invert($base_color), 150deg), 15%);
+$dark_color3: darken($color3, 15%);
+$highlight_color3: adjust-hue(lighten($color3, 40%), -15deg);
+
+
+
+
+$bg_main: $base_color;
+$bg_code: $darkest_base_color;
+$bg_hightlight: $color3;
+$bg_details: $lighter_base_color;
+
+$text: $darkest_base_color;
+$text_code: $light_base_color;
+$text_headers: $darker_base_color;
+
+$text_links: $darkest_color2;
+$underline_links: $lightest_color2;
+$text_active_links: $lightest_color2;
+
+$em: $darkest_base_color;
+
+$text_hightlight: $darkest_base_color;
+
+$text_details: $light_base_color;
+
+$borders1: $lightest_base_color;
+$borders2: $light_base_color;

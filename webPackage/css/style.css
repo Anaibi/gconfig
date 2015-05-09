@@ -1,4 +1,3 @@
-/*=FLATDOC THEME values------------------------------------------------*/
 .clearfix {
   clear: both; }
 
@@ -23,48 +22,76 @@
   top: 0; }
 
 #enjoy-mondays {
-  background-color: #bbe1bc; }
+  background-color: #f2f2f2; }
   #enjoy-mondays #main-header,
   #enjoy-mondays .content-root,
   #enjoy-mondays .menubar,
   #enjoy-mondays .content,
   #enjoy-mondays h1, #enjoy-mondays h2, #enjoy-mondays h3, #enjoy-mondays h4, #enjoy-mondays h5, #enjoy-mondays h6 {
-    background-color: #bbe1bc; }
+    background-color: #f2f2f2; }
   @media (min-width: 1180px) {
     #enjoy-mondays .content,
     #enjoy-mondays .content-root {
-      background-color: #2a612c; } }
+      background-color: #262626;
+      background: -webkit-gradient(linear, left top, right top, color-stop(0.8, #262626), color-stop(1, rgba(255, 255, 255, 0)));
+      background: -webkit-linear-gradient(left, #262626 80%, rgba(255, 255, 255, 0) 100%);
+      background: -moz-linear-gradient(left, #262626 80%, rgba(255, 255, 255, 0) 100%);
+      background: -o-linear-gradient(left, #262626 80%, rgba(255, 255, 255, 0) 100%);
+      background: -ms-linear-gradient(left, #262626 80%, rgba(255, 255, 255, 0) 100%);
+      background: linear-gradient(left, #262626 80%, rgba(255, 255, 255, 0) 100%);
+      -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); } }
   #enjoy-mondays .content p, #enjoy-mondays .content ul, #enjoy-mondays .content ol {
-    background-color: #bbe1bc; }
+    background-color: #f2f2f2; }
   #enjoy-mondays .content code {
-    background-color: #4CAF50; }
+    background-color: #262626; }
   #enjoy-mondays .content .hljs, #enjoy-mondays .content pre > code {
-    background-color: #2a612c; }
+    background-color: #262626; }
 
+#enjoy-mondays.big-h3 {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0.8, #f2f2f2), color-stop(1, rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(left, #f2f2f2 80%, rgba(255, 255, 255, 0) 100%);
+  background: -moz-linear-gradient(left, #f2f2f2 80%, rgba(255, 255, 255, 0) 100%);
+  background: -o-linear-gradient(left, #f2f2f2 80%, rgba(255, 255, 255, 0) 100%);
+  background: -ms-linear-gradient(left, #f2f2f2 80%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(left, #f2f2f2 80%, rgba(255, 255, 255, 0) 100%);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
 #enjoy-mondays #main-header {
-  text-shadow: 0 1px 0 #fcfefc;
-  border-bottom: solid 1px #fcfefc; }
+  text-shadow: 0 1px 0 white;
+  border-bottom: solid 1px white; }
   #enjoy-mondays #main-header li {
-    border-right: 1px solid #2a612c; }
+    border-left: 1px solid #bfbfbf;
+    border-right: 1px solid white; }
   #enjoy-mondays #main-header h1 + ul {
-    border-left: 1px solid #4CAF50; }
+    border-left: 1px solid #bfbfbf; }
 #enjoy-mondays .menubar {
-  border-right: solid 1px #fcfefc; }
-#enjoy-mondays h4 {
-  border-bottom: solid 1px #fcfefc; }
+  border-right: solid 1px white; }
+#enjoy-mondays .content h1:before, #enjoy-mondays .content h2:before, #enjoy-mondays .content h3
+.big-heading:before {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0.8, #e6e6e6), color-stop(1, rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(left, #e6e6e6 80%, rgba(255, 255, 255, 0) 100%);
+  background: -moz-linear-gradient(left, #e6e6e6 80%, rgba(255, 255, 255, 0) 100%);
+  background: -o-linear-gradient(left, #e6e6e6 80%, rgba(255, 255, 255, 0) 100%);
+  background: -ms-linear-gradient(left, #e6e6e6 80%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(left, #e6e6e6 80%, rgba(255, 255, 255, 0) 100%);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+#enjoy-mondays .content h4 {
+  border-bottom: solid 1px rgba(255, 255, 255, 0.07); }
 
 #enjoy-mondays {
   font-family: "Lato", sans-serif;
   font-weight: 100;
-  color: #2a612c; }
+  color: black; }
   #enjoy-mondays a {
     font-size: 1em;
     font-weight: 900;
-    color: #392d68; }
+    color: gray; }
   #enjoy-mondays h1, #enjoy-mondays h2, #enjoy-mondays h3, #enjoy-mondays h4, #enjoy-mondays h5, #enjoy-mondays h6 {
     font-family: "Dosis", sans-serif !important;
     font-weight: 600 !important;
-    color: #392d68; }
+    color: #262626; }
   #enjoy-mondays h1 {
     font-size: 2.5em;
     text-transform: uppercase; }
@@ -73,21 +100,21 @@
   #enjoy-mondays .content pre {
     font-size: 1.15em; }
   #enjoy-mondays .content p > code, #enjoy-mondays .content li > code {
-    color: #bbe1bc; }
+    color: white; }
   #enjoy-mondays .content em {
-    color: #4CAF50; }
+    color: black; }
 
 #enjoy-mondays a {
   text-decoration: none; }
   #enjoy-mondays a:hover, #enjoy-mondays a.active {
-    border-bottom: 3px solid #587f37; }
+    border-bottom: 3px solid gray; }
     #enjoy-mondays a:hover::after, #enjoy-mondays a.active::after {
       background: none; }
 #enjoy-mondays .menu a:visited, #enjoy-mondays .menu a:hover, #enjoy-mondays .menu a.active {
   margin-left: -3px;
-  border-left: 3px solid #587f37;
+  border-left: 3px solid gray;
   border-bottom: none;
-  color: #587f37 !important; }
+  color: #595959 !important; }
 #enjoy-mondays .menu .level-2 > a {
   padding-left: 3px; }
 

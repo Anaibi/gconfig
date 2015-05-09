@@ -1,41 +1,15 @@
 @import "_settings";
 
-
-@import "partials/_flatdoc";
 @import "partials/_classes";
 
-@import "partials/_colors2";
-
-@if ($use_combo) {
-   $color1: nth($combo, 1);
-   $color2: nth($combo, 6);
-   $color3: nth($combo, 2);
-   $color4: nth($combo, 2);
-   $color5: nth($combo, 4);
-   $color6: nth($combo, 4);
-} @else {
-  $color1: map-get($color_map, b_100);
-  $color2: map-get($color_map, b_500);
-  $color3: map-get($color_map, b_900);
-  $color4: map-get($color_map, b_25);
-  $color5: map-get($color_map, c_900);
-  $color6: map-get($color_map, d_500);
-}
-
-  $color1: map-get($color_map, b_100);
-  $color2: map-get($color_map, b_500);
-  $color3: map-get($color_map, b_900);
-  $color4: map-get($color_map, b_25);
-  $color5: map-get($color_map, c_900);
-  $color6: map-get($color_map, d_500);
+@import "partials/_colors3";
 
 
 // ------------------------------------------- BACKGROUNDS 
 
 #{$theme} { 
 
-//  background-color: $background_1; 
-  background-color: $color1;
+  background-color: $bg_main;
 
   #main-header, 
   // left menu and central content background need re-stating
@@ -43,34 +17,30 @@
   .menubar,
   .content,
   h1, h2, h3, h4, h5, h6 {
-//    background-color: $background_1;
-    background-color: $color1;
+    background-color: $bg_main;
   }
 
   // --------------------- 3 COLUMN BACKGROUND for big layout
   @media (min-width: 1180px) {
     .content,
     .content-root {
-//      background-color: $background_2;
-      background-color: $color3;
+      background-color: $bg_code;
+      @include gradientHr($bg_code, $borders1);
     }
   }
 
   .content {
     p, ul, ol {
-//      background-color: $background_1;
-      background-color: $color1;
+      background-color: $bg_main;
     }
 
     code {
-//      background-color: $background_3;
-      background-color: $color2;
+      background-color: $bg_code;
     } 
 
     // ------- HIGHLIGHT JS OVERRIDE
     .hljs, pre > code {
-//      background-color: $background_2;
-      background-color: $color3;
+      background-color: $bg_code;
     }
   }
 }
@@ -78,29 +48,41 @@
 // ----------------------------------------------- BORDERS 
 #{$theme} {
 
+  &.big-h3 {
+    @include gradientHr($bg_main, $borders1); 
+  }
+
   #main-header {  
 
-//    text-shadow: 0 1px 0 $background_2;
-    text-shadow: 0 1px 0 $color4;
+    text-shadow: 0 1px 0 $text_details;
    
-    border-bottom: solid 1px $color4;
+    border-bottom: solid 1px $borders1;
 
     li {
-//      border-left: 1px solid $color2;
-      border-right: 1px solid $color3;
+      border-left: 1px solid $borders2;
+      border-right: 1px solid $borders1;
     }
 
     h1 + ul {
-      border-left: 1px solid $color2;
+      border-left: 1px solid $borders2;
     }
   }
 
   .menubar {
-    border-right: solid 1px $color4;
+    border-right: solid 1px $borders1;
   }
 
-  h4 {
-    border-bottom: solid 1px $color4;
+  .content {
+    h1, h2, h3
+    .big-heading {
+      &:before {
+        @include gradientHr($bg_details, $borders1);
+      }
+    }  
+
+    h4 {
+      border-bottom: solid 1px rgba($borders1, .07);
+    }
   }
 }
 
@@ -111,15 +93,13 @@
   // ---------------------- GENERAL
   font-family: $font_1;
   font-weight: $font_weight_1;
-//  color: $color_1;
-  color: $color3;  
+  color: $text;  
 
   // ------------------------ LINKS 
   a {
     font-size: $font_size_3;
     font-weight: $font_weight_3;
-//    color: $color_2;
-    color: $color5;
+    color: $text_links;
   }
 
   // --------------------------- Hi 
@@ -127,8 +107,7 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: $font_2 !important;
     font-weight: $font_weight_2 !important; 
-//      color: $color_3;
-    color: $color5;
+    color: $text_headers;
   }
 
   // --------------------------- H1 
@@ -150,12 +129,12 @@
 
     p, li {
       > code {
-        color: $color1;
+        color: $text_code;
       }
     }
 
     em {
-      color: $color2;
+      color: $em;
     }
   }
 }
@@ -168,16 +147,16 @@
 // USED IN hover effects
 
 @mixin underline_link { 
-  border-bottom: 3px solid $color6; 
+  border-bottom: 3px solid $underline_links; 
 }
 
-@mixin colored_link {
+@mixin active_link {
   border-bottom: none;
-  color: $color6 !important;
+  color: $text_active_links !important;
 }
 
 @mixin left_border_link {
-  border-left: 3px solid $color6;
+  border-left: 3px solid $underline_links;
 }
 
 
@@ -206,7 +185,7 @@
       &.active {
         margin-left: -3px;
         @include left_border_link;
-        @include colored_link;
+        @include active_link;
       }
     }
 
