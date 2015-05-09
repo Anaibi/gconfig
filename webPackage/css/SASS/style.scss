@@ -22,12 +22,12 @@
   $color6: map-get($color_map, d_500);
 }
 
-   $color1: nth($combo, 1);
-   $color2: nth($combo, 6);
-   $color3: nth($combo, 2);
-   $color4: nth($combo, 2);
-   $color5: nth($combo, 4);
-   $color6: nth($combo, 4);
+  $color1: map-get($color_map, b_100);
+  $color2: map-get($color_map, b_500);
+  $color3: map-get($color_map, b_900);
+  $color4: map-get($color_map, b_25);
+  $color5: map-get($color_map, c_900);
+  $color6: map-get($color_map, d_500);
 
 
 // ------------------------------------------- BACKGROUNDS 
