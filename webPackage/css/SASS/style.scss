@@ -2,7 +2,9 @@
 
 @import "partials/_classes";
 
-@import "partials/_colors3";
+@import "partials/_allmixins";
+
+@import "partials/_colors";
 
 
 // ------------------------------------------- BACKGROUNDS 
@@ -25,8 +27,12 @@
     .content,
     .content-root {
       background-color: $bg_code;
-      @include gradientHr($bg_code, $borders1);
+      @include gradientBg($bg_code_3col, $borders1, 95%);
     }
+  }
+
+  &.big-h3 {
+    @include gradientBg($bg_main, $borders1);
   }
 
   .content {
@@ -40,7 +46,8 @@
 
     // ------- HIGHLIGHT JS OVERRIDE
     .hljs, pre > code {
-      background-color: $bg_code;
+      background-color: $bg_code_3col;
+      @include gradientBg($bg_code_3col, lighten($borders1, 20%), 70%, 80%);
     }
   }
 }
@@ -49,7 +56,7 @@
 #{$theme} {
 
   &.big-h3 {
-    @include gradientHr($bg_main, $borders1); 
+    @include boxShadow($bg_details);
   }
 
   #main-header {  
@@ -76,7 +83,7 @@
     h1, h2, h3
     .big-heading {
       &:before {
-        @include gradientHr($bg_details, $borders1);
+        @include gradientBg($bg_details, $borders1);
       }
     }  
 
@@ -142,24 +149,6 @@
 
 // ------------------------------------------------- LINKS 
 
-// --------------------- MIXINS
-
-// USED IN hover effects
-
-@mixin underline_link { 
-  border-bottom: 3px solid $underline_links; 
-}
-
-@mixin active_link {
-  border-bottom: none;
-  color: $text_active_links !important;
-}
-
-@mixin left_border_link {
-  border-left: 3px solid $underline_links;
-}
-
-
 #{$theme} {
   
   // ----------------- ALL links
@@ -168,7 +157,7 @@
 
     &:hover,
     &.active {
-      @include underline_link;
+      border-bottom: 3px solid $deco_links;
 
       &::after {
         // remove dash from links
@@ -184,8 +173,9 @@
       &:hover,
       &.active {
         margin-left: -3px;
-        @include left_border_link;
-        @include active_link;
+        border-bottom: none !important;
+        border-left: 3px solid $deco_links;
+        color: $text_active_links;
       }
     }
 

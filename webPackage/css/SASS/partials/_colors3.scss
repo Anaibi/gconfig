@@ -107,18 +107,19 @@ $borders2: $light_color2;
 
 
 
-@mixin gradientHr($c1, $c2) {
+@mixin gradientBg($c1, $c2, $s:80%, $e:100%) {
 	$c2: rgba($c2, 0);
 	background: -webkit-gradient(linear, left top, right top, color-stop(0.8, $c1), color-stop(1, $c2));
-	background: -webkit-linear-gradient(left, $c1 80%, $c2 100%);
-	background: -moz-linear-gradient(left, $c1 80%, $c2 100%);
-	background: -o-linear-gradient(left, $c1 80%, $c2 100%);
-	background: -ms-linear-gradient(left, $c1 80%, $c2 100%);
-	background: linear-gradient(left, $c1 80%, $c2 100%);
+	background: -webkit-linear-gradient(left, $c1 $s, $c2 $e);
+	background: -moz-linear-gradient(left, $c1 $s, $c2 $e);
+	background: -o-linear-gradient(left, $c1 $s, $c2 $e);
+	background: -ms-linear-gradient(left, $c1 $s, $c2 $e);
+	background: linear-gradient(left, $c1 $s, $c2 $e);
+}
 
-	-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.4);
-
-	box-shadow: 0 1px 0 rgba(255,255,255,0.4);
+@mixin boxShadow($c) {
+	-webkit-box-shadow: 0 1px 0 rgba($c,0.4);
+	box-shadow: 0 1px 0 rgba($c,0.4);
 }
 
 

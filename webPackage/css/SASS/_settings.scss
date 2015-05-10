@@ -7,6 +7,17 @@
 $theme: #enjoy-mondays;
 
 
+// ------------------------------------------ COLORS
+
+// set base color 
+$base_color: LIGHT_GRAY !default;
+
+// lightBackground: true -> lighter version of base_color as main background color
+// else, base_color as main background color
+
+$lightBackground: true !default;
+
+
 // ------------------------------------------- FONTS
 
   // ----------------- change font assignations here
