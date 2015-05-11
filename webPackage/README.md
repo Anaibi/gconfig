@@ -1,11 +1,11 @@
-####Using webPackage/css/sass/**_settings**.scss file:
-
-
 #####To view default settings, comment out the settings import in webPackage/css/sass/**style.scss**.
 ```
 //@import "settings/_settings";
 ```
 
+####Modify settings: webPackage/css/sass/**_settings**.scss:
+
+#####To use default value, comment it out. 
 
 #####To change layout color combination, options:
   1. **Base color**: `$base_color` (Can pick constant color name from _color-constants.scss)
