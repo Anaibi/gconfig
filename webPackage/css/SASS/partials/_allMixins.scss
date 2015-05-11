@@ -6,6 +6,8 @@
 //   getMiddleLightness
 //   isDarkColor
 //   isLightColor
+// FONTS
+//   toFontList
 // LAYOUTS
 //   setFixedHeaderLayout
 //   fillHeightSections
@@ -90,6 +92,39 @@
   } @else {
     @return false;
   }
+}
+
+
+// -------------------------------------------------------------- FONTS 
+
+// -------------------------------------------  toFontList
+
+@function toFontList($list) {
+
+  $fontList: ();
+
+  // take out repeats
+  @if length($list) > 1 {
+     @each $family in $list {
+      @each $font in $family {  
+        @if not index($fontList, $font) {
+          $fontList: append($fontList, $font, comma); 
+        }
+      }
+    }
+
+    // shift default types sanserif, serif, monospace to end of list
+    $i: index($fontList, 'serif') or index($fontList, 'sanserif') or index($fontList, 'monospace');
+
+    @if $i {
+      $fontList: append($fontList, nth($fontList, $i));
+      $fontList: set-nth($fontList, $i, null);
+    }
+  } @else {
+    $fontList: $list;
+  }
+
+  @return $fontList;
 }
 
 
