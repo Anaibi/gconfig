@@ -162,6 +162,9 @@
     background: -o-linear-gradient(left, #2b2922 70%, rgba(233, 232, 226, 0) 80%);
     background: -ms-linear-gradient(left, #2b2922 70%, rgba(233, 232, 226, 0) 80%);
     background: linear-gradient(left, #2b2922 70%, rgba(233, 232, 226, 0) 80%); }
+    @media (max-width: 1180px) {
+      #enjoy-mondays .content .hljs, #enjoy-mondays .content pre > code {
+        background-color: #2b2922; } }
 
 #enjoy-mondays {
   color: #2b2922; }

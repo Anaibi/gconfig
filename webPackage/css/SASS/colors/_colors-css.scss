@@ -45,6 +45,10 @@
     .hljs, pre > code {
       background-color: $bg_code_3col;
       @include gradientBg($bg_code_3col, lighten($borders1, 20%), 70%, 80%);
+
+      @media (max-width: 1180px) {
+        background-color: $bg_code_3col;
+      }
     }
   }
 }
