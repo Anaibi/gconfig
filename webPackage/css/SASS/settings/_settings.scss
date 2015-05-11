@@ -1,0 +1,144 @@
+@import "_all-constants";
+
+// LAYOUT
+  // THEME
+  // MEASURES
+    // header
+    // logo
+// COLORS
+  // BASE COLOR
+  // OPTIONS
+    // light background
+    // shade coeficient
+    // color3 tune
+// FONTS
+  // FAMILY
+    // links and text
+    // headers
+  // SIZE
+    // text p
+    // pre
+    // side menu links
+    // h1
+  // WEIGHT
+    // text p
+    // links
+
+
+// -------------------------------------------------
+// ------------------------------------------ LAYOUT
+
+  // --------------------------- THEME
+  
+  $theme: #enjoy-mondays;
+
+
+  // ------------------------ MEASURES
+
+  // HEADER
+  // total heights will be adding 31px
+
+  $header_height: 20px; 
+
+
+  // HEADER under 350px:
+  
+  $header_height_2: 50px;
+
+
+  // LOGO
+
+  $logo_footer_width: 28px;
+
+
+// -------------------------------------------------
+// ------------------------------------------ COLORS
+
+  // ---------------------- BASE COLOR
+  // can pick constant from colors/_colorConst.scss
+
+  $base_color: $LIGHT_GRAY;
+
+
+  // ------------------------- OPTIONS
+
+  // ----------------- lightBackground
+  // true -> lighter version of base_color as main background color
+  // false ->base_color as main background color
+
+  $lightBackground: false;
+
+
+  // ----------------- shadeCoeficient
+  // tune grade of shades 
+  // value between 0.0 and 2.0 
+
+  $shadeCoeficient: 1.55;
+
+
+  // ------------------------- COLOR 3
+  // third color 
+  // tune hue and saturation values to change color
+
+  $color3Hue: 270deg;
+
+  // value between 0 and 85%
+  $color3Saturation: 80%;
+
+
+// -------------------------------------------------
+// ------------------------------------------- FONTS
+// can pick constants from fonts/_fontConst.scss
+  
+  // -------------------------- FAMILY
+
+  // LINKS AND TEXT
+  
+  $font_1: $TAHOMA, $DOSIS;
+  
+
+  // HEADERS
+  
+  $font_2: $CONSOLAS, $COURIER;
+
+
+  // ---------------------------- SIZE
+
+  // TEXT, P
+  
+  $font_size_1: 1.25em; 
+  
+
+  // TEXT > PRE
+  
+  $font_size_2: 1.15em;
+  
+  
+  // SIDE MENU LINKS
+  
+  $font_size_3: 1em;
+  
+  
+  // H1 
+  
+  $font_size_4: 2.5em; 
+
+
+
+  // -------------------------- WEIGHT
+
+  // TEXT, P
+  
+  $font_weight_1: $LIGHT;
+
+  
+  // HEADERS
+
+  $font_weight_2: $BOLD;
+
+
+  // LINKS
+
+  $font_weight_3: $BOLDER;
+
+
