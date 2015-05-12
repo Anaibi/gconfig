@@ -64,9 +64,11 @@
       ul {
         float: right;
         margin-right: 30px;
+        border: none;
 
         li {
           float: left;
+          border: none;
 
           &:last-child a {
             padding-right: 0;
@@ -78,14 +80,10 @@
   // ---------------------------------------------- UNDER 350px
   @media (max-width: 350px) {
 
-  // -------------------------- TITLE AND MENU 
-  // ---------------------- => stack in 2 rows
-  
-    margin: 0;
-    padding: 0;
+    // -------------------------- TITLE AND MENU 
+    // ---------------------- => stack in 2 rows
+    
     text-align: center;
-  // ----------------------- new header height
-    height: $header_height_2;
 
     .left-content {
       h1 {

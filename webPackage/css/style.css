@@ -53,17 +53,16 @@
         float: left; }
       #enjoy-mondays #main-header .left-content ul {
         float: right;
-        margin-right: 30px; }
+        margin-right: 30px;
+        border: none; }
         #enjoy-mondays #main-header .left-content ul li {
-          float: left; }
+          float: left;
+          border: none; }
           #enjoy-mondays #main-header .left-content ul li:last-child a {
             padding-right: 0; } }
 @media (max-width: 350px) {
   #enjoy-mondays #main-header {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    height: 50px; }
+    text-align: center; }
     #enjoy-mondays #main-header .left-content h1 {
       float: none;
       margin: 10px auto 12px auto; }
