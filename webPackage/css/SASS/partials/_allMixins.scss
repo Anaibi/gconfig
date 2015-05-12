@@ -74,7 +74,7 @@
 // ------------------------------------------- isDarkColor 
 
 @function isDarkColor($c) {
-  $i: getIntensity($c); @debug $i;
+  $i: getIntensity($c); 
   @if ($i < 282) {
     @return true;
   } @else {
@@ -86,7 +86,7 @@
 // ------------------------------------------ isLightColor 
 
 @function isLightColor($c) {
-  $i: getIntensity($c); @debug $i;
+  $i: getIntensity($c); 
   @if ($i > 482) {
     @return true;
   } @else {
@@ -99,13 +99,13 @@
 
 // -------------------------------------------  toFontList
 
-@function toFontList($list) {
+@function toFontList($list) { 
 
   $fontList: ();
 
-  // take out repeats
-  @if length($list) > 1 {
-     @each $family in $list {
+  @if length($list) > 1 { 
+    // take out repeats and make list
+    @each $family in $list {
       @each $font in $family {  
         @if not index($fontList, $font) {
           $fontList: append($fontList, $font, comma); 
@@ -113,14 +113,20 @@
       }
     }
 
-    // shift default types sanserif, serif, monospace to end of list
-    $i: index($fontList, 'serif') or index($fontList, 'sanserif') or index($fontList, 'monospace');
+    // shift default types sanserif, serif, monospace to end of list 
+    // (ok if they are all the same)
+
+    $i: index($fontList, 'serif') or index($fontList, 'sans-serif') or index($fontList, 'monospace');
 
     @if $i {
       $fontList: append($fontList, nth($fontList, $i));
       $fontList: set-nth($fontList, $i, null);
-    }
-  } @else {
+    } 
+
+    // TODO case mixed types, then they would get pushed to back of list in order above
+  } 
+
+  @else {
     $fontList: $list;
   }
 

@@ -94,39 +94,39 @@
 
   // LINKS AND TEXT
   
-  $font_1: $TAHOMA, $DOSIS;
+  $font_main: $TAHOMA, $TIMES, $COURIER;
   
 
   // HEADERS
   
-  $font_2: $CONSOLAS, $COURIER;
+  $font_headers: $CONSOLAS, $COURIER, $LUCIDA_CONSOLE;
 
 
   // P > CODE
   
-  $font_3: $COURIER, $CONSOLAS;
+  $font_code: $COURIER, $CONSOLAS;
 
 
   // ---------------------------- SIZE
 
   // TEXT, P
   
-  $font_size_1: 1.25em; 
+  $font_size_main: 1.25em; 
   
 
   // TEXT > PRE
   
-  $font_size_2: 1.15em;
+  $font_size_code: 1.15em;
   
   
   // SIDE MENU LINKS
   
-  $font_size_3: 1em;
+  $font_size_links: 1em;
   
   
   // H1 
   
-  $font_size_4: 2.5em; 
+  $font_size_big: 2.5em; 
 
 
 
@@ -134,16 +134,16 @@
 
   // TEXT, P
   
-  $font_weight_1: $LIGHT;
+  $font_weight_main: $LIGHT;
 
   
   // HEADERS
 
-  $font_weight_2: $BOLD;
+  $font_weight_headers: $BOLD;
 
 
   // LINKS
 
-  $font_weight_3: $BOLDER;
+  $font_weight_links: $BOLDER;
 
 

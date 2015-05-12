@@ -2,33 +2,33 @@
 @import "_fonts-defaultSettings";
 
 
-$font_1: toFontList($font_1);
-$font_2: toFontList($font_2);
-$font_3: toFontList($font_3);
+$font_main: toFontList($font_main);
+$font_headers: toFontList($font_headers);
+$font_code: toFontList($font_code);
 
 
 #{$theme} { 
 
   // ---------------------- GENERAL
-  font-family: $font_1;
-  font-weight: $font_weight_1;
+  font-family: $font_main;
+  font-weight: $font_weight_main;
 
   // ------------------------ LINKS 
   a {
-    font-size: $font_size_3;
-    font-weight: $font_weight_3;
+    font-size: $font_size_links;
+    font-weight: $font_weight_links;
   }
 
   // --------------------------- Hi 
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: $font_2 !important;
-    font-weight: $font_weight_2 !important; 
+    font-family: $font_headers !important;
+    font-weight: $font_weight_headers !important; 
   }
 
   // --------------------------- H1 
   h1 {
-    font-size: $font_size_4;  
+    font-size: $font_size_big;  
     text-transform: uppercase;
   }
 
@@ -36,15 +36,15 @@ $font_3: toFontList($font_3);
 
   .content {
     p {
-      font-size: $font_size_1;
+      font-size: $font_size_main;
 
       & > code {
-        font-family: $font_3;
+        font-family: $font_code;
       }
     }
 
     pre {
-      font-size: $font_size_2;
+      font-size: $font_size_code;
     }
   }
 }
