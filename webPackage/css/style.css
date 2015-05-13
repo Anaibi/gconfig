@@ -1,279 +1,63 @@
-@charset "UTF-8";
-.clearfix {
-  clear: both; }
+/*
+Error: File to import not found or unreadable: partials/_colorSwap.
+       Load path: /Users/tatianaburgos/Documents/Trabajos/gconfig/webPackage/css/sass
+        on line 10 of css/sass/style.scss
 
-.fixed {
-  position: fixed;
-  z-index: 1000; }
+5: 
+6: @import "layouts/_layout";
+7: @import "colors/_colors-css";
+8: @import "fonts/_fonts-css";
+9: 
+10: @import "partials/_colorSwap";
+11: 
+12: 
+13: 
+14: // ----------------------------------------------------- HIDE SCROLLBAR
+15: // testing if needed, check mozilla affects height of pre elements
 
-.fullwidth {
-  width: 100%; }
-
-.screan-reader-text {
-  position: absolute;
-  height: 0;
-  width: 0;
-  opacity: 0;
-  font-size: 0; }
-
-.hidden {
-  display: none; }
-
-.top0 {
-  top: 0; }
-
-#enjoy-mondays #main-header .left-content {
-  position: relative;
-  left: 220px; }
-  @media (max-width: 767px) {
-    #enjoy-mondays #main-header .left-content {
-      left: 0; } }
-@media (max-width: 480px) {
-  #enjoy-mondays #main-header li {
-    margin-left: 20px; } }
-#enjoy-mondays #main-header .right-content {
-  float: right;
-  height: 20px; }
-  @media (max-width: 900px) {
-    #enjoy-mondays #main-header .right-content {
-      width: 168px;
-      height: 50px;
-      top: 3px; } }
-  @media (max-width: 650px) {
-    #enjoy-mondays #main-header .right-content {
-      display: none; } }
-@media (max-width: 650px) {
-  #enjoy-mondays #main-header {
-    padding-left: 0;
-    padding-right: 0; }
-    #enjoy-mondays #main-header .left-content {
-      float: none; }
-      #enjoy-mondays #main-header .left-content h1 {
-        margin-left: 30px;
-        float: left; }
-      #enjoy-mondays #main-header .left-content ul {
-        float: right;
-        margin-right: 30px;
-        border: none; }
-        #enjoy-mondays #main-header .left-content ul li {
-          float: left;
-          border: none; }
-          #enjoy-mondays #main-header .left-content ul li:last-child a {
-            padding-right: 0; } }
-@media (max-width: 350px) {
-  #enjoy-mondays #main-header {
-    text-align: center; }
-    #enjoy-mondays #main-header .left-content h1 {
-      float: none;
-      margin: 10px auto 12px auto; }
-    #enjoy-mondays #main-header .left-content ul {
-      float: none;
-      display: inline-block; } }
-
-#enjoy-mondays #fix-placeholder {
-  height: 51px; }
-  @media (max-width: 350px) {
-    #enjoy-mondays #fix-placeholder {
-      height: 81px; } }
-
-@media (max-width: 767px) {
-  #enjoy-mondays .content {
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%; } }
-#enjoy-mondays .content hr {
-  border: 0;
-  height: 3px;
-  width: 18%;
-  margin: 0 auto 3%;
-  clear: both; }
-
-#enjoy-mondays #logo {
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
-  width: 28px;
-  height: auto; }
-  #enjoy-mondays #logo img {
-    width: 100%; }
-
-@media (min-width: 1180px) {
-  #enjoy-mondays .content {
-    width: 100%;
-    padding-top: 0;
-    padding-bottom: 0; }
-    #enjoy-mondays .content h1, #enjoy-mondays .content h2, #enjoy-mondays .content h3, #enjoy-mondays .content h4, #enjoy-mondays .content h5, #enjoy-mondays .content h6 {
-      width: 550px;
-      margin: 0;
-      padding-left: 40px;
-      position: relative;
-      z-index: 2; }
-    #enjoy-mondays .content h1:first-child {
-      padding-top: 30px; }
-    #enjoy-mondays .content ul, #enjoy-mondays .content ol {
-      margin-left: 0;
-      padding-left: 60px !important;
-      position: relative;
-      z-index: 2; }
-    #enjoy-mondays .content p {
-      position: relative;
-      z-index: 2; }
-    #enjoy-mondays .content pre {
-      width: calc(100% - 550px); }
-    #enjoy-mondays .content > *:last-child {
-      padding-bottom: 40px; } }
-#enjoy-mondays {
-  background-color: #E9E8E3; }
-  #enjoy-mondays #main-header,
-  #enjoy-mondays .content-root,
-  #enjoy-mondays .menubar,
-  #enjoy-mondays .content,
-  #enjoy-mondays h1, #enjoy-mondays h2, #enjoy-mondays h3, #enjoy-mondays h4, #enjoy-mondays h5, #enjoy-mondays h6 {
-    background-color: #E9E8E3; }
-  @media (min-width: 1180px) {
-    #enjoy-mondays .content,
-    #enjoy-mondays .content-root {
-      background-color: black;
-      background: -webkit-gradient(linear, left top, right top, color-stop(0.8, black), color-stop(1, rgba(212, 210, 201, 0)));
-      background: -webkit-linear-gradient(left, black 95%, rgba(212, 210, 201, 0) 100%);
-      background: -moz-linear-gradient(left, black 95%, rgba(212, 210, 201, 0) 100%);
-      background: -o-linear-gradient(left, black 95%, rgba(212, 210, 201, 0) 100%);
-      background: -ms-linear-gradient(left, black 95%, rgba(212, 210, 201, 0) 100%);
-      background: linear-gradient(left, black 95%, rgba(212, 210, 201, 0) 100%); } }
-  #enjoy-mondays.big-h3 {
-    background: -webkit-gradient(linear, left top, right top, color-stop(0.8, #E9E8E3), color-stop(1, rgba(212, 210, 201, 0)));
-    background: -webkit-linear-gradient(left, #E9E8E3 80%, rgba(212, 210, 201, 0) 100%);
-    background: -moz-linear-gradient(left, #E9E8E3 80%, rgba(212, 210, 201, 0) 100%);
-    background: -o-linear-gradient(left, #E9E8E3 80%, rgba(212, 210, 201, 0) 100%);
-    background: -ms-linear-gradient(left, #E9E8E3 80%, rgba(212, 210, 201, 0) 100%);
-    background: linear-gradient(left, #E9E8E3 80%, rgba(212, 210, 201, 0) 100%); }
-  #enjoy-mondays .content p, #enjoy-mondays .content ul, #enjoy-mondays .content ol {
-    background-color: #E9E8E3; }
-  #enjoy-mondays .content code {
-    background-color: black; }
-  #enjoy-mondays .content .hljs, #enjoy-mondays .content pre > code {
-    background-color: black;
-    background: -webkit-gradient(linear, left top, right top, color-stop(0.8, black), color-stop(1, rgba(255, 255, 255, 0)));
-    background: -webkit-linear-gradient(left, black 70%, rgba(255, 255, 255, 0) 80%);
-    background: -moz-linear-gradient(left, black 70%, rgba(255, 255, 255, 0) 80%);
-    background: -o-linear-gradient(left, black 70%, rgba(255, 255, 255, 0) 80%);
-    background: -ms-linear-gradient(left, black 70%, rgba(255, 255, 255, 0) 80%);
-    background: linear-gradient(left, black 70%, rgba(255, 255, 255, 0) 80%); }
-    @media (max-width: 1180px) {
-      #enjoy-mondays .content .hljs, #enjoy-mondays .content pre > code {
-        background-color: black; } }
-
-#enjoy-mondays {
-  color: black; }
-  #enjoy-mondays a {
-    color: #70758f;
-    line-height: 17px;
-    margin-top: 3px;
-    margin-bottom: -3px; }
-    #enjoy-mondays a:hover, #enjoy-mondays a.active {
-      border-bottom: 3px solid #f50aa7; }
-      #enjoy-mondays a:hover::after, #enjoy-mondays a.active::after {
-        background: none; }
-  #enjoy-mondays .menu a:visited, #enjoy-mondays .menu a:hover, #enjoy-mondays .menu a.active {
-    color: #5d043f !important;
-    margin-left: -3px;
-    border-bottom: none !important;
-    border-left: 3px solid #f50aa7; }
-  #enjoy-mondays .menu .level-2 > a {
-    padding-left: 3px; }
-  #enjoy-mondays h1, #enjoy-mondays h2, #enjoy-mondays h3, #enjoy-mondays h4, #enjoy-mondays h5, #enjoy-mondays h6 {
-    color: black; }
-  #enjoy-mondays .content p > code, #enjoy-mondays .content li > code {
-    color: white; }
-  #enjoy-mondays .content em {
-    color: black; }
-
-#enjoy-mondays.big-h3 {
-  -webkit-box-shadow: 0 1px 0 rgba(93, 4, 63, 0.4);
-  box-shadow: 0 1px 0 rgba(93, 4, 63, 0.4); }
-#enjoy-mondays #main-header {
-  text-shadow: 0 1px 0 white;
-  border-bottom: solid 1px #d4d2c9; }
-  #enjoy-mondays #main-header li {
-    border-left: 1px solid #fba2dd;
-    border-right: 1px solid #d4d2c9; }
-  #enjoy-mondays #main-header h1 + ul {
-    border-left: 1px solid #fba2dd; }
-#enjoy-mondays .menubar {
-  border-right: solid 1px #d4d2c9; }
-#enjoy-mondays .content h1:before, #enjoy-mondays .content h2:before, #enjoy-mondays .content h3
-.big-heading:before {
-  background: -webkit-gradient(linear, left top, right top, color-stop(0.8, #5d043f), color-stop(1, rgba(212, 210, 201, 0)));
-  background: -webkit-linear-gradient(left, #5d043f 80%, rgba(212, 210, 201, 0) 100%);
-  background: -moz-linear-gradient(left, #5d043f 80%, rgba(212, 210, 201, 0) 100%);
-  background: -o-linear-gradient(left, #5d043f 80%, rgba(212, 210, 201, 0) 100%);
-  background: -ms-linear-gradient(left, #5d043f 80%, rgba(212, 210, 201, 0) 100%);
-  background: linear-gradient(left, #5d043f 80%, rgba(212, 210, 201, 0) 100%); }
-#enjoy-mondays .content h4 {
-  border-bottom: solid 1px rgba(212, 210, 201, 0.07); }
-
-#enjoy-mondays {
-  font-family: Tahoma, Geneva, sans-serif, "Times New Roman", Times, ‘Courier New’, Courier, monospace, serif;
-  font-weight: 100; }
-  #enjoy-mondays a {
-    font-size: 1em;
-    font-weight: 900; }
-  #enjoy-mondays h1, #enjoy-mondays h2, #enjoy-mondays h3, #enjoy-mondays h4, #enjoy-mondays h5, #enjoy-mondays h6 {
-    font-family: Consolas, monaco, ‘Courier New’, Courier, ‘Lucida Console’, Monaco, monospace !important;
-    font-weight: 600 !important; }
-  #enjoy-mondays h1 {
-    font-size: 2.5em;
-    text-transform: uppercase; }
-  #enjoy-mondays .content p {
-    font-size: 1.25em; }
-    #enjoy-mondays .content p > code {
-      font-family: ‘Courier New’, Courier, Consolas, monaco, monospace; }
-  #enjoy-mondays .content pre {
-    font-size: 1.15em; }
-
-#color-swapper {
-  display: none; }
-
-@media (min-width: 767px) {
-  #color-swapper {
-    display: initial;
-    left: 0;
-    padding: 5px; }
-    #color-swapper tr {
-      height: 15px;
-      overflow: hidden; }
-      #color-swapper tr:hover {
-        height: 12px;
-        cursor: pointer; }
-    #color-swapper td {
-      font-size: 0;
-      line-height: 0;
-      width: 27px;
-      border-right: 1px solid white; }
-      #color-swapper td a {
-        width: 27px;
-        height: 12px;
-        display: block; }
-
-  #color-swapper td.GRAY {
-    background-color: #4a4a4a; }
-  #color-swapper td.LIGHT_GRAY {
-    background-color: #E9E8E3; }
-  #color-swapper td.DARK_GRAY {
-    background-color: #3A3A3A; }
-  #color-swapper td.DARK_BLUE {
-    background-color: #363B48; }
-  #color-swapper td.FUXSIA {
-    background-color: #DF3F54; }
-  #color-swapper td.LIGHT_FUXSIA {
-    background-color: #F17C71; }
-  #color-swapper td.ZENBURN_BG {
-    background-color: #3F3F3F; }
-  #color-swapper td.LIGHT_WHITE {
-    background-color: #F3F6FB; }
-  #color-swapper td.LIGHTER_WHITE {
-    background-color: #F8F8F4; } }
-
-/*# sourceMappingURL=style.css.map */
+Backtrace:
+css/sass/style.scss:10
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:66:in `rescue in import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:45:in `import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:28:in `imported_file'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:37:in `css_import?'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `map'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:328:in `block in watch'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/vendor/listen/lib/listen/listener.rb:252:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/vendor/listen/lib/listen/adapter.rb:254:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: partials/_colorSwap.\A        Load path: /Users/tatianaburgos/Documents/Trabajos/gconfig/webPackage/css/sass\A         on line 10 of css/sass/style.scss\A \A 5: \A 6: @import \"layouts/_layout\";\A 7: @import \"colors/_colors-css\";\A 8: @import \"fonts/_fonts-css\";\A 9: \A 10: @import \"partials/_colorSwap\";\A 11: \A 12: \A 13: \A 14: // ----------------------------------------------------- HIDE SCROLLBAR\A 15: // testing if needed, check mozilla affects height of pre elements"; }
