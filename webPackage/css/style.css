@@ -135,7 +135,6 @@
   @media (min-width: 1180px) {
     #enjoy-mondays .content,
     #enjoy-mondays .content-root {
-      background-color: black;
       background: -webkit-gradient(linear, left top, right top, color-stop(0.8, black), color-stop(1, rgba(212, 210, 201, 0)));
       background: -webkit-linear-gradient(left, black 95%, rgba(212, 210, 201, 0) 100%);
       background: -moz-linear-gradient(left, black 95%, rgba(212, 210, 201, 0) 100%);
@@ -203,8 +202,7 @@
     border-left: 1px solid #fba2dd; }
 #enjoy-mondays .menubar {
   border-right: solid 1px #d4d2c9; }
-#enjoy-mondays .content h1:before, #enjoy-mondays .content h2:before, #enjoy-mondays .content h3
-.big-heading:before {
+#enjoy-mondays .content h1:before, #enjoy-mondays .content h2:before, #enjoy-mondays .content h3:before, #enjoy-mondays .content .big-heading:before {
   background: -webkit-gradient(linear, left top, right top, color-stop(0.8, #5d043f), color-stop(1, rgba(212, 210, 201, 0)));
   background: -webkit-linear-gradient(left, #5d043f 80%, rgba(212, 210, 201, 0) 100%);
   background: -moz-linear-gradient(left, #5d043f 80%, rgba(212, 210, 201, 0) 100%);

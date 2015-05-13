@@ -1,9 +1,9 @@
 
 // ----------------------------- 3 COLORS middle intensity 
 
-$color1: getMiddleLightness($base_color);
+$color1: getMiddleLightness($base_color); 
 
-$color2: complement($color1);
+$color2: complement($color1); @debug $color2;
 
 $color3: saturate(adjust-hue($color1, $color3Hue), $color3Saturation);
 

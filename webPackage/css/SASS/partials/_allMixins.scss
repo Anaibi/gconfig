@@ -58,8 +58,10 @@
 // ------------------------------------ getMiddleLightness 
 
 @function getMiddleLightness($c) {
+
+  @debug getIntensity($c); 
   $middle_lightness: 0;
-  $l: 50 - lightness($c);
+  $l: 50 - lightness($c); @debug 'l ' + $l; 
 
   @if $l > 0 {
     $middle_lightness: lighten($base_color, $l);

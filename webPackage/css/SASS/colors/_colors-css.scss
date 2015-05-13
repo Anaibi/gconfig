@@ -23,7 +23,7 @@
   @media (min-width: 1180px) {
     .content,
     .content-root {
-      background-color: $bg_code;
+      //background-color: $bg_code;
       @include gradientBg($bg_code_3col, $borders1, 95%);
     }
   }
@@ -158,8 +158,7 @@
   }
 
   .content {
-    h1, h2, h3
-    .big-heading {
+    h1, h2, h3, .big-heading {
       &:before {
         @include gradientBg($bg_details, $borders1);
       }
