@@ -233,9 +233,9 @@ $(window).load(function() {
 		return rgb;
 	}
 
-	function getMiddleLightness(hex_color) {
+	function getMiddleLightness(color) {
 		var l = (382.5 - getIntensity(color))/756; console.log(l);
-		console.log(ColorLuminance(hex_color, -.4019608));
+		console.log(ColorLuminance(color, -.4019608));
 		return ColorLuminance(color, l) 
 	}
 

@@ -98,7 +98,9 @@
     // TODO case mixed types, then they would get pushed to back of list in order above
   @else
     $fontList: $list
+
   @return $fontList
+
 
 // ------------------------------------------------------------ LAYOUTS 
 // ------------------------------- setFixedHeaderLayout 
@@ -165,16 +167,16 @@
 // ----------------------------------------------------------- POSITION 
 // ------------------------------------------- clearfix 
 %clearfix
- // For modern browsers
+  // For modern browsers
   &:before,
   &:after
-    content:""
-    display:table
+    content: ""
+    display: table
   &:after
-    clear:both  
+    clear: both  
   // For IE 6/7 (trigger hasLayout)
   &
-    zoom:1
+    zoom: 1
 
 // ------------------------------------------ vCentered 
 =vCentered($y:50%)
