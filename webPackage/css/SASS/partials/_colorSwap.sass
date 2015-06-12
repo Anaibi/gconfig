@@ -1,0 +1,54 @@
+
+// ------------------------------- COLOR SWAPPER TEST (only over 767px)
+#color-swapper
+  display: none
+@media (min-width: 767px)
+  #color-swapper
+    display: initial
+    left: 0
+    padding: 5px
+    tr
+      height: 15px
+      overflow: hidden
+      &:hover
+        height: 12px
+        cursor: pointer
+    td
+      font-size: 0
+      line-height: 0
+      width: 27px
+      border-right: 1px solid white
+      a
+        width: 27px
+        height: 12px
+        display: block
+
+  // --------------------------------------- COLOR OPTIONS
+  // ---------- is study
+  #color-swapper td
+    &.GRAY
+      background-color: $GRAY
+
+    &.LIGHT_GRAY
+      background-color: $LIGHT_GRAY
+
+    &.DARK_GRAY
+      background-color: $DARK_GRAY
+
+    &.DARK_BLUE
+      background-color: $DARK_BLUE
+
+    &.FUXSIA
+      background-color: $FUXSIA
+
+    &.LIGHT_FUXSIA
+      background-color: $LIGHT_FUXSIA
+
+    &.ZENBURN_BG
+      background-color: $ZENBURN_BG
+
+    &.LIGHT_WHITE
+      background-color: $LIGHT_WHITE
+
+    &.LIGHTER_WHITE
+      background-color: $LIGHTER_WHITE

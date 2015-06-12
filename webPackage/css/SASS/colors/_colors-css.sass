@@ -1,0 +1,118 @@
+@import "colors-constants"
+@import "colors-defaultSettings"
+@import "colors-assignations"
+
+
+
+// ------------------------------------------- BACKGROUNDS 
+
+#{$theme}
+  background-color: $bg_main
+
+  #main-header, 
+  // left menu and central content background need re-stating
+  .content-root,
+  .menubar,
+  .content,
+  h1, h2, h3, h4, h5, h6
+    background-color: $bg_main
+
+  // --------------------- 3 COLUMN BACKGROUND for big layout
+  @media (min-width: 1180px) 
+    .content,
+    .content-root 
+      background-color: $bg_code
+      +gradientBg($bg_code_3col, $borders1, 95%)
+
+  &.big-h3
+    +gradientBg($bg_main, $borders1)
+
+  .content
+    p, ul, ol
+      background-color: $bg_main
+    code
+      background-color: $bg_code
+
+    // ------- HIGHLIGHT JS OVERRIDE
+    .hljs, pre > code
+      background-color: $bg_code_3col
+      +gradientBg($bg_code_3col, lighten($borders1, 20%), 70%, 80%)
+
+      @media (max-width: 1180px)
+        background-color: $bg_code_3col
+
+
+// -------------------------------------------------- TEXT 
+
+#{$theme}
+
+  // ---------------------- GENERAL
+
+  color: $text
+
+  
+  // ----------------- ALL links
+  a
+    color: $text_links
+    // avoid border jump
+    line-height: 17px
+    margin-top: 3px
+    margin-bottom: -3px
+
+    &:hover,
+    &.active
+      border-bottom: 3px solid $deco_links
+
+      &::after
+        // remove dash from links
+        background: none
+  
+  // ----------- SIDE MENU links
+  .menu
+    a
+      &:visited, 
+      &:hover,
+      &.active
+        color: $text_active_links !important
+        // compensate border
+        margin-left: -3px
+        border-bottom: none !important
+        border-left: 3px solid $deco_links
+    // make room for border-left as some flatdoc level-x links don't have
+    .level-2 > a
+      padding-left: 3px
+  
+  // --------------------------- Hi 
+  h1, h2, h3, h4, h5, h6
+    color: $text_headers
+
+  // ---------------------- CONTENT 
+  .content
+    p, li
+      > code
+        color: $text_code
+    em
+      color: $em
+
+// ----------------------------------------------- DETAILS 
+#{$theme}
+  &.big-h3
+    @include boxShadow($bg_details)
+  #main-header
+    text-shadow: 0 1px 0 $text_details
+    border-bottom: solid 1px $borders1
+    li
+      border-left: 1px solid $borders2
+      border-right: 1px solid $borders1
+    h1 + ul
+      border-left: 1px solid $borders2
+  .menubar
+    border-right: solid 1px $borders1
+  .content
+    h1, h2, h3
+    .big-heading
+      &:before
+        @include gradientBg($bg_details, $borders1)
+    h4
+      border-bottom: solid 1px rgba($borders1, .07)
+

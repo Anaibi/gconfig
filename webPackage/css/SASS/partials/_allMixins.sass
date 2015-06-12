@@ -1,0 +1,185 @@
+// BACKGROUNDS
+//   gradientBg
+//   boxShadow
+// COLORS
+//   getIntensity
+//   getMiddleLightness
+//   isDarkColor
+//   isLightColor
+// FONTS
+//   toFontList
+// LAYOUTS
+//   setFixedHeaderLayout
+//   fillHeightSections
+// UTILITY FUNCTIONS
+//   calcProportion
+// TRANSITIONS
+//   transition
+//   transform
+//   transformNone
+// POSITION
+//   %clearfix
+//   vCentered
+
+
+// -------------------------------------------------------- BACKGROUNDS 
+// -------------------------------------------  gradientBg
+=gradientBg($c1, $c2, $s:80%, $e:100%)
+  $c2: rgba($c2, 0)
+  background: -webkit-gradient(linear, left top, right top, color-stop(0.8, $c1), color-stop(1, $c2))
+  background: -webkit-linear-gradient(left, $c1 $s, $c2 $e)
+  background: -moz-linear-gradient(left, $c1 $s, $c2 $e)
+  background: -o-linear-gradient(left, $c1 $s, $c2 $e)
+  background: -ms-linear-gradient(left, $c1 $s, $c2 $e)
+  background: linear-gradient(left, $c1 $s, $c2 $e)
+
+
+// --------------------------------------------- boxShadow 
+=boxShadow($c)
+  -webkit-box-shadow: 0 1px 0 rgba($c,0.4)
+  box-shadow: 0 1px 0 rgba($c,0.4)
+
+
+// ------------------------------------------------------------- COLORS 
+// ------------------------------------------ getIntensity 
+@function getIntensity($c)
+  @return red($c) + blue($c) + green($c)
+
+// ------------------------------------ getMiddleLightness 
+@function getMiddleLightness($c)
+  $middle_lightness: 0
+  $l: 50 - lightness($c)
+
+  @if $l > 0
+    $middle_lightness: lighten($base_color, $l)
+  @else
+    $middle_lightness: darken($base_color, -$l)
+  @return $middle_lightness
+
+
+// ------------------------------------------- isDarkColor 
+@function isDarkColor($c)
+  $i: getIntensity($c)
+  @if ($i < 282)
+    @return true
+  @else
+    @return false
+
+// ------------------------------------------ isLightColor 
+@function isLightColor($c)
+  $i: getIntensity($c)
+  @if ($i > 482)
+    @return true
+  @else
+    @return false
+
+
+// -------------------------------------------------------------- FONTS 
+// -------------------------------------------  toFontList
+@function toFontList($list)
+
+  $fontList: ()
+
+  @if length($list) > 1
+    // take out repeats and make list
+    @each $family in $list
+      @each $font in $family
+        @if not index($fontList, $font)
+          $fontList: append($fontList, $font, comma)
+
+    // shift default types sanserif, serif, monospace to end of list 
+    // (ok if they are all the same)
+    $i: index($fontList, 'serif') or index($fontList, 'sans-serif') or index($fontList, 'monospace')
+
+    @if $i
+      $fontList: append($fontList, nth($fontList, $i))
+      $fontList: set-nth($fontList, $i, null)
+
+    // TODO case mixed types, then they would get pushed to back of list in order above
+  @else
+    $fontList: $list
+  @return $fontList
+
+// ------------------------------------------------------------ LAYOUTS 
+// ------------------------------- setFixedHeaderLayout 
+// <div id="main-header"> fixed
+// <div id="content"> following
+// $h -> fixed header height
+
+=setFixedHeader($h)
+  #main-header
+    height: $h
+  #content
+    &::before
+      content: " "
+      display: block
+      height: $h
+      width: 100%
+
+
+// --------------------------------- fillHeightSections 
+// <header> 
+// <div class="section"> 
+// <div class="section last"> 
+// <footer>
+// $h1 -> header height
+// $h2 -> footer height
+
+=fillHeightSections($h1, $h2)
+  .section
+    height: 100%
+    min-height: calc(100vh - #{$h1})
+    @if $h2
+      &.last
+        $th: $h1 + $h2
+        min-height: calc(100vh - #{$th})
+    @else
+      @warn "No footer height"
+
+// -------------------------------------------------- UTILITY FUNCTIONS 
+// ------------------------------------- calcProportion 
+@function calcProportion($target, $container)
+  @return ($target/$container) * 100%
+
+
+// -------------------------------------------------------- TRANSITIONS 
+// ----------------------------------------- transition 
+=transition($args, $t)
+  -webkit-transition: $args $t
+  -ms-transition: $args $t
+  transition: $args $t
+
+// ------------------------------------------ transform 
+=transform($args, $t)
+  -webkit-transform: $args $t
+  -ms-transform: $args $t
+  transform: $args $t
+
+// -------------------------------------- transformNone 
+=transformNone
+  -webkit-transform: none
+  -ms-transform: none
+  transform: none
+
+
+// ----------------------------------------------------------- POSITION 
+// ------------------------------------------- clearfix 
+%clearfix
+ // For modern browsers
+  &:before,
+  &:after
+    content:""
+    display:table
+  &:after
+    clear:both  
+  // For IE 6/7 (trigger hasLayout)
+  &
+    zoom:1
+
+// ------------------------------------------ vCentered 
+=vCentered($y:50%)
+  position: relative
+  top: $y
+  -webkit-transform: translateY(-50%)
+  -ms-transform: translateY(-50%)
+  transform: translateY(-50%)
