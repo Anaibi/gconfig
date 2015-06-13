@@ -146,22 +146,16 @@
 
 // -------------------------------------------------------- TRANSITIONS 
 // ----------------------------------------- transition 
-=transition($args, $t)
-  -webkit-transition: $args $t
-  -ms-transition: $args $t
-  transition: $args $t
+=transition($args...)
+  -webkit-transition: $args
+  -ms-transition: $args
+  transition: $args
 
 // ------------------------------------------ transform 
-=transform($args, $t)
-  -webkit-transform: $args $t
-  -ms-transform: $args $t
-  transform: $args $t
-
-// -------------------------------------- transformNone 
-=transformNone
-  -webkit-transform: none
-  -ms-transform: none
-  transform: none
+=transform($args...)
+  -webkit-transform: $args
+  -ms-transform: $args
+  transform: $args
 
 
 // ----------------------------------------------------------- POSITION 
@@ -182,6 +176,4 @@
 =vCentered($y:50%)
   position: relative
   top: $y
-  -webkit-transform: translateY(-50%)
-  -ms-transform: translateY(-50%)
-  transform: translateY(-50%)
+  +transform(translateY(-50%))
