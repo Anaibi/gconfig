@@ -8,34 +8,34 @@
 
   <title>Gconfig</title>
 
+  <!-- Meta -->
+  <meta content="gconfig" property="og:title">
+  <meta content="gconfig" name="description">
+
   <!-- Flatdoc -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/legacy.js"></script>   
-  <script src="https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/flatdoc.js"></script>  -->
+  <script src="https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/flatdoc.js"></script>
 
   <!-- Flatdoc theme -->
   <link  href="https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/theme-white/style.css" rel="stylesheet">
   <script src="https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/theme-white/script.js"></script>
 
-  <!-- Enjoy-Mondays theme --> 
-  <link  href="webPackage/css/style.css" rel="stylesheet">
-  
-  <!-- Meta -->
-  <meta content="gconfig" property="og:title">
-  <meta content="gconfig" name="description">
-
   <!-- HIGHLIGHT.JS -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/8.4/styles/zenburn.min.css">
-  <script src="//cdn.jsdelivr.net/highlight.js/8.4/highlight.min.js"></script>  
+  <script src="//cdn.jsdelivr.net/highlight.js/8.4/highlight.min.js"></script>
+
+  <!-- Enjoy-Mondays theme --> 
+  <link  href="webPackage/css/style.css" rel="stylesheet">
 
   <!-- Initializer-->
   <script>
     Flatdoc.run({
       fetcher: Flatdoc.github('Anaibi/gconfig'),
-        highlight: function() {
-          return hljs.initHighlightingOnLoad();
-        }
-      });
+      highlight: function() {
+        return hljs.initHighlightingOnLoad();
+      }
+    });
   </script>
 </head>
 
@@ -63,12 +63,13 @@
     </div>
     <div role="flatdoc-content" class="content"></div>
   </div>
-  
 
-  <!-- Enjoy-Mondays script --> 
+
+  <!-- Flatdoc theme -->
+  <script src="https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/theme-white/script.js"></script>
+
+  <!-- Enjoy-Mondays theme --> 
   <script  src="webPackage/js/main.js"></script>
-  <!-- COLOR SWAPPER (off) 
-  <script src="webPackage/js/colorSwap.js"></script>-->
 
   <!-- GOOGLE FONTS -->
   <script type="text/javascript">
