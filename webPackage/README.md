@@ -1,14 +1,14 @@
-#####To view default settings, comment out the settings import in webPackage/css/sass/**style.scss**.
+#####To view default settings, comment out the settings import in webPackage/css/sass/**style.sass**.
 ```
 //@import "settings/_settings";
 ```
 
-####Modify settings: webPackage/css/sass/**_settings**.scss:
+####Modify settings: webPackage/css/sass/**_settings**.sass:
 
 #####To use default value, comment it out. 
 
 #####To change layout color combination, options:
-  1. **Base color**: `$base_color` (Can pick constant color name from _color-constants.scss)
+  1. **Base color**: `$base_color` (Can pick constant color name from _color-constants.sass)
   2. **Background type**: `$lightBackground` (**true**: light version of base_color / **false**: base_color as is)
   3. **Shades** variation degree: `$shadeCoeficient` (default 1. Values between 0.0 and 2.0)
   4. **Adjust color3**: `$color3Hue` and `$color3Saturation`

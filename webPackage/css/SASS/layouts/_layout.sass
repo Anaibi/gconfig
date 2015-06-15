@@ -2,41 +2,19 @@
 
 // ------------------------------------------- MAIN HEADER 
 #{$theme} #main-header  
-  // -------------------------- TITLE AND MENU
-  .left-content
-    position: relative
-    left: 220px
-
-    // - (when side menu drops out)
-    @media (max-width: 767px)
-      // ------------ move to left
-      left: 0
-
-  li
-    @media (max-width: 480px)
-      margin-left: 20px
-
-  // -------------------------- GITHUB BUTTONS
-  .right-content
-    float: right
-    height: $header_height
-
-    @media (max-width: 900px)
-      // ------- => stack in 2 rows
-      width: 168px
-      height: $header_height_2
-      top: 3px
-    @media (max-width: 650px)
-      // ------------------ => hide
-      display: none
-
-  // ---------------------------------------------- UNDER 650px
-  @media (max-width: 650px)
-  // -------------------------- TITLE AND MENU 
-  // ---------------------------- => fullwidth
+  +respond-to($break-medium)
+    // ------------ => fullwidth
     padding-left: 0
     padding-right: 0
-    .left-content
+  // -------------------------- TITLE AND MENU
+  .header-nav
+    position: relative
+    left: 220px
+    +respond-to($break-side_menu)
+      // ------------ move to left
+      left: 0
+    +respond-to($break-medium)
+      // ------------ => fullwidth
       float: none
       h1
         margin-left: 30px
@@ -45,18 +23,16 @@
         float: right
         margin-right: 30px
         border: none
-        li
-          float: left
-          border: none
-          &:last-child a
-            padding-right: 0
-
-  // ---------------------------------------------- UNDER 350px
-  @media (max-width: 350px)
-    // -------------------------- TITLE AND MENU 
-    // ---------------------- => stack in 2 rows
-    text-align: center
-    .left-content
+      li 
+        float: left
+        border: none
+        &:last-child a
+          padding-right: 0
+        +respond-to($break-small)
+          margin-left: 20px
+    +respond-to($break-smallest)
+      // ------- => 1 centered col
+      text-align: center
       h1
         float: none
         margin: 10px auto 12px auto
@@ -64,16 +40,31 @@
         float: none
         display: inline-block
 
+
+  // -------------------------- GITHUB BUTTONS
+  .github-buttons
+    float: right
+    height: $header_height
+
+    +respond-to($break-large)
+      // ------- => stack in 2 rows
+      width: 168px
+      height: $header_height_2
+      top: 3px
+    +respond-to($break-medium)
+      // ------------------ => hide
+      display: none
+
 // -------------------------------- FIX HEADER PLACEHOLDER 
 #{$theme} #fix-placeholder
   height: $h
-  @media (max-width: 350px)
+  +respond-to($break-smallest)
     height: $h_2
 
 // ----------------------------------------------- CONTENT 
 #{$theme} .content
   // -------------- (when side menu drops out)
-  @media (max-width: 767px)
+  +respond-to($break-side_menu)
     // ---------------------------- => center
     padding-left: 0
     padding-right: 0
@@ -99,7 +90,7 @@
       width: 100%
 
 // --------------------------------- 3 COLUMN BACKGROUND for big layout
-@media (min-width: 1180px)
++respond-to($break-big_layout, min)
   #{$theme} .content
     width: 100%
     padding-top: 0
