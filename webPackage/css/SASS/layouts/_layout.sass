@@ -38,7 +38,6 @@
         float: none
         display: inline-block
 
-
   // -------------------------- GITHUB BUTTONS
   .github-buttons
     float: right
@@ -59,6 +58,11 @@
   +respond-to(smallest)
     height: $h_2
 
+// ---------------------------------------------- SIDEMENU 
+#{$theme} .content-root
+  .menubar
+    z-index: 3000
+    
 // ----------------------------------------------- CONTENT 
 #{$theme} .content
   +respond-to(side_menu)

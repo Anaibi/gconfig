@@ -7,16 +7,6 @@
 .fullwidth {
   width: 100%; }
 
-.screan-reader-text {
-  position: absolute;
-  height: 0;
-  width: 0;
-  opacity: 0;
-  font-size: 0; }
-
-.hidden {
-  display: none; }
-
 @media screen and (max-width: 650px) {
   #enjoy-mondays #main-header {
     padding-left: 0;
@@ -70,6 +60,9 @@
   @media screen and (max-width: 350px) {
     #enjoy-mondays #fix-placeholder {
       height: 81px; } }
+
+#enjoy-mondays .content-root .menubar {
+  z-index: 3000; }
 
 @media screen and (max-width: 767px) {
   #enjoy-mondays .content {
