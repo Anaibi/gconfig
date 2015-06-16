@@ -11,7 +11,7 @@
     position: relative
     left: 220px
     +respond-to($break-side_menu)
-      // ------------ move to left
+      // --------- => move to left
       left: 0
     +respond-to($break-medium)
       // ------------ => fullwidth
@@ -61,9 +61,8 @@
 
 // ----------------------------------------------- CONTENT 
 #{$theme} .content
-  // -------------- (when side menu drops out)
   +respond-to($break-side_menu)
-    // ---------------------------- => center
+    // ---------------- => center
     padding-left: 0
     padding-right: 0
     margin-left: auto
@@ -110,6 +109,6 @@
       position: relative
       z-index: 2
     pre
-      width: calc(100% - 550px)
+      width: calc(100% - #{$content_width})
     & > *:last-child
       padding-bottom: 40px
