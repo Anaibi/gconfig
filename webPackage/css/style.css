@@ -218,8 +218,8 @@
     font-size: 1em;
     font-weight: 900; }
   #enjoy-mondays h1, #enjoy-mondays h2, #enjoy-mondays h3, #enjoy-mondays h4, #enjoy-mondays h5, #enjoy-mondays h6 {
-    font-family: "Dosis", sans-serif !important;
-    font-weight: 600 !important; }
+    font-family: "Dosis", sans-serif;
+    font-weight: 600; }
   #enjoy-mondays h1 {
     font-size: 2.5em;
     text-transform: uppercase; }

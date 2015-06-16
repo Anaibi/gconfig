@@ -27,7 +27,7 @@ $color3Saturation: 80% !default;
 
 #####To change fonts:
   1. Font family: `$font_1` and `$font_2`
-  2. Font sizes: ``$font_ratio` TODO
+  2. Font sizes: `$font_ratio` TODO
 
 
 #####Default font settings are:
