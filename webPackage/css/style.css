@@ -41,9 +41,7 @@
         border: none; }
       #enjoy-mondays #main-header .header-nav li {
         float: left;
-        border: none; }
-        #enjoy-mondays #main-header .header-nav li:last-child a {
-          padding-right: 0; } }
+        border: none; } }
     @media screen and (max-width: 650px) and (max-width: 480px) {
       #enjoy-mondays #main-header .header-nav li {
         margin-left: 20px; } }
