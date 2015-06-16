@@ -8,18 +8,6 @@
 //   isLightColor
 // FONTS
 //   toFontList
-// LAYOUTS
-//   setFixedHeaderLayout
-//   fillHeightSections
-// UTILITY FUNCTIONS
-//   calcProportion
-// TRANSITIONS
-//   transition
-//   transform
-//   transformNone
-// POSITION
-//   %clearfix
-//   vCentered
 // MEDIA QUERIES
 
 
@@ -34,12 +22,10 @@
   background: -ms-linear-gradient(left, $c1 $s, $c2 $e)
   background: linear-gradient(left, $c1 $s, $c2 $e)
 
-
 // --------------------------------------------- boxShadow 
 =boxShadow($c)
   -webkit-box-shadow: 0 1px 0 rgba($c,0.4)
   box-shadow: 0 1px 0 rgba($c,0.4)
-
 
 // ------------------------------------------------------------- COLORS 
 // ------------------------------------------ getIntensity 
@@ -57,7 +43,6 @@
     $middle_lightness: darken($base_color, -$l)
   @return $middle_lightness
 
-
 // ------------------------------------------- isDarkColor 
 @function isDarkColor($c)
   $i: getIntensity($c)
@@ -73,7 +58,6 @@
     @return true
   @else
     @return false
-
 
 // -------------------------------------------------------------- FONTS 
 // -------------------------------------------  toFontList
@@ -102,83 +86,6 @@
 
   @return $fontList
 
-
-// ------------------------------------------------------------ LAYOUTS 
-// ------------------------------- setFixedHeaderLayout 
-// <div id="main-header"> fixed
-// <div id="content"> following
-// $h -> fixed header height
-
-=setFixedHeader($h)
-  #main-header
-    height: $h
-  #content
-    &::before
-      content: " "
-      display: block
-      height: $h
-      width: 100%
-
-
-// --------------------------------- fillHeightSections 
-// <header> 
-// <div class="section"> 
-// <div class="section last"> 
-// <footer>
-// $h1 -> header height
-// $h2 -> footer height
-
-=fillHeightSections($h1, $h2)
-  .section
-    height: 100%
-    min-height: calc(100vh - #{$h1})
-    @if $h2
-      &.last
-        $th: $h1 + $h2
-        min-height: calc(100vh - #{$th})
-    @else
-      @warn "No footer height"
-
-// -------------------------------------------------- UTILITY FUNCTIONS 
-// ------------------------------------- calcProportion 
-@function calcProportion($target, $container)
-  @return ($target/$container) * 100%
-
-
-// -------------------------------------------------------- TRANSITIONS 
-// ----------------------------------------- transition 
-=transition($args...)
-  -webkit-transition: $args
-  -ms-transition: $args
-  transition: $args
-
-// ------------------------------------------ transform 
-=transform($args...)
-  -webkit-transform: $args
-  -ms-transform: $args
-  transform: $args
-
-
-// ----------------------------------------------------------- POSITION 
-// ------------------------------------------- clearfix 
-%clearfix
-  // For modern browsers
-  &:before,
-  &:after
-    content: ""
-    display: table
-  &:after
-    clear: both  
-  // For IE 6/7 (trigger hasLayout)
-  &
-    zoom: 1
-
-// ------------------------------------------ vCentered 
-=vCentered($y:50%)
-  position: relative
-  top: $y
-  +transform(translateY(-50%))
-
 // ------------------------------------------------------ MEDIA QUERIES 
 $break-smallest: 350px !default
 $break-small: 480px !default
@@ -190,30 +97,29 @@ $break-big_layout: 1180px !default
 
 
 =respond-to($media, $val:max) 
-  // TODO pass to @each 
   @if $media == smallest
     @media screen and (#{$val}-width: $break-smallest)
       @content
 
-  @if $media == small
+  @else if $media == small
     @media screen and (#{$val}-width: $break-small)
-      @content 
-    
-  @else if $media == medium 
+      @content
+
+  @else if $media == medium
     @media screen and (#{$val}-width: $break-medium)
-      @content 
+      @content
+
+  @else if $media == side_menu
+    @media screen and (#{$val}-width: $break-side_menu)
+      @content
 
   @else if $media == large 
     @media screen and (#{$val}-width: $break-large)
-      @content 
-  
-  @else if $media == landscape 
-    @media screen and (#{$val}-height: $break-medium) and (orientation: landscape)
-      @content 
-  
-  @else if $media == small-height 
-    @media screen and (#{$val}-height: $break-medium) and (#{$val}-width: 700px)
-      @content 
+      @content
+
+  @else if $media == big_layout 
+    @media screen and (#{$val}-width: $break-big_layout)
+      @content
 
   @else if $media
     @media screen and (#{$val}-width: $media)

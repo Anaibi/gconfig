@@ -2,7 +2,7 @@
 
 // ------------------------------------------- MAIN HEADER 
 #{$theme} #main-header  
-  +respond-to($break-medium)
+  +respond-to(medium)
     // ------------ => fullwidth
     padding-left: 0
     padding-right: 0
@@ -10,10 +10,10 @@
   .header-nav
     position: relative
     left: 220px
-    +respond-to($break-side_menu)
+    +respond-to(side_menu)
       // --------- => move to left
       left: 0
-    +respond-to($break-medium)
+    +respond-to(medium)
       // ------------ => fullwidth
       float: none
       h1
@@ -26,9 +26,9 @@
       li 
         float: left
         border: none
-        +respond-to($break-small)
+        +respond-to(small)
           margin-left: 20px
-    +respond-to($break-smallest)
+    +respond-to(smallest)
       // ------- => 1 centered col
       text-align: center
       h1
@@ -44,24 +44,24 @@
     float: right
     height: $header_height
 
-    +respond-to($break-large)
+    +respond-to(large)
       // ------- => stack in 2 rows
       width: 168px
       height: $header_height_2
       top: 3px
-    +respond-to($break-medium)
+    +respond-to(medium)
       // ------------------ => hide
       display: none
 
 // -------------------------------- FIX HEADER PLACEHOLDER 
 #{$theme} #fix-placeholder
   height: $h
-  +respond-to($break-smallest)
+  +respond-to(smallest)
     height: $h_2
 
 // ----------------------------------------------- CONTENT 
 #{$theme} .content
-  +respond-to($break-side_menu)
+  +respond-to(side_menu)
     // ---------------- => center
     padding-left: 0
     padding-right: 0
@@ -87,7 +87,7 @@
       width: 100%
 
 // --------------------------------- 3 COLUMN BACKGROUND for big layout
-+respond-to($break-big_layout, min)
++respond-to(big_layout, min)
   #{$theme} .content
     width: 100%
     padding-top: 0

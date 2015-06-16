@@ -19,7 +19,7 @@
     background-color: $bg_main
   .content-root,
   .content
-    +respond-to($break-big_layout, min)
+    +respond-to(big_layout, min)
       background-color: $bg_code
       +gradientBg($bg_code_3col, $borders1, 95%)
   .content
@@ -31,7 +31,7 @@
     .hljs, pre > code
       background-color: $bg_code_3col
       +gradientBg($bg_code_3col, lighten($borders1, 20%), 70%, 80%)
-      +respond-to($break-big_layout)
+      +respond-to(big_layout)
         background-color: $bg_code_3col
 
 
