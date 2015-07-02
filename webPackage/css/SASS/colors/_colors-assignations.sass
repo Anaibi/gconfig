@@ -3,28 +3,10 @@ $color1: getMiddleLightness($base_color)
 $color2: complement($color1)
 $color3: saturate(adjust-hue($color1, $color3Hue), $color3Saturation)
 
-// ------------------------------------------------ SHADES 
-$dark_color1: darken($color1, $shadeCoeficient * 20%)
-$darker_color1: darken($color1, $shadeCoeficient * 35%)
-$darkest_color1: darken($color1, $shadeCoeficient * 50%)
+@if not $lightBackground
+	$color3: saturate(adjust-hue($color1, $color3Hue + 230deg), $color3Saturation + 15%)
 
-$lightest_color1: lighten($color1, $shadeCoeficient * 50%)
-$lighter_color1: lighten($color1, $shadeCoeficient * 45%)
-$light_color1: lighten($color1, $shadeCoeficient * 20%)
-
-$transparent_base_color: rgba($color1, .4)
-
-$dark_color2: darken($color2, $shadeCoeficient * 35%)
-$light_color2: lighten($color2, $shadeCoeficient * 25%)
-
-
-$dark_color3: darken($color3, $shadeCoeficient * 15%)
-$light_color3: lighten($color3, $shadeCoeficient * 40%)
-
-
-// ------------------------------------------------ SHADES 
-// regular version: 20, 35, 50  *testing*
-
+// ------------------------------------------------ SHADES
 $dark_color1: darken($color1, $shadeCoeficient * 20%)
 $darker_color1: darken($color1, $shadeCoeficient * 35%)
 $darkest_color1: darken($color1, $shadeCoeficient * 50%)
@@ -33,20 +15,15 @@ $lightest_color1: lighten($color1, $shadeCoeficient * 50%)
 $lighter_color1: lighten($color1, $shadeCoeficient * 35%)
 $light_color1: lighten($color1, $shadeCoeficient * 20%)
 
-
-$dark_color2: darken($color2, $shadeCoeficient * 20%)
 $light_color2: lighten($color2, $shadeCoeficient * 20%)
-
 
 $dark_color3: darken($color3, $shadeCoeficient * 20%)
 $light_color3: lighten($color3, $shadeCoeficient * 20%)
 
 
 // ------------------------------------ COLOR ASSIGNATIONS 
-
 // --------------------------------- middle intensity 
 $bg_main: $lighter_color1
-@debug $bg_main
 $text: $darkest_color1
 $text_headers: $darker_color1
 
@@ -76,8 +53,6 @@ $borders2: $light_color2
 // otherwise same as middle intensity
 
 @if not $lightBackground
-
-	$color3: saturate(adjust-hue($color1, $color3Hue + 230deg), $color3Saturation + 15%)
 
 	$bg_main: $base_color
 

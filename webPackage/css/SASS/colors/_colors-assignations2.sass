@@ -1,0 +1,106 @@
+// to start with, have one color defined = $base_color
+
+// get shades and contrast colors:
+
+// logic: either
+// a) use base_color as BACKGROUND color and calculate shades/contrast from this one
+// b) use base_color as REFERENCE color and calculate PALLETE from this one, with background eiter light or dark version of this color
+
+// case a: 
+@if $base_color_bg
+  // set base_color as main background color and calculate shades/contrast colors for links, details from base color
+  $bg_main: $base_color
+
+@else 
+  // calculate middle tone for base_color, then calculate shades/contrast colors for links, details from there
+  $bg_main: getMiddleLightness($base_color)
+
+
+// ----------------------------------- GET CONTRAST COLORS
+$color1: $bg_main
+$color2: complement($color1)
+$color3: saturate(adjust-hue($color1, $color3Hue), $color3Saturation)
+
+// ------------------------------------------------ SHADES
+
+// -------------------------------------------- GET SHADES
+$dark_color1: darken($color1, $shadeCoeficient * 20%)
+$darker_color1: darken($color1, $shadeCoeficient * 35%)
+$darkest_color1: darken($color1, $shadeCoeficient * 50%)
+
+$lightest_color1: lighten($color1, $shadeCoeficient * 50%)
+$lighter_color1: lighten($color1, $shadeCoeficient * 35%)
+$light_color1: lighten($color1, $shadeCoeficient * 20%)
+
+$light_color2: lighten($color2, $shadeCoeficient * 20%)
+
+$dark_color3: darken($color3, $shadeCoeficient * 20%)
+$light_color3: lighten($color3, $shadeCoeficient * 20%)
+
+
+// ------------------------------------ COLOR ASSIGNATIONS 
+// --------------------------------- middle intensity 
+$bg_main: $lighter_color1
+$text: $darkest_color1
+$text_headers: $darker_color1
+
+$text_links: $color2
+$text_active_links: $dark_color3
+$deco_links: $color3
+
+$em: $darkest_color1
+
+$bg_code: $darker_color1
+$bg_code_3col: $darker_color1
+$text_code: $lightest_color1
+
+$bg_hightlight: $dark_color3
+$text_hightlight: $light_color3
+
+$bg_details: $light_color3
+$text_details: $lightest_color1
+
+$borders1: $lightest_color1
+$borders2: $light_color2
+
+
+// --------------------------------------- base color 
+// if color is dark, general assignations = lighter
+// if color is light, general assignations = darker
+// otherwise same as middle intensity
+
+@if not $lightBackground
+
+  $bg_main: $base_color
+
+  @if isDarkColor($base_color) 
+
+    $text: $light_color1
+    $text_headers: $lighter_color1
+
+    $text_links: $light_color2
+    $text_active_links: $light_color3
+    $deco_links: $color3
+
+    $em: $lightest_color1
+
+    $bg_code: $light_color1
+    $bg_code_3col: $darkest_color1
+    $text_code: $dark_color1
+
+    $bg_hightlight: $light_color3
+    $text_hightlight: $dark_color3
+
+    $bg_details: $light_color3
+    $text_details: $dark_color1
+
+  @if isLightColor($base_color)
+
+    $text: $darker_color1
+    $text_headers: $darkest_color1
+
+    $bg_details: $dark_color3
+    $text_details: $lighter_color1
+
+    $borders1: $light_color1
+    $borders2: $light_color3
