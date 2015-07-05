@@ -6,11 +6,17 @@
   <meta name="viewport" content="width=device-width">
   <link rel="shortcut icon" href="favicon.ico">
 
+  <!-- VAR project.title -->
+  <!-- <title>{{project.title}}</title> -->
   <title>Gconfig</title>
 
   <!-- Meta -->
+  <!-- VAR project.title -->
+  <!-- <meta content="{{project.title}}" property="og:title"> -->
   <meta content="gconfig" property="og:title">
-  <meta content="gconfig" name="description">
+  <!-- VAR project.description -->
+  <!-- <meta content="{{project.description}}" name="description"> -->
+  <meta name="description" content="GConfig lets you define a configuration hierarchy where you start with a set of hardcoded default options, environment options in HTML metatags, and runtime flags in query string format.">
 
   <!-- Flatdoc -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -31,6 +37,8 @@
   <!-- Initializer-->
   <script>
     Flatdoc.run({
+      // VAR github.user, github.repo
+      // fetcher: Flatdoc.github('{{github.user}}/{github.repo}'),
       fetcher: Flatdoc.github('Anaibi/gconfig'),
       highlight: function() {
         return hljs.initHighlightingOnLoad();
@@ -43,15 +51,23 @@
 
   <div id="main-header" class="header fixedTop fullwidth">
     <div class="left header-nav">
+      <!-- VAR project.title -->
+      <!-- <h1>{{project.title}}</h1> -->
       <h1>Gconfig\</h1>
-      <ul>  
+      <ul>
+        <!-- VAR github.user, github.repo -->
+        <!-- <li><a href="https://github.com/{{github.user}}/{{github.repo}}">View on GitHub</a></li> --> 
         <li><a href="https://github.com/Anaibi/gconfig">View on GitHub</a></li>
+        <!-- <li><a href="https://github.com/{{github.user}}/{{github.repo}}/issues">Issues</a></li> -->
         <li><a href="https://github.com/Anaibi/gconfig/issues">Issues</a></li>
       </ul>
     </div>
     <div class="right github-buttons">
       <!-- GitHub buttons: see http://ghbtns.com -->
-      <iframe src="http://ghbtns.com/github-btn.html?user=Anaibi&amp;type=follow&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="20"></iframe> 
+      <!-- VAR github.user, github.repo -->
+      <!-- <iframe src="http://ghbtns.com/github-btn.html?user={{github.user}}&amp;type=follow&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="20"></iframe>  -->
+      <iframe src="http://ghbtns.com/github-btn.html?user=Anaibi&amp;type=follow&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="20"></iframe>
+      <!-- <iframe src="http://ghbtns.com/github-btn.html?user={{github.user}}&amp;repo={{github.repo}}&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe> -->
       <iframe src="http://ghbtns.com/github-btn.html?user=Anaibi&amp;repo=gconfig&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
     </div>
   </div>
