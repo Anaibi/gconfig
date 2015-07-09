@@ -2,24 +2,26 @@ $(window).load(function() {
 
   var threeColumnContentCalled = false;
   var minWidth_threeColumn = 1180;
-  var ww = $(window).width();
 
   var preElements = $('.content').find('pre');
 
-  if (ww > minWidth_threeColumn) {
+  if (hasThreeColumnsLayout()) {
     // fix css for three column layout 
     threeColumnCss();
   }
 	
-  $(window).resize(function() { console.log('in resize');
-    // new window width
-    ww = $(window).width();
-    if (!threeColumnContentCalled && (ww > minWidth_threeColumn)) { 
+  $(window).resize(function() {
+    if (!threeColumnContentCalled && hasThreeColumnsLayout()) { 
       threeColumnCss();
     }
     //hideScrollbarMoz();
   });
 
+
+  // ---------------------------------------------------------------- hasThreeColumnsLayout
+  function hasThreeColumnsLayout() {
+    return $(window).width() > minWidth_threeColumn;
+  }
 
   // --------------------------------------------------------------------- hideScrollbarMoz
   // testing
